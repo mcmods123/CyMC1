@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -16,31 +15,68 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#0d0d0d;
+background:#0b0b0b;
 color:white;
-background-image:
-linear-gradient(rgba(124,58,237,.15) 1px, transparent 1px),
-linear-gradient(90deg, rgba(124,58,237,.15) 1px, transparent 1px);
-background-size:30px 30px;
+overflow-x:hidden;
 }
 
+/* FUNDO */
+.bg{
+position:fixed;
+inset:0;
+z-index:-3;
+background:
+radial-gradient(circle at top, #1a1a1a, #000),
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:48px 48px;
+animation: moveGrid 25s linear infinite;
+}
+
+@keyframes moveGrid{
+from{background-position:0 0;}
+to{background-position:48px 48px;}
+}
+
+/* BANNER */
 header{
-background:#111;
-padding:25px;
 text-align:center;
+padding:70px 20px;
+background: linear-gradient(135deg, #111, #000);
 border-bottom:4px solid #7c3aed;
 }
 
 header h1{
-font-size:52px;
+font-size:60px;
 color:#a855f7;
 }
 
 header p{
-margin-top:10px;
 color:#ccc;
+margin-top:10px;
 }
 
+/* SEARCH */
+.search-box{
+display:flex;
+justify-content:center;
+padding:15px;
+background:#0f0f0f;
+border-bottom:2px solid #7c3aed;
+}
+
+.search-box input{
+width:320px;
+max-width:90%;
+padding:10px;
+border:2px solid #7c3aed;
+background:#181818;
+color:white;
+outline:none;
+text-align:center;
+}
+
+/* MODS GRID (PC) */
 .mods{
 display:flex;
 flex-wrap:wrap;
@@ -49,6 +85,7 @@ gap:25px;
 padding:30px;
 }
 
+/* CARD */
 .card{
 width:280px;
 background:#181818;
@@ -67,7 +104,6 @@ box-shadow:12px 12px 0 #a855f7;
 height:180px;
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
 }
 
 .info{
@@ -80,7 +116,6 @@ background:#7c3aed;
 padding:5px 10px;
 font-size:12px;
 font-weight:bold;
-border-radius:4px;
 }
 
 .version{
@@ -93,16 +128,12 @@ border:2px solid #7c3aed;
 h3{
 margin-top:12px;
 margin-bottom:10px;
+font-size:18px;
 }
 
 .desc{
 color:#ccc;
 font-size:14px;
-margin-bottom:12px;
-}
-
-.stars{
-color:gold;
 margin-bottom:12px;
 }
 
@@ -121,16 +152,11 @@ color:white;
 font-weight:bold;
 }
 
-.share{
-width:50px;
-text-decoration:none;
-text-align:center;
-padding:12px;
-background:#222;
-color:white;
-border:2px solid #7c3aed;
+.hidden{
+display:none !important;
 }
 
+/* FOOTER */
 footer{
 margin-top:20px;
 padding:20px;
@@ -139,131 +165,75 @@ background:#111;
 border-top:4px solid #7c3aed;
 }
 
-</style>
+/* 🔥 RESPONSIVO MOBILE */
+@media (max-width: 768px){
 
+header h1{
+font-size:38px;
+}
+
+.mods{
+gap:15px;
+padding:15px;
+}
+
+/* cards centralizados e maiores */
+.card{
+width:90%;
+}
+
+/* botões melhor alinhados */
+.buttons{
+flex-direction:column;
+}
+
+.download{
+padding:14px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
+
+<div class="bg"></div>
 
 <header>
 <h1>⚡ CY MODS ⚡</h1>
 <p>Os melhores addons para Minecraft Bedrock</p>
 </header>
 
-<div class="mods">
+<div class="search-box">
+<input type="text" id="search" placeholder="Pesquise o nome do addon..." onkeyup="searchMods()">
+</div>
 
-<!-- VEIN MINER -->
+<div class="mods">
 
 <div class="card">
 <div class="img" style="background-image:url('imagens/veimaner.png')"></div>
-
 <div class="info">
 <span class="tag">UTILIDADES</span>
 <span class="version">v5.5</span>
-
-<h3>VEIN MINER</h3>
-
-<p class="desc">
-Quebre veios inteiros de minério automaticamente.
-</p>
-
-<div class="stars">★★★★★</div>
-
+<h3 class="title">VEIN MINER</h3>
+<p class="desc">Quebre veios inteiros de minério automaticamente.</p>
 <div class="buttons">
-<a class="download" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
-<a class="share" href="#">↗</a>
+<a class="download" href="#">BAIXAR</a>
 </div>
 </div>
 </div>
-
-<!-- NIGHT VISION -->
 
 <div class="card">
 <div class="img" style="background-image:url('imagens/nigth vision png.webp')"></div>
-
 <div class="info">
 <span class="tag">UTILIDADES</span>
 <span class="version">v1.0</span>
-
-<h3>NIGHT VISION</h3>
-
-<p class="desc">
-Visão noturna permanente para explorar qualquer lugar.
-</p>
-
-<div class="stars">★★★★★</div>
-
+<h3 class="title">NIGHT VISION</h3>
+<p class="desc">Visão noturna permanente para explorar qualquer lugar.</p>
 <div class="buttons">
-<a class="download" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
-<a class="share" href="#">↗</a>
+<a class="download" href="#">BAIXAR</a>
 </div>
-</div>
-</div>
-
-<!-- ONE ESMERALDE -->
-
-<div class="card">
-<div class="img" style="background-image:url('imagens/op vilagers png.webp')"></div>
-
-<div class="info">
-<span class="tag">VILLAGERS</span>
-<span class="version">v1.0</span>
-
-<h3>ONE ESMERALDE</h3>
-
-<p class="desc">
-Trocas especiais com aldeões usando apenas uma esmeralda.
-</p>
-
-<div class="stars">★★★★★</div>
-
-<div class="buttons">
-<a class="download" href="addons/oneesmeralde.mcpack">BAIXAR</a>
-<a class="share" href="#">↗</a>
-</div>
-</div>
-</div>
-
-<!-- MULTIPLY ORES -->
-
-<div class="card">
-<div class="img" style="background-image:url('imagens/multiplidor de minerios png.webp')"></div>
-
-<div class="info">
-<span class="tag">MINERAÇÃO</span>
-<span class="version">v1.0</span>
-
-<h3>MULTIPLY ORES</h3>
-
-<p class="desc">
-Multiplica a quantidade de minérios obtidos.
-</p>
-
-<div class="stars">★★★★★</div>
-
-<div class="buttons">
-<a class="download" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
-<a class="share" href="#">↗</a>
-</div>
-</div>
-</div>
-
-<!-- ESPAÇOS PARA NOVOS ADDONS -->
-
-<div class="card">
-<div class="img"></div>
-<div class="info">
-<span class="tag">EM BREVE</span>
-<h3>NOVO ADDON</h3>
-<p class="desc">Espaço reservado para futuros addons.</p>
-</div>
-</div>
-
-<div class="card">
-<div class="img"></div>
-<div class="info">
-<span class="tag">EM BREVE</span>
-<h3>NOVO ADDON</h3>
-<p class="desc">Espaço reservado para futuros addons.</p>
 </div>
 </div>
 
@@ -272,6 +242,25 @@ Multiplica a quantidade de minérios obtidos.
 <footer>
 © 2026 CY Mods
 </footer>
+
+<script>
+
+function searchMods(){
+let input = document.getElementById("search").value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let title = card.querySelector(".title").innerText.toLowerCase();
+
+if(input === "" || title.includes(input)){
+card.classList.remove("hidden");
+}else{
+card.classList.add("hidden");
+}
+});
+}
+
+</script>
 
 </body>
 </html>
