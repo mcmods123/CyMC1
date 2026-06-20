@@ -1,123 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CY Mods</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
-background:#0d0d0d;
-color:white;
+}
+
+body{
+background:#e9e9e9;
+background-image:
+linear-gradient(#d8d8d8 1px, transparent 1px),
+linear-gradient(90deg,#d8d8d8 1px, transparent 1px);
+background-size:30px 30px;
 }
 
 header{
-background:linear-gradient(90deg,#4c1d95,#7c3aed);
-padding:60px 20px;
-text-align:center;
-}
-
-h1{
-font-size:60px;
-margin:0;
-}
-
-.hero{
-text-align:center;
-padding:40px;
-}
-
-.btn{
-background:#7c3aed;
+background:#111;
 color:white;
-padding:15px 30px;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
+padding:20px;
+text-align:center;
+border-bottom:4px solid #7c3aed;
+}
+
+header h1{
+font-size:50px;
+color:#a855f7;
 }
 
 .mods{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:20px;
-padding:30px;
+gap:15px;
+padding:20px;
 }
 
 .card{
-background:#1a1a1a;
-width:300px;
-border:2px solid #7c3aed;
-border-radius:15px;
-overflow:hidden;
+width:240px;
+background:white;
+border:4px solid black;
+box-shadow:6px 6px 0 black;
 }
 
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
+.img{
+height:140px;
+background:#333;
+background-size:cover;
+background-position:center;
 }
 
-.card-content{
-padding:15px;
+.info{
+padding:12px;
+}
+
+.tag{
+display:inline-block;
+background:#7c3aed;
+color:white;
+font-size:12px;
+padding:4px 8px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.version{
+float:right;
+border:2px solid black;
+padding:2px 8px;
+font-size:12px;
+font-weight:bold;
+}
+
+h3{
+font-size:16px;
+margin:10px 0;
+}
+
+.desc{
+font-size:14px;
+color:#555;
+margin-bottom:10px;
+}
+
+.stars{
+color:orange;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.buttons{
+display:flex;
+gap:8px;
 }
 
 .download{
-display:inline-block;
-background:#22c55e;
-color:white;
-padding:10px 20px;
+flex:1;
+text-align:center;
+padding:12px;
+background:white;
+border:3px solid black;
+box-shadow:4px 4px 0 black;
 text-decoration:none;
-border-radius:8px;
+color:black;
+font-weight:bold;
+}
+
+.share{
+width:50px;
+text-align:center;
+padding:12px;
+background:white;
+border:3px solid black;
+box-shadow:4px 4px 0 black;
+text-decoration:none;
+color:black;
+}
+
+.download:hover,
+.share:hover{
+transform:translate(2px,2px);
+box-shadow:2px 2px 0 black;
 }
 
 footer{
-text-align:center;
+margin-top:30px;
 padding:20px;
 background:#111;
+color:white;
+text-align:center;
 }
 </style>
 </head>
-
 <body>
 
 <header>
 <h1>⚡ CY MODS ⚡</h1>
-<p>Mods e Addons para Minecraft Bedrock</p>
+<p>Addons para Minecraft Bedrock</p>
 </header>
-
-<div class="hero">
-<h2>Os melhores addons para Bedrock</h2>
-<p>Downloads rápidos pelo TeraBox</p>
-</div>
 
 <div class="mods">
 
 <div class="card">
-<img src="https://picsum.photos/300/180?1">
-<div class="card-content">
-<h3>Vein Miner</h3>
-<p>Quebre veios inteiros de minério.</p>
-<a class="download" href="#">Baixar</a>
+<div class="img" style="background-image:url('https://picsum.photos/400/200?1')"></div>
+<div class="info">
+<span class="tag">UTILIDADES</span>
+<span class="version">v1.0</span>
+<h3>VEIN MINER</h3>
+<p class="desc">Quebre veios inteiros de minério com um clique.</p>
+<div class="stars">★★★★★</div>
+<div class="buttons">
+<a class="download" href="#">BAIXAR</a>
+<a class="share" href="#">↗</a>
 </div>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/300/180?2">
-<div class="card-content">
-<h3>More Tools</h3>
-<p>Novas ferramentas para sobrevivência.</p>
-<a class="download" href="#">Baixar</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/300/180?3">
-<div class="card-content">
-<h3>Damage Canceler</h3>
-<p>Reduza danos e personalize o jogo.</p>
-<a class="download" href="#">Baixar</a>
+<div class="img" style="background-image:url('https://picsum.photos/400/200?2')"></div>
+<div class="info">
+<span class="tag">OUTROS</span>
+<span class="version">v1.0</span>
+<h3>MINIMAP</h3>
+<p class="desc">Visualize o mapa e localize recursos facilmente.</p>
+<div class="stars">★★★★★</div>
+<div class="buttons">
+<a class="download" href="#">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="img" style="background-image:url('https://picsum.photos/400/200?3')"></div>
+<div class="info">
+<span class="tag">DECORAÇÃO</span>
+<span class="version">v1.0</span>
+<h3>FURNITURE ADDON</h3>
+<p class="desc">Adicione centenas de móveis ao seu mundo.</p>
+<div class="stars">★★★★★</div>
+<div class="buttons">
+<a class="download" href="#">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="img" style="background-image:url('https://picsum.photos/400/200?4')"></div>
+<div class="info">
+<span class="tag">PVP</span>
+<span class="version">v1.0</span>
+<h3>DAMAGE CANCELER</h3>
+<p class="desc">Personalize os danos e a dificuldade do jogo.</p>
+<div class="stars">★★★★★</div>
+<div class="buttons">
+<a class="download" href="#">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
 </div>
 </div>
 
