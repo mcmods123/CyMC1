@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CY Mods</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -15,93 +16,94 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#e9e9e9;
+background:#0d0d0d;
+color:white;
 background-image:
-linear-gradient(#d8d8d8 1px, transparent 1px),
-linear-gradient(90deg,#d8d8d8 1px, transparent 1px);
+linear-gradient(rgba(124,58,237,.15) 1px, transparent 1px),
+linear-gradient(90deg, rgba(124,58,237,.15) 1px, transparent 1px);
 background-size:30px 30px;
 }
 
 header{
 background:#111;
-color:white;
-padding:20px;
+padding:25px;
 text-align:center;
 border-bottom:4px solid #7c3aed;
 }
 
 header h1{
-font-size:50px;
+font-size:52px;
 color:#a855f7;
 }
 
 header p{
 margin-top:10px;
+color:#ccc;
 }
 
 .mods{
 display:flex;
+flex-wrap:wrap;
 justify-content:center;
+gap:25px;
 padding:30px;
 }
 
 .card{
 width:280px;
-background:white;
-border:4px solid #7c3aed;
+background:#181818;
+border:3px solid #7c3aed;
 box-shadow:8px 8px 0 #7c3aed;
+overflow:hidden;
 transition:.2s;
 }
 
 .card:hover{
-transform:translate(-2px,-2px);
+transform:translateY(-5px);
 box-shadow:12px 12px 0 #a855f7;
 }
 
 .img{
 height:180px;
-background-image:url('https://raw.githubusercontent.com/mcmods123/CyMC1/main/veimaner.png');
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 }
 
 .info{
-padding:12px;
+padding:15px;
 }
 
 .tag{
 display:inline-block;
 background:#7c3aed;
-color:white;
+padding:5px 10px;
 font-size:12px;
-padding:4px 8px;
 font-weight:bold;
-margin-bottom:8px;
+border-radius:4px;
 }
 
 .version{
 float:right;
-border:2px solid #7c3aed;
-padding:2px 8px;
 font-size:12px;
-font-weight:bold;
+padding:4px 8px;
+border:2px solid #7c3aed;
 }
 
 h3{
-font-size:18px;
-margin:10px 0;
+margin-top:12px;
+margin-bottom:10px;
 }
 
 .desc{
+color:#ccc;
 font-size:14px;
-color:#555;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 .stars{
-color:orange;
-font-size:18px;
-margin-bottom:10px;
+color:gold;
+margin-bottom:12px;
 }
 
 .buttons{
@@ -111,40 +113,32 @@ gap:8px;
 
 .download{
 flex:1;
+text-decoration:none;
 text-align:center;
 padding:12px;
-background:white;
-border:3px solid #7c3aed;
-box-shadow:4px 4px 0 #7c3aed;
-text-decoration:none;
-color:black;
+background:#7c3aed;
+color:white;
 font-weight:bold;
 }
 
 .share{
 width:50px;
+text-decoration:none;
 text-align:center;
 padding:12px;
-background:white;
-border:3px solid #7c3aed;
-box-shadow:4px 4px 0 #7c3aed;
-text-decoration:none;
-color:black;
-}
-
-.download:hover,
-.share:hover{
-transform:translate(2px,2px);
-box-shadow:2px 2px 0 #7c3aed;
+background:#222;
+color:white;
+border:2px solid #7c3aed;
 }
 
 footer{
-margin-top:30px;
+margin-top:20px;
 padding:20px;
-background:#111;
-color:white;
 text-align:center;
+background:#111;
+border-top:4px solid #7c3aed;
 }
+
 </style>
 
 </head>
@@ -152,41 +146,124 @@ text-align:center;
 
 <header>
 <h1>⚡ CY MODS ⚡</h1>
-<p>Addons para Minecraft Bedrock</p>
+<p>Os melhores addons para Minecraft Bedrock</p>
 </header>
 
 <div class="mods">
 
-<div class="card">
+<!-- VEIN MINER -->
 
-<div class="img"></div>
+<div class="card">
+<div class="img" style="background-image:url('imagens/veimaner.png')"></div>
 
 <div class="info">
-
-<span class="tag">UTILIDADES</span> <span class="version">v5.5</span>
+<span class="tag">UTILIDADES</span>
+<span class="version">v5.5</span>
 
 <h3>VEIN MINER</h3>
 
 <p class="desc">
-Quebre veios inteiros de minério automaticamente com apenas um bloco.
+Quebre veios inteiros de minério automaticamente.
 </p>
 
 <div class="stars">★★★★★</div>
 
 <div class="buttons">
-
-<a class="download"
-href="https://github.com/mcmods123/CyMC1/raw/main/Utilities_Vein_Miner_v5.5%20BP.zip"
-target="_blank">
-BAIXAR </a>
-
-<a class="share"
-href="https://wa.me/?text=Confira%20o%20Vein%20Miner%20na%20CY%20Mods"
-target="_blank">
-↗ </a>
-
+<a class="download" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
+</div>
 </div>
 
+<!-- NIGHT VISION -->
+
+<div class="card">
+<div class="img" style="background-image:url('imagens/nigth vision png.webp')"></div>
+
+<div class="info">
+<span class="tag">UTILIDADES</span>
+<span class="version">v1.0</span>
+
+<h3>NIGHT VISION</h3>
+
+<p class="desc">
+Visão noturna permanente para explorar qualquer lugar.
+</p>
+
+<div class="stars">★★★★★</div>
+
+<div class="buttons">
+<a class="download" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
+</div>
+</div>
+
+<!-- ONE ESMERALDE -->
+
+<div class="card">
+<div class="img" style="background-image:url('imagens/op vilagers png.webp')"></div>
+
+<div class="info">
+<span class="tag">VILLAGERS</span>
+<span class="version">v1.0</span>
+
+<h3>ONE ESMERALDE</h3>
+
+<p class="desc">
+Trocas especiais com aldeões usando apenas uma esmeralda.
+</p>
+
+<div class="stars">★★★★★</div>
+
+<div class="buttons">
+<a class="download" href="addons/oneesmeralde.mcpack">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
+</div>
+</div>
+
+<!-- MULTIPLY ORES -->
+
+<div class="card">
+<div class="img" style="background-image:url('imagens/multiplidor de minerios png.webp')"></div>
+
+<div class="info">
+<span class="tag">MINERAÇÃO</span>
+<span class="version">v1.0</span>
+
+<h3>MULTIPLY ORES</h3>
+
+<p class="desc">
+Multiplica a quantidade de minérios obtidos.
+</p>
+
+<div class="stars">★★★★★</div>
+
+<div class="buttons">
+<a class="download" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
+<a class="share" href="#">↗</a>
+</div>
+</div>
+</div>
+
+<!-- ESPAÇOS PARA NOVOS ADDONS -->
+
+<div class="card">
+<div class="img"></div>
+<div class="info">
+<span class="tag">EM BREVE</span>
+<h3>NOVO ADDON</h3>
+<p class="desc">Espaço reservado para futuros addons.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<div class="info">
+<span class="tag">EM BREVE</span>
+<h3>NOVO ADDON</h3>
+<p class="desc">Espaço reservado para futuros addons.</p>
 </div>
 </div>
 
