@@ -16,46 +16,122 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#0d0d0d;
+background:#0a0a0a;
 color:white;
-background-image:
-linear-gradient(rgba(124,58,237,.15) 1px, transparent 1px),
-linear-gradient(90deg, rgba(124,58,237,.15) 1px, transparent 1px);
-background-size:30px 30px;
 }
 
 header{
 background:#111;
-padding:25px;
-text-align:center;
-border-bottom:4px solid #7c3aed;
+border-bottom:3px solid #8b5cf6;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
 }
 
-header h1{
-font-size:52px;
+.logo{
+font-size:32px;
+font-weight:bold;
 color:#a855f7;
 }
 
-header p{
-margin-top:10px;
-color:#ccc;
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#a855f7;
+}
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+linear-gradient(135deg,#7c3aed,#111);
+}
+
+.hero h1{
+font-size:65px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+color:#ddd;
+max-width:700px;
+margin:auto;
+margin-bottom:25px;
+}
+
+.counter{
+display:inline-block;
+background:#8b5cf6;
+padding:15px 30px;
+border-radius:12px;
+font-weight:bold;
+font-size:18px;
+}
+
+.search{
+padding:40px 20px;
+text-align:center;
+}
+
+.search input{
+width:90%;
+max-width:800px;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:18px;
+background:#181818;
+color:white;
+}
+
+.categorias{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+padding-bottom:30px;
+}
+
+.categorias span{
+background:#181818;
+border:1px solid #8b5cf6;
+padding:10px 15px;
+border-radius:20px;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:20px;
 }
 
 .mods{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 padding:30px;
+max-width:1400px;
+margin:auto;
 }
 
 .card{
-width:280px;
 background:#181818;
-border:3px solid #7c3aed;
-box-shadow:8px 8px 0 #7c3aed;
+border:2px solid #8b5cf6;
+border-radius:15px;
 overflow:hidden;
-transition:.2s;
+box-shadow:8px 8px 0 #8b5cf6;
+transition:.3s;
 }
 
 .card:hover{
@@ -63,11 +139,10 @@ transform:translateY(-5px);
 box-shadow:12px 12px 0 #a855f7;
 }
 
-.img{
+.card img{
+width:100%;
 height:180px;
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+object-fit:cover;
 }
 
 .info{
@@ -76,201 +151,250 @@ padding:15px;
 
 .tag{
 display:inline-block;
-background:#7c3aed;
+background:#8b5cf6;
 padding:5px 10px;
+border-radius:5px;
 font-size:12px;
-font-weight:bold;
-border-radius:4px;
-}
-
-.version{
-float:right;
-font-size:12px;
-padding:4px 8px;
-border:2px solid #7c3aed;
-}
-
-h3{
-margin-top:12px;
 margin-bottom:10px;
 }
 
-.desc{
-color:#ccc;
+.info h3{
+margin-bottom:10px;
+}
+
+.info p{
+color:#bbb;
 font-size:14px;
-margin-bottom:12px;
-}
-
-.stars{
-color:gold;
-margin-bottom:12px;
-}
-
-.buttons{
-display:flex;
-gap:8px;
+margin-bottom:15px;
 }
 
 .download{
-flex:1;
-text-decoration:none;
+display:block;
 text-align:center;
 padding:12px;
-background:#7c3aed;
+background:#8b5cf6;
 color:white;
+text-decoration:none;
 font-weight:bold;
+border-radius:8px;
 }
 
-.share{
-width:50px;
-text-decoration:none;
-text-align:center;
-padding:12px;
-background:#222;
-color:white;
-border:2px solid #7c3aed;
+.download:hover{
+background:#a855f7;
+}
+
+.embreve{
+opacity:.6;
 }
 
 footer{
-margin-top:20px;
-padding:20px;
+margin-top:60px;
+padding:40px;
 text-align:center;
 background:#111;
-border-top:4px solid #7c3aed;
+border-top:3px solid #8b5cf6;
+}
+
+footer h3{
+color:#a855f7;
+margin-bottom:10px;
 }
 
 </style>
 
 </head>
+
 <body>
 
 <header>
-<h1>⚡ CY MODS ⚡</h1>
-<p>Os melhores addons para Minecraft Bedrock</p>
+
+<div class="logo">
+⚡ CY MODS
+</div>
+
+<nav>
+<a href="#">ADDONS</a>
+<a href="#">DISCORD</a>
+<a href="#">YOUTUBE</a>
+</nav>
+
 </header>
+
+<section class="hero">
+
+<h1>CY MODS</h1>
+
+<p>
+A sua biblioteca de addons para Minecraft Bedrock.
+Downloads rápidos, grátis e organizados.
+</p>
+
+<div class="counter">
+🚀 Rumo a 113+ Addons
+</div>
+
+</section>
+
+<section class="search">
+
+<input type="text" placeholder="Buscar addon...">
+
+</section>
+
+<div class="categorias">
+
+<span>Todos</span> <span>Utilidades</span> <span>Mineração</span> <span>Villagers</span> <span>Visual</span> <span>PvP</span> <span>Mobs</span>
+
+</div>
+
+<h2 class="section-title">
+Addons Disponíveis
+</h2>
 
 <div class="mods">
 
 <!-- VEIN MINER -->
 
 <div class="card">
-<div class="img" style="background-image:url('imagens/veimaner.png')"></div>
+
+<img src="imagens/veimaner.png">
 
 <div class="info">
+
 <span class="tag">UTILIDADES</span>
-<span class="version">v5.5</span>
 
 <h3>VEIN MINER</h3>
 
-<p class="desc">
+<p>
 Quebre veios inteiros de minério automaticamente.
 </p>
 
-<div class="stars">★★★★★</div>
+<a class="download"
+href="addons/Utilities_Vein_Miner_v5.5 BP.zip">
+BAIXAR </a>
 
-<div class="buttons">
-<a class="download" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
-<a class="share" href="#">↗</a>
-</div>
 </div>
 </div>
 
 <!-- NIGHT VISION -->
 
 <div class="card">
-<div class="img" style="background-image:url('imagens/nigth vision png.webp')"></div>
+
+<img src="imagens/nigth vision png.webp">
 
 <div class="info">
-<span class="tag">UTILIDADES</span>
-<span class="version">v1.0</span>
+
+<span class="tag">VISUAL</span>
 
 <h3>NIGHT VISION</h3>
 
-<p class="desc">
-Visão noturna permanente para explorar qualquer lugar.
+<p>
+Visão noturna permanente para qualquer ambiente.
 </p>
 
-<div class="stars">★★★★★</div>
+<a class="download"
+href="addons/NIGHT VISION ATUALIZADA.mcpack">
+BAIXAR </a>
 
-<div class="buttons">
-<a class="download" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
-<a class="share" href="#">↗</a>
-</div>
 </div>
 </div>
 
-<!-- ONE ESMERALDE -->
+<!-- OP VILLAGERS -->
 
 <div class="card">
-<div class="img" style="background-image:url('imagens/op vilagers png.webp')"></div>
+
+<img src="imagens/op vilagers png.webp">
 
 <div class="info">
+
 <span class="tag">VILLAGERS</span>
-<span class="version">v1.0</span>
 
-<h3>ONE ESMERALDE</h3>
+<h3>OP VILLAGERS</h3>
 
-<p class="desc">
-Trocas especiais com aldeões usando apenas uma esmeralda.
+<p>
+Trocas extremamente vantajosas com aldeões.
 </p>
 
-<div class="stars">★★★★★</div>
+<a class="download"
+href="addons/oneesmeralde.mcpack">
+BAIXAR </a>
 
-<div class="buttons">
-<a class="download" href="addons/oneesmeralde.mcpack">BAIXAR</a>
-<a class="share" href="#">↗</a>
-</div>
 </div>
 </div>
 
 <!-- MULTIPLY ORES -->
 
 <div class="card">
-<div class="img" style="background-image:url('imagens/multiplidor de minerios png.webp')"></div>
+
+<img src="imagens/multiplidor de minerios png.webp">
 
 <div class="info">
+
 <span class="tag">MINERAÇÃO</span>
-<span class="version">v1.0</span>
 
 <h3>MULTIPLY ORES</h3>
 
-<p class="desc">
-Multiplica a quantidade de minérios obtidos.
+<p>
+Multiplique a quantidade de minérios obtidos.
 </p>
 
-<div class="stars">★★★★★</div>
+<a class="download"
+href="addons/MultiplyOresby@ncmine.mcaddon">
+BAIXAR </a>
 
-<div class="buttons">
-<a class="download" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
-<a class="share" href="#">↗</a>
-</div>
 </div>
 </div>
 
-<!-- ESPAÇOS PARA NOVOS ADDONS -->
+<!-- ESPAÇOS FUTUROS -->
 
-<div class="card">
-<div class="img"></div>
+<div class="card embreve">
 <div class="info">
 <span class="tag">EM BREVE</span>
 <h3>NOVO ADDON</h3>
-<p class="desc">Espaço reservado para futuros addons.</p>
+<p>Reservado para futuros addons.</p>
 </div>
 </div>
 
-<div class="card">
-<div class="img"></div>
+<div class="card embreve">
 <div class="info">
 <span class="tag">EM BREVE</span>
 <h3>NOVO ADDON</h3>
-<p class="desc">Espaço reservado para futuros addons.</p>
+<p>Reservado para futuros addons.</p>
+</div>
+</div>
+
+<div class="card embreve">
+<div class="info">
+<span class="tag">EM BREVE</span>
+<h3>NOVO ADDON</h3>
+<p>Reservado para futuros addons.</p>
+</div>
+</div>
+
+<div class="card embreve">
+<div class="info">
+<span class="tag">EM BREVE</span>
+<h3>NOVO ADDON</h3>
+<p>Reservado para futuros addons.</p>
 </div>
 </div>
 
 </div>
 
 <footer>
-© 2026 CY Mods
+
+<h3>⚡ CY MODS</h3>
+
+<p>
+Minecraft Bedrock Addons
+</p>
+
+<br>
+
+<p>
+Rumo aos 113+ addons.
+</p>
+
 </footer>
 
 </body>
