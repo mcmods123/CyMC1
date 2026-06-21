@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CY Mods</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,68 +14,127 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
 }
 
 body{
-background:#111;
+background:#0b0b0f;
+font-family:'Rajdhani',sans-serif;
 color:white;
 }
 
 header{
-background:#000;
-padding:20px;
-border-bottom:4px solid #8b5cf6;
-text-align:center;
+height:80px;
+background:#111;
+border-bottom:2px solid #7c3aed;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 40px;
 }
 
-header h1{
-font-size:48px;
+.logo{
+font-family:'Orbitron';
+font-size:28px;
+font-weight:900;
 color:#a855f7;
 }
 
-header p{
-color:#ccc;
-margin-top:10px;
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:700;
+}
+
+nav a:hover{
+color:#a855f7;
+}
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(
+180deg,
+#111,
+#0b0b0f
+);
+}
+
+.hero h1{
+font-size:80px;
+font-family:'Orbitron';
+color:#a855f7;
+}
+
+.hero p{
+font-size:24px;
+margin-top:15px;
+}
+
+.stats{
+margin-top:25px;
+font-size:20px;
+}
+
+.search-area{
+display:flex;
+justify-content:center;
+padding:30px;
 }
 
 .search{
-padding:25px;
-text-align:center;
-}
-
-.search input{
-width:90%;
-max-width:800px;
-padding:14px;
-font-size:16px;
-border:2px solid #8b5cf6;
-background:#1a1a1a;
-color:white;
+width:700px;
+max-width:90%;
+height:55px;
+padding:15px;
+border:none;
 outline:none;
+background:#18181b;
+color:white;
+font-size:18px;
+border:2px solid #7c3aed;
 }
 
-.mods{
+.categories{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+padding:20px;
+}
+
+.category{
+background:#15151c;
+border:2px solid #7c3aed;
+padding:12px 25px;
+cursor:pointer;
+font-weight:700;
+}
+
+.category:hover{
+background:#7c3aed;
+}
+
+.addons{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
 gap:25px;
-padding:25px;
-max-width:1400px;
-margin:auto;
+padding:40px;
 }
 
 .card{
-background:#1a1a1a;
-border:3px solid black;
-box-shadow:8px 8px 0 #8b5cf6;
-overflow:hidden;
-transition:.2s;
-cursor:pointer;
+background:#111;
+border:2px solid #222;
+transition:.3s;
 }
 
 .card:hover{
-transform:translate(-3px,-3px);
-box-shadow:12px 12px 0 #a855f7;
+border-color:#7c3aed;
+transform:translateY(-5px);
 }
 
 .card img{
@@ -81,241 +143,145 @@ height:180px;
 object-fit:cover;
 }
 
-.info{
+.card-content{
 padding:15px;
 }
 
-.tag{
-display:inline-block;
-background:#8b5cf6;
-padding:6px 10px;
-font-size:12px;
-font-weight:bold;
+.card-title{
+font-size:24px;
+font-weight:700;
 margin-bottom:10px;
 }
 
-h3{
-margin-bottom:10px;
-}
-
-.desc{
-color:#bbb;
-font-size:14px;
+.card-desc{
+color:#bdbdbd;
 margin-bottom:15px;
 }
 
-.download{
+.download-btn{
 display:block;
-text-align:center;
-padding:12px;
-background:#8b5cf6;
-color:white;
-font-weight:bold;
-text-decoration:none;
-}
-
-.download:hover{
-background:#a855f7;
-}
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
 width:100%;
-height:100%;
-background:rgba(0,0,0,.85);
-z-index:9999;
+background:#7c3aed;
+color:white;
+text-align:center;
+padding:14px;
+text-decoration:none;
+font-weight:700;
 }
 
-.modal-content{
-background:#1a1a1a;
-max-width:700px;
-margin:80px auto;
-padding:25px;
-border:3px solid #8b5cf6;
-box-shadow:8px 8px 0 #8b5cf6;
-}
-
-.close{
-float:right;
-font-size:35px;
-cursor:pointer;
+.download-btn:hover{
+background:#9333ea;
 }
 
 footer{
-margin-top:40px;
-padding:25px;
-background:#000;
+margin-top:80px;
+padding:40px;
+background:#111;
+border-top:2px solid #7c3aed;
 text-align:center;
-border-top:4px solid #8b5cf6;
 }
 
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>⚡ CY MODS ⚡</h1>
-<p>Rumo a 113+ Addons para Minecraft Bedrock</p>
+<div class="logo">CY MODS</div>
+
+<nav>
+<a href="#">Addons</a>
+<a href="#">Discord</a>
+<a href="#">YouTube</a>
+<a href="#">Sobre</a>
+</nav>
 </header>
 
-<div class="search">
-<input type="text" id="search" placeholder="Buscar addon..." onkeyup="buscarAddon()">
+<section class="hero">
+
+<h1>117+ ADDONS</h1>
+
+<p>A maior biblioteca de addons Bedrock da CY Mods</p>
+
+<div class="stats">
+⬇ Downloads rápidos • ✔ Arquivos verificados
 </div>
 
-<div class="mods">
-  <div class="card" onclick="abrirModal('VEIN MINER','Quebre veios inteiros de minério instantaneamente.')">
-<img src="imagens/veimaner.png">
-<div class="info">
-<span class="tag">UTILIDADES</span>
-<h3>VEIN MINER</h3>
-<p class="desc">Quebre veios inteiros de minério.</p>
-<a class="download" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
-</div>
+</section>
+
+<div class="search-area">
+<input
+class="search"
+placeholder="Buscar addon..."
+>
 </div>
 
-<div class="card" onclick="abrirModal('NIGHT VISION','Visão noturna permanente.')">
-<img src="imagens/nigth vision png.webp">
-<div class="info">
-<span class="tag">VISUAL</span>
-<h3>NIGHT VISION</h3>
-<p class="desc">Visão noturna permanente.</p>
-<a class="download" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
-</div>
-</div>
-
-<div class="card" onclick="abrirModal('OP VILLAGERS','Trocas extremamente vantajosas.')">
-<img src="imagens/op vilagers png.webp">
-<div class="info">
-<span class="tag">VILLAGERS</span>
-<h3>OP VILLAGERS</h3>
-<p class="desc">Trocas extremamente vantajosas.</p>
-<a class="download" href="addons/oneesmeralde.mcpack">BAIXAR</a>
-</div>
+<div class="categories">
+<div class="category">Todos</div>
+<div class="category">Utilidades</div>
+<div class="category">Construção</div>
+<div class="category">Visual</div>
+<div class="category">Java</div>
+<div class="category">Minérios</div>
+<div class="category">Outros</div>
 </div>
 
-<div class="card" onclick="abrirModal('MULTIPLY ORES','Multiplique os minérios obtidos.')">
-<img src="imagens/multiplidor de minerios png.webp">
-<div class="info">
-<span class="tag">MINERAÇÃO</span>
-<h3>MULTIPLY ORES</h3>
-<p class="desc">Multiplique seus minérios.</p>
-<a class="download" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
+<section class="addons">
+
+<div class="card">
+<img src="veimaner.png">
+<div class="card-content">
+<div class="card-title">Vein Miner</div>
+<div class="card-desc">
+Mine veios inteiros instantaneamente.
+</div>
+<a href="#" class="download-btn">BAIXAR</a>
 </div>
 </div>
 
-<div class="card" onclick="abrirModal('AFK CHUNK LOADER','Mantém chunks carregados.')">
-<img src="imagens/Afk_Chunk_Loader.jpg">
-<div class="info">
-<span class="tag">UTILIDADES</span>
-<h3>AFK CHUNK LOADER</h3>
-<p class="desc">Mantém farms funcionando.</p>
-<a class="download" href="addons/Afk_Chunk_Loader_bot.mcaddon">BAIXAR</a>
+<div class="card">
+<img src="nigth vision png.webp">
+<div class="card-content">
+<div class="card-title">Night Vision</div>
+<div class="card-desc">
+Visão noturna permanente.
+</div>
+<a href="#" class="download-btn">BAIXAR</a>
 </div>
 </div>
 
-<div class="card" onclick="abrirModal('CINECAM','Ferramenta para gravações cinematográficas.')">
-<img src="imagens/camera addon.png">
-<div class="info">
-<span class="tag">CÂMERA</span>
-<h3>CINECAM</h3>
-<p class="desc">Câmera cinematográfica.</p>
-<a class="download" href="addons/Cinecam by domikalmazika.mcaddon">BAIXAR</a>
+<div class="card">
+<img src="construção addon.png">
+<div class="card-content">
+<div class="card-title">Effortless Building</div>
+<div class="card-desc">
+Construa rapidamente.
+</div>
+<a href="#" class="download-btn">BAIXAR</a>
 </div>
 </div>
 
-<div class="card" onclick="abrirModal('EFFORTLESS BUILDING','Construa estruturas gigantes rapidamente.')">
-<img src="imagens/construção addon.png">
-<div class="info">
-<span class="tag">CONSTRUÇÃO</span>
-<h3>EFFORTLESS BUILDING</h3>
-<p class="desc">Construção avançada.</p>
-<a class="download" href="addons/Effortless Building v3.1.mcaddon">BAIXAR</a>
+<div class="card">
+<img src="multiplidor de minerios png.webp">
+<div class="card-content">
+<div class="card-title">Multiply Ores</div>
+<div class="card-desc">
+Mais recursos ao minerar.
+</div>
+<a href="#" class="download-btn">BAIXAR</a>
 </div>
 </div>
 
-<div class="card" onclick="abrirModal('JAVA SPAWN IN BEDROCK','Recursos inspirados na versão Java.')">
-<img src="imagens/mob boster java.png">
-<div class="info">
-<span class="tag">JAVA</span>
-<h3>JAVA SPAWN IN BEDROCK</h3>
-<p class="desc">Experiência Java no Bedrock.</p>
-<a class="download" href="addons/JavaSpawnInBedrock.mcpack">BAIXAR</a>
-</div>
-</div>
+</section>
 
-<div class="card" onclick="abrirModal('DIAMOND ULTRA 200%','Mais diamantes e progressão acelerada.')">
-<img src="imagens/diamante 200x.webp">
-<div class="info">
-<span class="tag">MINERAÇÃO</span>
-<h3>DIAMOND ULTRA 200%</h3>
-<p class="desc">Mais diamantes no mundo.</p>
-<a class="download" href="addons/_MConverter.eu_diamond ultra 200%.mcpack">BAIXAR</a>
-</div>
-</div>
-
-</div>
 <footer>
-<h3>CY MODS</h3>
-<p>Biblioteca de Addons Minecraft Bedrock</p>
+
+<h2>CY Mods</h2>
+
+<p>
+Hub brasileiro de addons para Minecraft Bedrock.
+</p>
+
 </footer>
-
-<div id="modal" class="modal">
-<div class="modal-content">
-<span class="close" onclick="fecharModal()">&times;</span>
-<h2 id="modalTitulo"></h2>
-<br>
-<p id="modalDescricao"></p>
-</div>
-</div>
-
-<script>
-
-function buscarAddon(){
-
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-let titulo=card.querySelector("h3").innerText.toLowerCase();
-
-if(titulo.includes(input)){
-card.style.display="";
-}else{
-card.style.display="none";
-}
-
-});
-
-}
-
-function abrirModal(titulo,descricao){
-
-document.getElementById("modalTitulo").innerText=titulo;
-document.getElementById("modalDescricao").innerText=descricao;
-document.getElementById("modal").style.display="block";
-
-}
-
-function fecharModal(){
-document.getElementById("modal").style.display="none";
-}
-
-window.onclick=function(event){
-
-let modal=document.getElementById("modal");
-
-if(event.target==modal){
-modal.style.display="none";
-}
-
-}
-
-</script>
 
 </body>
 </html>
