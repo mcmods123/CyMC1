@@ -7,753 +7,452 @@
 
 <style>
 *{box-sizing:border-box}
-
-:root{
-  --roxo:#7b2cff;
-  --roxo-2:#a855ff;
-  --roxo-3:#efe4ff;
-  --preto:#080808;
-  --branco:#fff;
-  --cinza:#5a5a5a;
-}
+:root{--p:#7b2cff;--p2:#a855ff;--b:#080808;--w:#fff;--g:#555}
 
 body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  color:#111;
-  background:#fff;
-  background-image:
-    linear-gradient(45deg,rgba(0,0,0,.055) 25%,transparent 25%),
-    linear-gradient(-45deg,rgba(0,0,0,.055) 25%,transparent 25%),
-    linear-gradient(45deg,transparent 75%,rgba(0,0,0,.055) 75%),
-    linear-gradient(-45deg,transparent 75%,rgba(0,0,0,.055) 75%);
-  background-size:30px 30px;
-  background-position:0 0,0 15px,15px -15px,-15px 0;
-  overflow-x:hidden;
+  margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff;
+  background-image:linear-gradient(45deg,rgba(0,0,0,.055) 25%,transparent 25%),
+  linear-gradient(-45deg,rgba(0,0,0,.055) 25%,transparent 25%),
+  linear-gradient(45deg,transparent 75%,rgba(0,0,0,.055) 75%),
+  linear-gradient(-45deg,transparent 75%,rgba(0,0,0,.055) 75%);
+  background-size:30px 30px;background-position:0 0,0 15px,15px -15px,-15px 0;overflow-x:hidden
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(123,44,255,.26),transparent 390px),
-    radial-gradient(circle at 8% 22%,rgba(123,44,255,.18),transparent 250px),
-    radial-gradient(circle at 92% 12%,rgba(168,85,255,.20),transparent 260px),
-    linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.86));
-  z-index:-4;
+body:before{
+  content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;
+  background:radial-gradient(circle at 50% 0,rgba(123,44,255,.25),transparent 390px),
+  radial-gradient(circle at 8% 22%,rgba(123,44,255,.16),transparent 250px),
+  linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.9))
 }
 
-.bg-art{
-  position:fixed;
-  inset:0;
-  z-index:-3;
-  pointer-events:none;
-  overflow:hidden;
-}
-
-.bg-card{
-  position:absolute;
-  width:165px;
-  height:165px;
-  object-fit:cover;
-  border:4px solid #111;
-  background:#111;
-  box-shadow:9px 9px 0 rgba(0,0,0,.62);
-  opacity:.16;
-  filter:saturate(1.25) contrast(1.05);
-}
-
+.bg-art{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
+.bg-card{position:absolute;width:165px;height:165px;object-fit:cover;border:4px solid #111;box-shadow:9px 9px 0 rgba(0,0,0,.55);opacity:.14}
 .bg-card:nth-child(1){top:70px;left:7%;transform:rotate(-15deg)}
 .bg-card:nth-child(2){top:58px;right:10%;transform:rotate(12deg)}
-.bg-card:nth-child(3){top:250px;left:38%;transform:rotate(-8deg)}
-.bg-card:nth-child(4){top:430px;left:12%;transform:rotate(10deg)}
-.bg-card:nth-child(5){top:370px;right:17%;transform:rotate(-12deg)}
-.bg-card:nth-child(6){top:610px;left:44%;transform:rotate(9deg)}
+.bg-card:nth-child(3){top:260px;left:38%;transform:rotate(-8deg)}
+.bg-card:nth-child(4){top:440px;left:12%;transform:rotate(10deg)}
+.bg-card:nth-child(5){top:390px;right:17%;transform:rotate(-12deg)}
 
 .top,.nav,.wrap{position:relative;z-index:1}
+.hide{display:none!important}
 
-.top{
-  text-align:center;
-  padding:28px 14px 42px;
-}
-
-.badge{
-  display:inline-block;
-  border:3px solid var(--preto);
-  box-shadow:5px 5px 0 var(--preto);
-  background:#fff;
-  padding:8px 20px;
-  font-weight:1000;
-  letter-spacing:1px;
-}
-
-.live{
-  margin:16px 0;
-  color:var(--roxo);
-  font-weight:1000;
-  font-size:14px;
-}
+.top{text-align:center;padding:28px 14px 42px}
+.badge{display:inline-block;border:3px solid var(--b);box-shadow:5px 5px 0 var(--b);background:#fff;padding:8px 20px;font-weight:1000}
+.live{margin:16px 0;color:var(--p);font-weight:1000}
 
 .hero{
-  display:inline-block;
-  background:linear-gradient(90deg,var(--roxo),var(--roxo-2));
-  color:#fff;
-  font-size:clamp(42px,9vw,94px);
-  font-weight:1000;
-  line-height:.95;
-  padding:10px 22px;
-  border:4px solid #fff;
-  box-shadow:9px 9px 0 #111,0 0 42px rgba(123,44,255,.46);
-  transform:rotate(-1deg);
-  text-shadow:4px 4px 0 rgba(0,0,0,.22);
+  display:inline-block;background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;
+  font-size:clamp(42px,9vw,94px);font-weight:1000;line-height:.95;padding:10px 22px;
+  border:4px solid #fff;box-shadow:9px 9px 0 #111,0 0 42px rgba(123,44,255,.46);
+  transform:rotate(-1deg);text-shadow:4px 4px 0 rgba(0,0,0,.22)
 }
 
-.sub{
-  font-size:20px;
-  font-weight:900;
-  line-height:1.35;
+.sub{font-size:20px;font-weight:900;line-height:1.35}.sub b{color:var(--p)}
+.free{display:inline-block;margin-top:20px;border:2px dashed #b88cff;background:rgba(255,255,255,.78);padding:14px 24px;font-weight:1000}
+
+.nav{display:flex;gap:26px;background:#050505;color:white;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}
+.nav a{color:white;text-decoration:none;white-space:nowrap}.nav span{color:var(--p)}
+
+.wrap{max-width:1240px;margin:auto;padding:24px 14px 50px}
+.social,.box,.how,.feedback,.discord{background:rgba(255,255,255,.94);border:3px solid #111;box-shadow:5px 5px 0 #111}
+
+.social{padding:18px;text-align:center;margin-bottom:28px}
+.social h2{margin:0 0 14px;color:var(--p);letter-spacing:2px}
+.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.socials button{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;color:#111;text-decoration:none;font-weight:1000;background:#fff;cursor:pointer;font-size:15px}
+.socials button:nth-child(2){background:linear-gradient(90deg,var(--p),#d946ef);color:#fff}
+.socials button:hover{transform:translateY(-2px)}
+
+.head{display:grid;grid-template-columns:1fr 390px 120px;gap:10px;align-items:end;margin:28px 0 16px}
+.label{display:inline-block;background:#111;color:white;padding:5px 9px;font-weight:1000}
+.head h1{font-size:54px;margin:8px 0 0;font-weight:1000;line-height:.95}
+.head p{margin:10px 0 0;color:#555}
+.search,.select{height:46px;border:3px solid #111;background:white;padding:0 14px;font-weight:900;font-size:15px;outline:none}
+
+.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+.tabs button{border:3px solid #111;background:white;padding:10px 16px;font-weight:1000;cursor:pointer}
+.tabs button.active,.tabs button:hover{background:var(--p);color:white}
+
+.feature{height:330px;border:3px solid #111;margin-bottom:20px;position:relative;overflow:hidden;background:#111;box-shadow:5px 5px 0 #111}
+.feature img{width:100%;height:100%;object-fit:cover;filter:brightness(.82) saturate(1.12)}
+.feature b{position:absolute;top:10px;left:10px;background:var(--p);color:white;border:3px solid white;padding:5px 10px;font-weight:1000}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}
+.pic{height:160px;background:#111;position:relative;overflow:hidden;display:block;color:white;text-decoration:none}
+.pic img{width:100%;height:100%;object-fit:cover}
+.pic.missing{display:grid;place-items:center;color:white;font-weight:1000;padding:20px;text-align:center}
+
+.tag,.ver{position:absolute;top:8px;border:2px solid #111;font-weight:1000;padding:3px 8px;z-index:2;font-size:12px}
+.tag{left:8px;background:var(--p);color:white}
+.ver{right:8px;background:white;color:#111}
+
+.body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h3{margin:0;font-size:20px;line-height:1.1}
+.meta,.desc{font-size:13px;color:#555;line-height:1.35}
+.stars{color:var(--p);font-size:18px;letter-spacing:1px}
+
+.actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}
+.btn{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;min-height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center;cursor:pointer;text-align:center;padding:0 12px}
+.btn:hover{background:var(--p);color:white}
+
+.empty{display:none;border:3px solid #111;background:white;padding:25px;font-weight:1000;box-shadow:5px 5px 0 #111}
+
+.detail-top{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:3px solid #111;padding:10px 0 12px;margin-bottom:20px}
+.back{font-weight:1000;text-decoration:none;color:#111;padding:10px}
+.top-actions{display:flex;gap:10px}
+
+.addon-hero{display:grid;grid-template-columns:1fr 1fr;border:3px solid #111;box-shadow:6px 6px 0 #111;background:#fff;margin-bottom:24px}
+.addon-image{min-height:430px;background:#111;position:relative}
+.addon-image img{width:100%;height:100%;object-fit:cover}
+.addon-info{padding:26px}
+.addon-info h1{font-size:34px;line-height:1;margin:0 0 14px;font-weight:1000}
+.addon-info p{color:#555;line-height:1.55}
+.download-main{margin:18px 0 24px;min-height:54px;font-size:18px}
+
+.image-page{background:#fff;border:3px solid #111;box-shadow:6px 6px 0 #111;padding:18px;margin-bottom:24px}
+.image-page h1{font-size:38px;margin:0 0 16px;font-weight:1000}
+.image-full{width:100%;max-height:720px;object-fit:contain;background:#111;border:3px solid #111}
+
+.box{margin:20px 0;padding:24px}
+.box h2{margin:0;color:var(--p);font-size:22px;letter-spacing:2px}
+.how h2{margin:0;background:#111;color:white;padding:12px 16px;font-size:18px}
+.step{display:flex;gap:12px;margin:14px;border:2px solid #ccc;padding:12px}
+.num{min-width:34px;height:34px;border:3px solid #111;display:grid;place-items:center;font-weight:1000;background:#fff}
+.step:nth-child(3){border-color:var(--p);background:#f5efff}
+.account{margin:14px;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:14px;text-align:center;font-weight:1000}
+
+.feedback{padding:28px;margin-top:28px}
+.feedback h2{color:var(--p);letter-spacing:2px}
+.login-box{border:3px dashed #ddd;padding:42px;text-align:center;font-weight:1000;color:#555}
+.more-title{margin:34px 0 18px;color:var(--p);letter-spacing:2px}
+.discord{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:36px 0 0;padding:28px}
+.footer{background:#050505;color:#aaa;text-align:center;padding:18px;font-weight:1000}
+
+.notice{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);
+  background:#111;color:#fff;border:3px solid var(--p);box-shadow:6px 6px 0 #000;
+  padding:14px 20px;font-weight:1000;z-index:20;display:none;text-align:center
 }
+.notice.show{display:block}
 
-.sub b{color:var(--roxo)}
-
-.free{
-  display:inline-block;
-  margin-top:20px;
-  border:2px dashed #b88cff;
-  background:rgba(255,255,255,.76);
-  padding:14px 24px;
-  font-weight:1000;
-}
-
-.nav{
-  display:flex;
-  gap:26px;
-  background:#050505;
-  color:white;
-  border-top:4px solid #111;
-  border-bottom:4px solid #111;
-  padding:14px;
-  overflow:auto;
-  font-weight:1000;
-}
-
-.nav a{
-  color:white;
-  text-decoration:none;
-  white-space:nowrap;
-}
-
-.nav span{color:var(--roxo)}
-
-.wrap{
-  max-width:1220px;
-  margin:auto;
-  padding:24px 14px 50px;
-}
-
-.social{
-  background:rgba(255,255,255,.92);
-  border:3px solid #111;
-  box-shadow:5px 5px 0 #111;
-  padding:18px;
-  text-align:center;
-  margin-bottom:28px;
-}
-
-.social h2{
-  margin:0 0 14px;
-  color:var(--roxo);
-  letter-spacing:2px;
-  font-size:20px;
-}
-
-.socials{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
-.socials a{
-  border:3px solid #111;
-  box-shadow:5px 5px 0 #111;
-  padding:16px;
-  color:#111;
-  text-decoration:none;
-  font-weight:1000;
-  background:#fff;
-}
-
-.socials a:nth-child(2){
-  background:linear-gradient(90deg,var(--roxo),#d946ef);
-  color:#fff;
-}
-
-.head{
-  display:grid;
-  grid-template-columns:1fr 390px 120px;
-  gap:10px;
-  align-items:end;
-  margin:28px 0 16px;
-}
-
-.label{
-  display:inline-block;
-  background:#111;
-  color:white;
-  padding:5px 9px;
-  font-weight:1000;
-}
-
-.head h1{
-  font-size:54px;
-  margin:8px 0 0;
-  font-weight:1000;
-  line-height:.95;
-}
-
-.head p{
-  margin:10px 0 0;
-  color:#555;
-}
-
-.search,.select{
-  height:46px;
-  border:3px solid #111;
-  background:white;
-  padding:0 14px;
-  font-weight:900;
-  font-size:15px;
-  outline:none;
-}
-
-.search:focus,.select:focus{
-  box-shadow:0 0 0 4px rgba(123,44,255,.22);
-}
-
-.tabs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-bottom:24px;
-}
-
-.tabs button{
-  border:3px solid #111;
-  background:white;
-  padding:10px 16px;
-  font-weight:1000;
-  cursor:pointer;
-}
-
-.tabs button.active,
-.tabs button:hover{
-  background:var(--roxo);
-  color:white;
-}
-
-.feature{
-  height:330px;
-  border:3px solid #111;
-  margin-bottom:20px;
-  position:relative;
-  overflow:hidden;
-  background:#111;
-  box-shadow:5px 5px 0 #111;
-}
-
-.feature img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.82) saturate(1.12);
-}
-
-.feature b{
-  position:absolute;
-  top:10px;
-  left:10px;
-  background:var(--roxo);
-  color:white;
-  border:3px solid white;
-  padding:5px 10px;
-  font-weight:1000;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.card{
-  background:white;
-  border:3px solid #111;
-  box-shadow:5px 5px 0 #111;
-  display:flex;
-  flex-direction:column;
-  min-height:390px;
-}
-
-.pic{
-  height:160px;
-  background:#111;
-  position:relative;
-  overflow:hidden;
-}
-
-.pic img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.pic.missing{
-  display:grid;
-  place-items:center;
-  color:white;
-  font-weight:1000;
-  padding:20px;
-  text-align:center;
-}
-
-.tag,.ver{
-  position:absolute;
-  top:8px;
-  border:2px solid #111;
-  font-weight:1000;
-  padding:3px 8px;
-  z-index:2;
-  font-size:12px;
-}
-
-.tag{
-  left:8px;
-  background:var(--roxo);
-  color:white;
-}
-
-.ver{
-  right:8px;
-  background:white;
-  color:#111;
-}
-
-.body{
-  padding:14px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  flex:1;
-}
-
-.body h3{
-  margin:0;
-  font-size:20px;
-  line-height:1.1;
-}
-
-.meta,.desc{
-  font-size:13px;
-  color:#555;
-  line-height:1.35;
-}
-
-.stars{
-  color:var(--roxo);
-  font-size:18px;
-  letter-spacing:1px;
-}
-
-.actions{
-  margin-top:auto;
-  display:grid;
-  grid-template-columns:1fr 44px;
-  gap:9px;
-}
-
-.down,.share{
-  border:3px solid #111;
-  background:white;
-  box-shadow:5px 5px 0 #111;
-  min-height:43px;
-  font-weight:1000;
-  text-decoration:none;
-  color:#111;
-  display:grid;
-  place-items:center;
-}
-
-.down:hover,.share:hover{
-  background:var(--roxo);
-  color:white;
-}
-
-.empty{
-  display:none;
-  border:3px solid #111;
-  background:white;
-  padding:25px;
-  font-weight:1000;
-  box-shadow:5px 5px 0 #111;
-}
-
-.how{
-  margin-top:34px;
-  background:rgba(255,255,255,.94);
-  border:3px solid #111;
-  box-shadow:5px 5px 0 #111;
-}
-
-.how h2{
-  margin:0;
-  background:#111;
-  color:white;
-  padding:12px 16px;
-  font-size:18px;
-}
-
-.step{
-  display:flex;
-  gap:12px;
-  margin:14px;
-  border:2px solid #ccc;
-  padding:12px;
-}
-
-.num{
-  min-width:34px;
-  height:34px;
-  border:3px solid #111;
-  display:grid;
-  place-items:center;
-  font-weight:1000;
-  background:#fff;
-}
-
-.step:nth-child(3){
-  border-color:var(--roxo);
-  background:#f5efff;
-}
-
-.account{
-  margin:14px;
-  border:3px solid #111;
-  box-shadow:5px 5px 0 #111;
-  padding:14px;
-  text-align:center;
-  font-weight:1000;
-}
-
-@media(max-width:1000px){
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .head{grid-template-columns:1fr}
-}
-
-@media(max-width:760px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .socials{grid-template-columns:1fr}
-  .hero{font-size:48px}
-  .feature{height:230px}
-  .head h1{font-size:40px}
-}
-
-@media(max-width:520px){
-  .grid{grid-template-columns:1fr}
-  .nav{gap:18px}
-  .top{padding-top:20px}
-}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.head,.addon-hero{grid-template-columns:1fr}.addon-image{min-height:300px}}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.feature{height:230px}.head h1{font-size:40px}.top-actions,.discord{flex-direction:column;align-items:stretch}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{gap:18px}.top{padding-top:20px}.addon-info h1{font-size:28px}}
 </style>
 </head>
 
 <body>
 
-<div class="bg-art" id="bgArt" aria-hidden="true"></div>
+<div class="bg-art" id="bgArt"></div>
+<div class="notice" id="notice">Indisponível por enquanto</div>
 
-<section class="top">
-  <div class="badge" id="heroCount">✣ ADDONS GRÁTIS</div>
-  <div class="live">● ↗ PESSOAS BAIXANDO AGORA</div>
-  <div class="hero">ADDONS GRÁTIS</div>
-  <p class="sub">
-    A maior biblioteca de addons de Minecraft Bedrock.<br>
-    <b>Escolha seu addon e baixe em 10 segundos.</b>
-  </p>
-  <div class="free">★ 100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
+<section id="homeView">
+  <section class="top">
+    <div class="badge" id="heroCount">ADDONS GRÁTIS</div>
+    <div class="live">● 209 PESSOAS BAIXANDO AGORA</div>
+    <div class="hero">ADDONS GRÁTIS</div>
+    <p class="sub">A maior biblioteca de addons de Minecraft Bedrock.<br><b>Escolha seu addon e baixe em 10 segundos.</b></p>
+    <div class="free">100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
+  </section>
+
+  <nav class="nav">
+    <a href="#">■ ADDONS</a>
+    <a href="#">■ TEXTURAS</a>
+    <a href="#">■ MOBS</a>
+    <a href="#">■ MAPAS</a>
+    <a href="#">■ UTILIDADES</a>
+    <a href="#">■ VISUAL</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="social">
+      <h2>SIGA O CRIADOR</h2>
+      <div class="socials">
+        <button onclick="indisponivel()">DISCORD</button>
+        <button onclick="indisponivel()">INSTAGRAM</button>
+        <button onclick="indisponivel()">YOUTUBE</button>
+      </div>
+      <p>Toque em um addon abaixo para abrir a página dele. <b>Grátis, sem pegadinha.</b></p>
+    </section>
+
+    <section class="head">
+      <div>
+        <span class="label">ADDONS</span>
+        <h1>TODA A COLEÇÃO</h1>
+        <p id="total"></p>
+      </div>
+      <input class="search" id="search" placeholder="Buscar addon...">
+      <select class="select" id="sort">
+        <option value="mix">MIX</option>
+        <option value="az">A-Z</option>
+      </select>
+    </section>
+
+    <div class="tabs" id="tabs"></div>
+
+    <section class="feature" id="feature">
+      <b>DESTAQUE</b>
+      <img alt="Addon em destaque">
+    </section>
+
+    <section class="grid" id="grid"></section>
+    <p class="empty" id="empty">Nenhum addon encontrado.</p>
+  </main>
 </section>
 
-<nav class="nav">
-  <a href="#"><span>■</span> ADDONS</a>
-  <a href="#"><span>■</span> TEXTURAS</a>
-  <a href="#"><span>■</span> MOBS</a>
-  <a href="#"><span>■</span> MAPAS</a>
-  <a href="#"><span>■</span> UTILIDADES</a>
-  <a href="#"><span>■</span> VISUAL</a>
-</nav>
-
-<main class="wrap">
-
-  <section class="social">
-    <h2>SIGA O CRIADOR</h2>
-    <div class="socials">
-      <a href="#">DISCORD</a>
-      <a href="#">INSTAGRAM</a>
-      <a href="#">YOUTUBE</a>
-    </div>
-    <p>Toque em um addon abaixo para baixar. <b>Grátis, sem pegadinha.</b></p>
-  </section>
-
-  <section class="head">
-    <div>
-      <span class="label">ADDONS</span>
-      <h1>TODA A COLEÇÃO</h1>
-      <p id="total"></p>
+<section id="detailView" class="hide">
+  <main class="wrap">
+    <div class="detail-top">
+      <a class="back" href="#">← Voltar</a>
+      <div class="top-actions">
+        <button class="btn" onclick="indisponivel()">♡ FAVORITAR</button>
+        <button class="btn" id="shareBtn">COMPARTILHAR</button>
+      </div>
     </div>
 
-    <input class="search" id="search" placeholder="⌕ Buscar addon...">
+    <section class="addon-hero">
+      <a class="addon-image" id="detailImageLink">
+        <span class="tag" id="detailCat"></span>
+        <img id="detailImg" alt="">
+      </a>
+      <div class="addon-info">
+        <h1 id="detailTitle"></h1>
+        <div class="meta" id="detailMeta"></div>
+        <div class="stars">★★★★★ <b style="color:#111;font-size:14px">5/5</b></div>
+        <p id="detailDesc"></p>
+        <a class="btn download-main" id="detailDownload" download>BAIXAR ADDON</a>
+        <a class="btn" id="detailOpenImage">ABRIR IMAGEM</a>
+      </div>
+    </section>
 
-    <select class="select" id="sort">
-      <option value="mix">MIX</option>
-      <option value="az">A-Z</option>
-    </select>
-  </section>
+    <section class="how">
+      <h2>COMO BAIXAR - PASSO A PASSO <span style="float:right;color:#00c875;font-size:12px">100% GRÁTIS</span></h2>
+      <div class="step"><div class="num">1</div><div><b>TOQUE EM BAIXAR</b><br>O botão abre o arquivo do addon.</div></div>
+      <div class="step"><div class="num">2</div><div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div></div>
+      <div class="step"><div class="num">3</div><div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar no Minecraft Bedrock.</div></div>
+      <div class="account">CRIAR MINHA CONTA GRÁTIS</div>
+    </section>
 
-  <div class="tabs" id="tabs"></div>
+    <a class="btn download-main" id="detailDownload2" download>BAIXAR ADDON</a>
 
-  <section class="feature" id="feature">
-    <b>☆ DESTAQUE</b>
-    <img alt="Addon em destaque">
-  </section>
+    <section class="box">
+      <h2>SOBRE ESTE ADDON</h2>
+      <p id="detailAbout"></p>
+    </section>
 
-  <section class="grid" id="grid"></section>
-  <p class="empty" id="empty">Nenhum addon encontrado.</p>
+    <section class="feedback">
+      <h2>ÁREA DE FEEDBACK</h2>
+      <div class="login-box">
+        FAÇA LOGIN PARA PARTICIPAR DA COMUNIDADE<br><br>
+        <button class="btn" onclick="indisponivel()" style="display:inline-grid;padding:0 22px">ENTRAR AGORA</button>
+      </div>
+    </section>
 
-  <section class="how">
-    <h2>▷ COMO BAIXAR - PASSO A PASSO</h2>
+    <h2 class="more-title">CONTINUAR EXPLORANDO</h2>
+    <section class="grid" id="moreGrid"></section>
 
-    <div class="step">
-      <div class="num">1</div>
-      <div><b>TOQUE EM BAIXAR</b><br>O botão roxo abre o arquivo do addon.</div>
+    <section class="discord">
+      <div>
+        <h2>ENTRE NO DISCORD</h2>
+        <p>Receba novos addons em primeira mão.</p>
+      </div>
+      <button class="btn" onclick="indisponivel()">ENTRAR AGORA</button>
+    </section>
+  </main>
+</section>
+
+<section id="imageView" class="hide">
+  <main class="wrap">
+    <div class="detail-top">
+      <a class="back" id="imageBack" href="#">← Voltar</a>
+      <div class="top-actions">
+        <button class="btn" onclick="indisponivel()">♡ FAVORITAR</button>
+        <button class="btn" id="imageShareBtn">COMPARTILHAR</button>
+      </div>
     </div>
 
-    <div class="step">
-      <div class="num">2</div>
-      <div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div>
-    </div>
+    <section class="image-page">
+      <h1 id="imageTitle"></h1>
+      <img class="image-full" id="imageFull" alt="">
+      <br><br>
+      <a class="btn" id="imageDownload" download>BAIXAR IMAGEM</a>
+    </section>
 
-    <div class="step">
-      <div class="num">3</div>
-      <div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar.</div>
-    </div>
+    <h2 class="more-title">OUTRAS IMAGENS</h2>
+    <section class="grid" id="imageMoreGrid"></section>
+  </main>
+</section>
 
-    <div class="account">CRIAR MINHA CONTA GRÁTIS NO TERABOX</div>
-  </section>
-
-</main>
+<footer class="footer">© 2026 @ncmine · Todos os direitos reservados</footer>
 
 <script>
-const ADDONS = [
-  {
-    nome:"Vein Miner",
-    categoria:"utilidades",
-    imagem:"veimaner.png",
-    arquivo:"Utilities_Vein_Miner_v5.5 BP.zip",
-    versao:"v5.5"
-  },
-  {
-    nome:"Night Vision",
-    categoria:"visual",
-    imagem:"nigth vision png.webp",
-    arquivo:"NIGHT VISION ATUALIZADA.mcpack",
-    versao:"v1.0"
-  },
-  {
-    nome:"Multiply Ores",
-    categoria:"utilidades",
-    imagem:"multiplidor de minerios png.webp",
-    arquivo:"MultiplyOresby@ncmine.mcaddon",
-    versao:"v1.0"
-  },
-  {
-    nome:"Backpack Addon",
-    categoria:"utilidades",
-    imagem:"Backpack addon.png",
-    arquivo:"OTG Backpack v1.0.6.mcaddon",
-    versao:"v1.0.6"
-  },
-  {
-    nome:"Camera Addon",
-    categoria:"visual",
-    imagem:"camera addon.png",
-    arquivo:"Cinecam by domikalmazika.mcaddon",
-    versao:"v1.0"
-  },
-  {
-    nome:"Construção Addon",
-    categoria:"construcao",
-    imagem:"construção addon.png",
-    arquivo:"Effortless Building v3.1.mcaddon",
-    versao:"v3.1"
-  },
-  {
-    nome:"Diamante Ultra 200%",
-    categoria:"visual",
-    imagem:"diamante 200x.webp",
-    arquivo:"_MConverter.eu_diamond ultra 200%.mcpack",
-    versao:"v1.0"
-  },
-  {
-    nome:"Mini Map Addon",
-    categoria:"utilidades",
-    imagem:"mini map addon.jpg",
-    arquivo:"Real Minimap Add-On addon.mcaddon",
-    versao:"v1.0"
-  },
-  {
-    nome:"Java Spawn In Bedrock",
-    categoria:"java",
-    imagem:"mob boster java.png",
-    arquivo:"JavaSpawnInBedrock.mcpack",
-    versao:"v1.0"
-  },
-  {
-    nome:"OP Villagers",
-    categoria:"utilidades",
-    imagem:"op vilagers png.webp",
-    arquivo:"oneesmeralde.mcpack",
-    versao:"v1.0"
-  },
-  {
-    nome:"Afk Chunk Loader",
-    categoria:"utilidades",
-    imagem:"Afk_Chunk_Loader.jpg",
-    arquivo:"Afk_Chunk_Loader_bot.mcaddon",
-    versao:"v1.0"
-  },
-  {
-    nome:"Simple Waystone",
-    categoria:"utilidades",
-    imagem:"Backpack addon.png",
-    arquivo:"Simple_Waystone_v8.2_Full.mcaddon",
-    versao:"v8.2"
-  }
+const ADDONS=[
+  {nome:"Vein Miner",categoria:"utilidades",imagem:"veimaner.png",arquivo:"Utilities_Vein_Miner_v5.5 BP.zip",versao:"v5.5",descricao:"Minere vários blocos de uma vez no Minecraft Bedrock."},
+  {nome:"Night Vision",categoria:"visual",imagem:"nigth vision png.webp",arquivo:"NIGHT VISION ATUALIZADA.mcpack",versao:"v1.0",descricao:"Veja melhor no escuro com visão noturna atualizada."},
+  {nome:"Multiply Ores",categoria:"utilidades",imagem:"multiplidor de minerios png.webp",arquivo:"MultiplyOresby@ncmine.mcaddon",versao:"v1.0",descricao:"Multiplique minérios e deixe a mineração mais forte."},
+  {nome:"Backpack Addon",categoria:"utilidades",imagem:"Backpack addon.png",arquivo:"OTG Backpack v1.0.6.mcaddon",versao:"v1.0.6",descricao:"Adicione mochilas para carregar mais itens nas aventuras."},
+  {nome:"Camera Addon",categoria:"visual",imagem:"camera addon.png",arquivo:"Cinecam by domikalmazika.mcaddon",versao:"v1.0",descricao:"Use câmera cinematográfica para vídeos e cenas."},
+  {nome:"Construção Addon",categoria:"construcao",imagem:"construção addon.png",arquivo:"Effortless Building v3.1.mcaddon",versao:"v3.1",descricao:"Construa mais rápido com ferramentas de construção."},
+  {nome:"Diamante Ultra 200%",categoria:"visual",imagem:"diamante 200x.webp",arquivo:"_MConverter.eu_diamond ultra 200%.mcpack",versao:"v1.0",descricao:"Textura de diamante com visual mais forte e destacado."},
+  {nome:"Mini Map Addon",categoria:"utilidades",imagem:"mini map addon.jpg",arquivo:"Real Minimap Add-On addon.mcaddon",versao:"v1.0",descricao:"Adicione um minimapa para explorar melhor seu mundo."},
+  {nome:"Java Spawn In Bedrock",categoria:"java",imagem:"mob boster java.png",arquivo:"JavaSpawnInBedrock.mcpack",versao:"v1.0",descricao:"Deixe alguns comportamentos parecidos com Java no Bedrock."},
+  {nome:"OP Villagers",categoria:"utilidades",imagem:"op vilagers png.webp",arquivo:"oneesmeralde.mcpack",versao:"v1.0",descricao:"Villagers com trocas mais fortes e úteis."},
+  {nome:"Afk Chunk Loader",categoria:"utilidades",imagem:"Afk_Chunk_Loader.jpg",arquivo:"Afk_Chunk_Loader_bot.mcaddon",versao:"v1.0",descricao:"Mantenha chunks carregados para farms e sistemas."},
+  {nome:"Simple Waystone",categoria:"utilidades",imagem:"Backpack addon.png",arquivo:"Simple_Waystone_v8.2_Full.mcaddon",versao:"v8.2",descricao:"Sistema de teleporte com waystones para seu mundo."}
 ];
 
-const grid = document.querySelector("#grid");
-const search = document.querySelector("#search");
-const total = document.querySelector("#total");
-const empty = document.querySelector("#empty");
-const sort = document.querySelector("#sort");
-const tabs = document.querySelector("#tabs");
-const bgArt = document.querySelector("#bgArt");
-const featureImg = document.querySelector("#feature img");
-const heroCount = document.querySelector("#heroCount");
+const $=s=>document.querySelector(s);
+const grid=$("#grid"),search=$("#search"),total=$("#total"),empty=$("#empty"),sort=$("#sort"),tabs=$("#tabs");
+let categoriaAtual="todos";
+let noticeTimer;
 
-let categoriaAtual = "todos";
+function link(p,n){return p+"/"+String(n).split("/").map(encodeURIComponent).join("/")}
+function slug(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function catName(c){return({todos:"TODOS",utilidades:"UTILIDADES",visual:"VISUAL",construcao:"CONSTRUÇÃO",java:"JAVA",mobs:"MOBS",textura:"TEXTURA",mapas:"MAPAS"}[c]||c.toUpperCase())}
 
-function link(pasta,nome){
-  return pasta + "/" + String(nome).split("/").map(encodeURIComponent).join("/");
+function indisponivel(){
+  const n=$("#notice");
+  n.textContent="Indisponível por enquanto";
+  n.classList.add("show");
+  clearTimeout(noticeTimer);
+  noticeTimer=setTimeout(()=>n.classList.remove("show"),2200);
 }
 
-function nomeCategoria(cat){
-  const nomes = {
-    todos:"TODOS",
-    utilidades:"UTILIDADES",
-    visual:"VISUAL",
-    construcao:"CONSTRUÇÃO",
-    java:"JAVA",
-    mobs:"MOBS",
-    textura:"TEXTURA",
-    mapas:"MAPAS"
-  };
-  return nomes[cat] || cat.toUpperCase();
-}
+function init(){
+  $("#heroCount").textContent=`${ADDONS.length}+ ADDONS GRÁTIS`;
+  $("#bgArt").innerHTML=ADDONS.slice(0,5).map(a=>`<img class="bg-card" src="${link("imagens",a.imagem)}" alt="">`).join("");
+  $("#feature img").src=link("imagens",ADDONS[0].imagem);
 
-function criarCategorias(){
-  const categorias = ["todos", ...new Set(ADDONS.map(a => a.categoria))];
+  const cats=["todos",...new Set(ADDONS.map(a=>a.categoria))];
+  tabs.innerHTML=cats.map(c=>`<button class="${c=="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
 
-  tabs.innerHTML = categorias.map(cat => `
-    <button class="${cat === "todos" ? "active" : ""}" data-cat="${cat}">
-      ▦ ${nomeCategoria(cat)}
-    </button>
-  `).join("");
-
-  document.querySelectorAll("#tabs button").forEach(botao => {
-    botao.onclick = () => {
+  document.querySelectorAll("#tabs button").forEach(b=>{
+    b.onclick=()=>{
       document.querySelector("#tabs .active").classList.remove("active");
-      botao.classList.add("active");
-      categoriaAtual = botao.dataset.cat;
-      render();
-    };
-  });
-}
-
-function criarFundo(){
-  bgArt.innerHTML = ADDONS.slice(0,6).map(addon => `
-    <img class="bg-card" src="${link("imagens",addon.imagem)}" alt="">
-  `).join("");
-}
-
-function criarDestaque(){
-  const destaque = ADDONS[0];
-  featureImg.src = link("imagens",destaque.imagem);
-  featureImg.alt = destaque.nome;
-}
-
-function render(){
-  const busca = search.value.trim().toLowerCase();
-
-  let lista = ADDONS.filter(addon => {
-    const bateCategoria = categoriaAtual === "todos" || addon.categoria === categoriaAtual;
-    const bateBusca = addon.nome.toLowerCase().includes(busca) ||
-      addon.arquivo.toLowerCase().includes(busca) ||
-      addon.categoria.toLowerCase().includes(busca);
-
-    return bateCategoria && bateBusca;
+      b.classList.add("active");
+      categoriaAtual=b.dataset.cat;
+      renderHome();
+    }
   });
 
-  if(sort.value === "az"){
-    lista.sort((a,b) => a.nome.localeCompare(b.nome));
+  search.oninput=renderHome;
+  sort.onchange=renderHome;
+  window.onhashchange=route;
+  route();
+}
+
+function card(a){
+  return `
+  <article class="card">
+    <a class="pic" href="#addon/${slug(a.nome)}">
+      <span class="tag">${catName(a.categoria)}</span>
+      <span class="ver">${a.versao||"v1.0"}</span>
+      <img src="${link("imagens",a.imagem)}" alt="${a.nome}" onerror="this.parentElement.classList.add('missing');this.remove();">
+    </a>
+    <div class="body">
+      <h3>${a.nome}</h3>
+      <div class="meta">Minecraft Bedrock</div>
+      <div class="desc">${a.descricao}</div>
+      <div class="stars">★★★★★</div>
+      <div class="actions">
+        <a class="btn" href="#addon/${slug(a.nome)}">BAIXAR</a>
+        <a class="btn" href="#imagem/${slug(a.nome)}">IMG</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+function renderHome(){
+  const busca=search.value.trim().toLowerCase();
+
+  let lista=ADDONS.filter(a=>{
+    return (categoriaAtual==="todos"||a.categoria===categoriaAtual) &&
+    (a.nome.toLowerCase().includes(busca)||a.arquivo.toLowerCase().includes(busca)||a.categoria.toLowerCase().includes(busca));
+  });
+
+  if(sort.value==="az")lista.sort((a,b)=>a.nome.localeCompare(b.nome));
+
+  total.textContent=`${lista.length} addons curados. Busque, filtre e baixe.`;
+  empty.style.display=lista.length?"none":"block";
+  grid.innerHTML=lista.map(card).join("");
+}
+
+function renderDetail(a){
+  $("#homeView").classList.add("hide");
+  $("#imageView").classList.add("hide");
+  $("#detailView").classList.remove("hide");
+
+  $("#detailCat").textContent=catName(a.categoria);
+  $("#detailImg").src=link("imagens",a.imagem);
+  $("#detailImg").alt=a.nome;
+  $("#detailImageLink").href="#imagem/"+slug(a.nome);
+  $("#detailOpenImage").href="#imagem/"+slug(a.nome);
+
+  $("#detailTitle").textContent=a.nome.toUpperCase();
+  $("#detailMeta").innerHTML=`Minecraft Bedrock &nbsp; 2026-06-21 &nbsp; <b>${a.versao||"v1.0"}</b>`;
+  $("#detailDesc").textContent=a.descricao;
+  $("#detailAbout").textContent=a.descricao+" Baixe o arquivo, abra no Minecraft Bedrock e ative no seu mundo. Se a imagem ou download não abrir no GitHub, confira se o nome do arquivo está exatamente igual na pasta.";
+
+  $("#detailDownload").href=link("addons",a.arquivo);
+  $("#detailDownload").textContent="BAIXAR "+a.nome.toUpperCase();
+
+  $("#detailDownload2").href=link("addons",a.arquivo);
+  $("#detailDownload2").textContent="BAIXAR "+a.nome.toUpperCase();
+
+  $("#shareBtn").onclick=()=>{
+    if(navigator.clipboard){navigator.clipboard.writeText(location.href)}
+    indisponivel();
+  };
+
+  $("#moreGrid").innerHTML=ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
+  scrollTo(0,0);
+}
+
+function renderImage(a){
+  $("#homeView").classList.add("hide");
+  $("#detailView").classList.add("hide");
+  $("#imageView").classList.remove("hide");
+
+  $("#imageBack").href="#addon/"+slug(a.nome);
+  $("#imageTitle").textContent="IMAGEM - "+a.nome.toUpperCase();
+  $("#imageFull").src=link("imagens",a.imagem);
+  $("#imageFull").alt=a.nome;
+  $("#imageDownload").href=link("imagens",a.imagem);
+  $("#imageDownload").download=a.imagem;
+
+  $("#imageShareBtn").onclick=()=>{
+    if(navigator.clipboard){navigator.clipboard.writeText(location.href)}
+    indisponivel();
+  };
+
+  $("#imageMoreGrid").innerHTML=ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
+  scrollTo(0,0);
+}
+
+function route(){
+  const hash=location.hash;
+
+  if(hash.startsWith("#addon/")){
+    const id=hash.replace("#addon/","");
+    const addon=ADDONS.find(a=>slug(a.nome)===id);
+    if(addon){renderDetail(addon);return}
   }
 
-  heroCount.textContent = `✣ ${ADDONS.length}+ ADDONS GRÁTIS`;
-  total.textContent = `${lista.length} addons curados. Busque, filtre e baixe.`;
-  empty.style.display = lista.length ? "none" : "block";
+  if(hash.startsWith("#imagem/")){
+    const id=hash.replace("#imagem/","");
+    const addon=ADDONS.find(a=>slug(a.nome)===id);
+    if(addon){renderImage(addon);return}
+  }
 
-  grid.innerHTML = lista.map(addon => `
-    <article class="card">
-      <div class="pic">
-        <span class="tag">◇ ${nomeCategoria(addon.categoria)}</span>
-        <span class="ver">${addon.versao || "v1.0"}</span>
-        <img
-          src="${link("imagens",addon.imagem)}"
-          alt="${addon.nome}"
-          onerror="this.parentElement.classList.add('missing');this.parentElement.append('Imagem não encontrada');this.remove();"
-        >
-      </div>
-
-      <div class="body">
-        <h3>${addon.nome}</h3>
-        <div class="meta">♙ Minecraft Bedrock</div>
-        <div class="desc">Addon pronto para baixar. Clique no botão abaixo para fazer download.</div>
-        <div class="stars">★★★★★</div>
-
-        <div class="actions">
-          <a class="down" href="${link("addons",addon.arquivo)}" download>⇩ BAIXAR</a>
-          <a class="share" href="${link("addons",addon.arquivo)}">⌯</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
+  $("#detailView").classList.add("hide");
+  $("#imageView").classList.add("hide");
+  $("#homeView").classList.remove("hide");
+  renderHome();
+  scrollTo(0,0);
 }
 
-search.oninput = render;
-sort.onchange = render;
-
-criarCategorias();
-criarFundo();
-criarDestaque();
-render();
+init();
 </script>
 
 </body>
