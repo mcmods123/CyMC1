@@ -67,6 +67,7 @@ border:3px solid black;
 box-shadow:8px 8px 0 #8b5cf6;
 overflow:hidden;
 transition:.2s;
+cursor:pointer;
 }
 
 .card:hover{
@@ -117,6 +118,32 @@ text-decoration:none;
 background:#a855f7;
 }
 
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+z-index:9999;
+}
+
+.modal-content{
+background:#1a1a1a;
+max-width:700px;
+margin:80px auto;
+padding:25px;
+border:3px solid #8b5cf6;
+box-shadow:8px 8px 0 #8b5cf6;
+}
+
+.close{
+float:right;
+font-size:35px;
+cursor:pointer;
+}
+
 footer{
 margin-top:40px;
 padding:25px;
@@ -127,6 +154,7 @@ border-top:4px solid #8b5cf6;
 
 </style>
 </head>
+
 <body>
 
 <header>
@@ -138,19 +166,18 @@ border-top:4px solid #8b5cf6;
 <input type="text" id="search" placeholder="Buscar addon..." onkeyup="buscarAddon()">
 </div>
 
-<div class="mods" id="mods">
-
-<div class="card">
+<div class="mods">
+  <div class="card" onclick="abrirModal('VEIN MINER','Quebre veios inteiros de minério instantaneamente.')">
 <img src="imagens/veimaner.png">
 <div class="info">
 <span class="tag">UTILIDADES</span>
 <h3>VEIN MINER</h3>
-<p class="desc">Quebre veios inteiros de minério de uma vez.</p>
+<p class="desc">Quebre veios inteiros de minério.</p>
 <a class="download" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('NIGHT VISION','Visão noturna permanente.')">
 <img src="imagens/nigth vision png.webp">
 <div class="info">
 <span class="tag">VISUAL</span>
@@ -160,7 +187,7 @@ border-top:4px solid #8b5cf6;
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('OP VILLAGERS','Trocas extremamente vantajosas.')">
 <img src="imagens/op vilagers png.webp">
 <div class="info">
 <span class="tag">VILLAGERS</span>
@@ -170,83 +197,124 @@ border-top:4px solid #8b5cf6;
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('MULTIPLY ORES','Multiplique os minérios obtidos.')">
 <img src="imagens/multiplidor de minerios png.webp">
 <div class="info">
 <span class="tag">MINERAÇÃO</span>
 <h3>MULTIPLY ORES</h3>
-<p class="desc">Multiplique os minérios obtidos.</p>
+<p class="desc">Multiplique seus minérios.</p>
 <a class="download" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('AFK CHUNK LOADER','Mantém chunks carregados.')">
 <img src="imagens/Afk_Chunk_Loader.jpg">
 <div class="info">
 <span class="tag">UTILIDADES</span>
 <h3>AFK CHUNK LOADER</h3>
-<p class="desc">Mantém chunks carregados automaticamente.</p>
+<p class="desc">Mantém farms funcionando.</p>
 <a class="download" href="addons/Afk_Chunk_Loader_bot.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('CINECAM','Ferramenta para gravações cinematográficas.')">
 <img src="imagens/camera addon.png">
 <div class="info">
 <span class="tag">CÂMERA</span>
 <h3>CINECAM</h3>
-<p class="desc">Crie gravações cinematográficas.</p>
+<p class="desc">Câmera cinematográfica.</p>
 <a class="download" href="addons/Cinecam by domikalmazika.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('EFFORTLESS BUILDING','Construa estruturas gigantes rapidamente.')">
 <img src="imagens/construção addon.png">
 <div class="info">
 <span class="tag">CONSTRUÇÃO</span>
 <h3>EFFORTLESS BUILDING</h3>
-<p class="desc">Construa estruturas gigantes rapidamente.</p>
+<p class="desc">Construção avançada.</p>
 <a class="download" href="addons/Effortless Building v3.1.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirModal('JAVA SPAWN IN BEDROCK','Recursos inspirados na versão Java.')">
 <img src="imagens/mob boster java.png">
 <div class="info">
 <span class="tag">JAVA</span>
 <h3>JAVA SPAWN IN BEDROCK</h3>
-<p class="desc">Recursos inspirados na versão Java.</p>
+<p class="desc">Experiência Java no Bedrock.</p>
 <a class="download" href="addons/JavaSpawnInBedrock.mcpack">BAIXAR</a>
 </div>
 </div>
 
-<div class="card">
-<img src="https://placehold.co/600x300/111111/8b5cf6?text=Diamond+Ultra">
+<div class="card" onclick="abrirModal('DIAMOND ULTRA 200%','Mais diamantes e progressão acelerada.')">
+<img src="imagens/diamante 200x.webp">
 <div class="info">
 <span class="tag">MINERAÇÃO</span>
 <h3>DIAMOND ULTRA 200%</h3>
-<p class="desc">Mais diamantes e progressão acelerada.</p>
+<p class="desc">Mais diamantes no mundo.</p>
 <a class="download" href="addons/_MConverter.eu_diamond ultra 200%.mcpack">BAIXAR</a>
 </div>
 </div>
 
 </div>
-
 <footer>
 <h3>CY MODS</h3>
 <p>Biblioteca de Addons Minecraft Bedrock</p>
 </footer>
 
-<script>
-function buscarAddon() {
-let input = document.getElementById("search").value.toLowerCase();
-let cards = document.querySelectorAll(".card");
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="fecharModal()">&times;</span>
+<h2 id="modalTitulo"></h2>
+<br>
+<p id="modalDescricao"></p>
+</div>
+</div>
 
-cards.forEach(card => {
-let texto = card.innerText.toLowerCase();
-card.style.display = texto.includes(input) ? "block" : "none";
-});
+<script>
+
+function buscarAddon(){
+
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let titulo=card.querySelector("h3").innerText.toLowerCase();
+
+if(titulo.includes(input)){
+card.style.display="";
+}else{
+card.style.display="none";
 }
+
+});
+
+}
+
+function abrirModal(titulo,descricao){
+
+document.getElementById("modalTitulo").innerText=titulo;
+document.getElementById("modalDescricao").innerText=descricao;
+document.getElementById("modal").style.display="block";
+
+}
+
+function fecharModal(){
+document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(event){
+
+let modal=document.getElementById("modal");
+
+if(event.target==modal){
+modal.style.display="none";
+}
+
+}
+
 </script>
 
 </body>
