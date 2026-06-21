@@ -7,124 +7,754 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff;background-image:linear-gradient(45deg,#eee 25%,transparent 25%),linear-gradient(-45deg,#eee 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eee 75%),linear-gradient(-45deg,transparent 75%,#eee 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
-.top{text-align:center;padding:28px 14px 40px}
-.badge{display:inline-block;border:3px solid #111;box-shadow:5px 5px 0 #111;background:white;padding:8px 20px;font-weight:900}
-.live{margin:16px 0;color:#7b2cff;font-weight:900}
-.hero{display:inline-block;background:#7b2cff;color:white;font-size:clamp(42px,9vw,92px);font-weight:1000;line-height:.95;padding:10px 20px;box-shadow:8px 8px 0 #111;transform:rotate(-1deg)}
-.sub{font-size:20px;font-weight:900}.sub b{color:#7b2cff}
-.nav{display:flex;gap:26px;background:#050505;color:white;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}
-.nav a{color:white;text-decoration:none;white-space:nowrap}.nav span{color:#7b2cff}
-.wrap{max-width:1200px;margin:auto;padding:24px 14px}
-.social{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:18px;text-align:center;margin-bottom:26px}
-.social h2{margin:0 0 14px;color:#7b2cff;letter-spacing:2px}
-.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.socials a{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;font-weight:1000}.socials a:nth-child(2){background:#7b2cff;color:white}
-.head{display:grid;grid-template-columns:1fr 390px 110px;gap:10px;align-items:end;margin-bottom:16px}
-.head h1{font-size:54px;margin:8px 0 0;font-weight:1000}
-.label{background:#111;color:white;padding:5px 8px;font-weight:900}
-.search,.select{height:46px;border:3px solid #111;background:white;padding:0 14px;font-weight:900;font-size:15px}
-.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
-.tabs button{border:3px solid #111;background:white;padding:10px 16px;font-weight:1000;cursor:pointer}
-.tabs button.active,.tabs button:hover{background:#7b2cff;color:white}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}
-.pic{height:160px;background:#111;position:relative;overflow:hidden}
-.pic img{width:100%;height:100%;object-fit:cover}.pic.missing{display:grid;place-items:center;color:white;font-weight:900;padding:20px;text-align:center}
-.tag,.ver{position:absolute;top:8px;border:2px solid #111;font-weight:1000;padding:3px 8px}.tag{left:8px;background:#7b2cff;color:white}.ver{right:8px;background:white;color:#111}
-.body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
-.body h3{margin:0;font-size:20px}.meta,.desc{font-size:13px;color:#555}.stars{color:#7b2cff;font-size:18px}
-.actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}
-.down,.share{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center}
-.down:hover,.share:hover{background:#7b2cff;color:white}
-.empty{display:none;border:3px solid #111;background:white;padding:25px;font-weight:900}
-@media(max-width:900px){.head{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.head h1{font-size:38px}}
+
+:root{
+  --roxo:#7b2cff;
+  --roxo-2:#a855ff;
+  --roxo-3:#efe4ff;
+  --preto:#080808;
+  --branco:#fff;
+  --cinza:#5a5a5a;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#111;
+  background:#fff;
+  background-image:
+    linear-gradient(45deg,rgba(0,0,0,.055) 25%,transparent 25%),
+    linear-gradient(-45deg,rgba(0,0,0,.055) 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,rgba(0,0,0,.055) 75%),
+    linear-gradient(-45deg,transparent 75%,rgba(0,0,0,.055) 75%);
+  background-size:30px 30px;
+  background-position:0 0,0 15px,15px -15px,-15px 0;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(123,44,255,.26),transparent 390px),
+    radial-gradient(circle at 8% 22%,rgba(123,44,255,.18),transparent 250px),
+    radial-gradient(circle at 92% 12%,rgba(168,85,255,.20),transparent 260px),
+    linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.86));
+  z-index:-4;
+}
+
+.bg-art{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.bg-card{
+  position:absolute;
+  width:165px;
+  height:165px;
+  object-fit:cover;
+  border:4px solid #111;
+  background:#111;
+  box-shadow:9px 9px 0 rgba(0,0,0,.62);
+  opacity:.16;
+  filter:saturate(1.25) contrast(1.05);
+}
+
+.bg-card:nth-child(1){top:70px;left:7%;transform:rotate(-15deg)}
+.bg-card:nth-child(2){top:58px;right:10%;transform:rotate(12deg)}
+.bg-card:nth-child(3){top:250px;left:38%;transform:rotate(-8deg)}
+.bg-card:nth-child(4){top:430px;left:12%;transform:rotate(10deg)}
+.bg-card:nth-child(5){top:370px;right:17%;transform:rotate(-12deg)}
+.bg-card:nth-child(6){top:610px;left:44%;transform:rotate(9deg)}
+
+.top,.nav,.wrap{position:relative;z-index:1}
+
+.top{
+  text-align:center;
+  padding:28px 14px 42px;
+}
+
+.badge{
+  display:inline-block;
+  border:3px solid var(--preto);
+  box-shadow:5px 5px 0 var(--preto);
+  background:#fff;
+  padding:8px 20px;
+  font-weight:1000;
+  letter-spacing:1px;
+}
+
+.live{
+  margin:16px 0;
+  color:var(--roxo);
+  font-weight:1000;
+  font-size:14px;
+}
+
+.hero{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--roxo),var(--roxo-2));
+  color:#fff;
+  font-size:clamp(42px,9vw,94px);
+  font-weight:1000;
+  line-height:.95;
+  padding:10px 22px;
+  border:4px solid #fff;
+  box-shadow:9px 9px 0 #111,0 0 42px rgba(123,44,255,.46);
+  transform:rotate(-1deg);
+  text-shadow:4px 4px 0 rgba(0,0,0,.22);
+}
+
+.sub{
+  font-size:20px;
+  font-weight:900;
+  line-height:1.35;
+}
+
+.sub b{color:var(--roxo)}
+
+.free{
+  display:inline-block;
+  margin-top:20px;
+  border:2px dashed #b88cff;
+  background:rgba(255,255,255,.76);
+  padding:14px 24px;
+  font-weight:1000;
+}
+
+.nav{
+  display:flex;
+  gap:26px;
+  background:#050505;
+  color:white;
+  border-top:4px solid #111;
+  border-bottom:4px solid #111;
+  padding:14px;
+  overflow:auto;
+  font-weight:1000;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.nav span{color:var(--roxo)}
+
+.wrap{
+  max-width:1220px;
+  margin:auto;
+  padding:24px 14px 50px;
+}
+
+.social{
+  background:rgba(255,255,255,.92);
+  border:3px solid #111;
+  box-shadow:5px 5px 0 #111;
+  padding:18px;
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.social h2{
+  margin:0 0 14px;
+  color:var(--roxo);
+  letter-spacing:2px;
+  font-size:20px;
+}
+
+.socials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.socials a{
+  border:3px solid #111;
+  box-shadow:5px 5px 0 #111;
+  padding:16px;
+  color:#111;
+  text-decoration:none;
+  font-weight:1000;
+  background:#fff;
+}
+
+.socials a:nth-child(2){
+  background:linear-gradient(90deg,var(--roxo),#d946ef);
+  color:#fff;
+}
+
+.head{
+  display:grid;
+  grid-template-columns:1fr 390px 120px;
+  gap:10px;
+  align-items:end;
+  margin:28px 0 16px;
+}
+
+.label{
+  display:inline-block;
+  background:#111;
+  color:white;
+  padding:5px 9px;
+  font-weight:1000;
+}
+
+.head h1{
+  font-size:54px;
+  margin:8px 0 0;
+  font-weight:1000;
+  line-height:.95;
+}
+
+.head p{
+  margin:10px 0 0;
+  color:#555;
+}
+
+.search,.select{
+  height:46px;
+  border:3px solid #111;
+  background:white;
+  padding:0 14px;
+  font-weight:900;
+  font-size:15px;
+  outline:none;
+}
+
+.search:focus,.select:focus{
+  box-shadow:0 0 0 4px rgba(123,44,255,.22);
+}
+
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:24px;
+}
+
+.tabs button{
+  border:3px solid #111;
+  background:white;
+  padding:10px 16px;
+  font-weight:1000;
+  cursor:pointer;
+}
+
+.tabs button.active,
+.tabs button:hover{
+  background:var(--roxo);
+  color:white;
+}
+
+.feature{
+  height:330px;
+  border:3px solid #111;
+  margin-bottom:20px;
+  position:relative;
+  overflow:hidden;
+  background:#111;
+  box-shadow:5px 5px 0 #111;
+}
+
+.feature img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.82) saturate(1.12);
+}
+
+.feature b{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:var(--roxo);
+  color:white;
+  border:3px solid white;
+  padding:5px 10px;
+  font-weight:1000;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border:3px solid #111;
+  box-shadow:5px 5px 0 #111;
+  display:flex;
+  flex-direction:column;
+  min-height:390px;
+}
+
+.pic{
+  height:160px;
+  background:#111;
+  position:relative;
+  overflow:hidden;
+}
+
+.pic img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.pic.missing{
+  display:grid;
+  place-items:center;
+  color:white;
+  font-weight:1000;
+  padding:20px;
+  text-align:center;
+}
+
+.tag,.ver{
+  position:absolute;
+  top:8px;
+  border:2px solid #111;
+  font-weight:1000;
+  padding:3px 8px;
+  z-index:2;
+  font-size:12px;
+}
+
+.tag{
+  left:8px;
+  background:var(--roxo);
+  color:white;
+}
+
+.ver{
+  right:8px;
+  background:white;
+  color:#111;
+}
+
+.body{
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  flex:1;
+}
+
+.body h3{
+  margin:0;
+  font-size:20px;
+  line-height:1.1;
+}
+
+.meta,.desc{
+  font-size:13px;
+  color:#555;
+  line-height:1.35;
+}
+
+.stars{
+  color:var(--roxo);
+  font-size:18px;
+  letter-spacing:1px;
+}
+
+.actions{
+  margin-top:auto;
+  display:grid;
+  grid-template-columns:1fr 44px;
+  gap:9px;
+}
+
+.down,.share{
+  border:3px solid #111;
+  background:white;
+  box-shadow:5px 5px 0 #111;
+  min-height:43px;
+  font-weight:1000;
+  text-decoration:none;
+  color:#111;
+  display:grid;
+  place-items:center;
+}
+
+.down:hover,.share:hover{
+  background:var(--roxo);
+  color:white;
+}
+
+.empty{
+  display:none;
+  border:3px solid #111;
+  background:white;
+  padding:25px;
+  font-weight:1000;
+  box-shadow:5px 5px 0 #111;
+}
+
+.how{
+  margin-top:34px;
+  background:rgba(255,255,255,.94);
+  border:3px solid #111;
+  box-shadow:5px 5px 0 #111;
+}
+
+.how h2{
+  margin:0;
+  background:#111;
+  color:white;
+  padding:12px 16px;
+  font-size:18px;
+}
+
+.step{
+  display:flex;
+  gap:12px;
+  margin:14px;
+  border:2px solid #ccc;
+  padding:12px;
+}
+
+.num{
+  min-width:34px;
+  height:34px;
+  border:3px solid #111;
+  display:grid;
+  place-items:center;
+  font-weight:1000;
+  background:#fff;
+}
+
+.step:nth-child(3){
+  border-color:var(--roxo);
+  background:#f5efff;
+}
+
+.account{
+  margin:14px;
+  border:3px solid #111;
+  box-shadow:5px 5px 0 #111;
+  padding:14px;
+  text-align:center;
+  font-weight:1000;
+}
+
+@media(max-width:1000px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .head{grid-template-columns:1fr}
+}
+
+@media(max-width:760px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .socials{grid-template-columns:1fr}
+  .hero{font-size:48px}
+  .feature{height:230px}
+  .head h1{font-size:40px}
+}
+
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .nav{gap:18px}
+  .top{padding-top:20px}
+}
 </style>
 </head>
 
 <body>
+
+<div class="bg-art" id="bgArt" aria-hidden="true"></div>
+
 <section class="top">
-  <div class="badge">✣ ADDONS GRÁTIS</div>
+  <div class="badge" id="heroCount">✣ ADDONS GRÁTIS</div>
   <div class="live">● ↗ PESSOAS BAIXANDO AGORA</div>
   <div class="hero">ADDONS GRÁTIS</div>
-  <p class="sub">A maior biblioteca de addons de Minecraft Bedrock.<br><b>Escolha seu addon e baixe em 10 segundos.</b></p>
+  <p class="sub">
+    A maior biblioteca de addons de Minecraft Bedrock.<br>
+    <b>Escolha seu addon e baixe em 10 segundos.</b>
+  </p>
+  <div class="free">★ 100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
 </section>
 
 <nav class="nav">
-  <a><span>■</span> ADDONS</a><a><span>■</span> TEXTURAS</a><a><span>■</span> MOBS</a>
-  <a><span>■</span> MAPAS</a><a><span>■</span> UTILIDADES</a><a><span>■</span> VISUAL</a>
+  <a href="#"><span>■</span> ADDONS</a>
+  <a href="#"><span>■</span> TEXTURAS</a>
+  <a href="#"><span>■</span> MOBS</a>
+  <a href="#"><span>■</span> MAPAS</a>
+  <a href="#"><span>■</span> UTILIDADES</a>
+  <a href="#"><span>■</span> VISUAL</a>
 </nav>
 
 <main class="wrap">
+
   <section class="social">
     <h2>SIGA O CRIADOR</h2>
-    <div class="socials"><a>DISCORD</a><a>INSTAGRAM</a><a>YOUTUBE</a></div>
+    <div class="socials">
+      <a href="#">DISCORD</a>
+      <a href="#">INSTAGRAM</a>
+      <a href="#">YOUTUBE</a>
+    </div>
     <p>Toque em um addon abaixo para baixar. <b>Grátis, sem pegadinha.</b></p>
   </section>
 
   <section class="head">
-    <div><span class="label">ADDONS</span><h1>TODA A COLEÇÃO</h1><p id="total"></p></div>
+    <div>
+      <span class="label">ADDONS</span>
+      <h1>TODA A COLEÇÃO</h1>
+      <p id="total"></p>
+    </div>
+
     <input class="search" id="search" placeholder="⌕ Buscar addon...">
-    <select class="select" id="sort"><option value="mix">MIX</option><option value="az">A-Z</option></select>
+
+    <select class="select" id="sort">
+      <option value="mix">MIX</option>
+      <option value="az">A-Z</option>
+    </select>
   </section>
 
-  <div class="tabs" id="tabs">
-    <button class="active" data-cat="todos">▦ TODOS</button>
-    <button data-cat="utilidades">▦ UTILIDADES</button>
-    <button data-cat="visual">▦ VISUAL</button>
-    <button data-cat="construcao">▦ CONSTRUÇÃO</button>
-    <button data-cat="java">▦ JAVA</button>
-  </div>
+  <div class="tabs" id="tabs"></div>
+
+  <section class="feature" id="feature">
+    <b>☆ DESTAQUE</b>
+    <img alt="Addon em destaque">
+  </section>
 
   <section class="grid" id="grid"></section>
   <p class="empty" id="empty">Nenhum addon encontrado.</p>
+
+  <section class="how">
+    <h2>▷ COMO BAIXAR - PASSO A PASSO</h2>
+
+    <div class="step">
+      <div class="num">1</div>
+      <div><b>TOQUE EM BAIXAR</b><br>O botão roxo abre o arquivo do addon.</div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar.</div>
+    </div>
+
+    <div class="account">CRIAR MINHA CONTA GRÁTIS NO TERABOX</div>
+  </section>
+
 </main>
 
-<script src="data/addons.js"></script>
 <script>
-const grid=document.querySelector("#grid"),search=document.querySelector("#search"),total=document.querySelector("#total"),empty=document.querySelector("#empty");
-let cat="todos";
+const ADDONS = [
+  {
+    nome:"Vein Miner",
+    categoria:"utilidades",
+    imagem:"veimaner.png",
+    arquivo:"Utilities_Vein_Miner_v5.5 BP.zip",
+    versao:"v5.5"
+  },
+  {
+    nome:"Night Vision",
+    categoria:"visual",
+    imagem:"nigth vision png.webp",
+    arquivo:"NIGHT VISION ATUALIZADA.mcpack",
+    versao:"v1.0"
+  },
+  {
+    nome:"Multiply Ores",
+    categoria:"utilidades",
+    imagem:"multiplidor de minerios png.webp",
+    arquivo:"MultiplyOresby@ncmine.mcaddon",
+    versao:"v1.0"
+  },
+  {
+    nome:"Backpack Addon",
+    categoria:"utilidades",
+    imagem:"Backpack addon.png",
+    arquivo:"OTG Backpack v1.0.6.mcaddon",
+    versao:"v1.0.6"
+  },
+  {
+    nome:"Camera Addon",
+    categoria:"visual",
+    imagem:"camera addon.png",
+    arquivo:"Cinecam by domikalmazika.mcaddon",
+    versao:"v1.0"
+  },
+  {
+    nome:"Construção Addon",
+    categoria:"construcao",
+    imagem:"construção addon.png",
+    arquivo:"Effortless Building v3.1.mcaddon",
+    versao:"v3.1"
+  },
+  {
+    nome:"Diamante Ultra 200%",
+    categoria:"visual",
+    imagem:"diamante 200x.webp",
+    arquivo:"_MConverter.eu_diamond ultra 200%.mcpack",
+    versao:"v1.0"
+  },
+  {
+    nome:"Mini Map Addon",
+    categoria:"utilidades",
+    imagem:"mini map addon.jpg",
+    arquivo:"Real Minimap Add-On addon.mcaddon",
+    versao:"v1.0"
+  },
+  {
+    nome:"Java Spawn In Bedrock",
+    categoria:"java",
+    imagem:"mob boster java.png",
+    arquivo:"JavaSpawnInBedrock.mcpack",
+    versao:"v1.0"
+  },
+  {
+    nome:"OP Villagers",
+    categoria:"utilidades",
+    imagem:"op vilagers png.webp",
+    arquivo:"oneesmeralde.mcpack",
+    versao:"v1.0"
+  },
+  {
+    nome:"Afk Chunk Loader",
+    categoria:"utilidades",
+    imagem:"Afk_Chunk_Loader.jpg",
+    arquivo:"Afk_Chunk_Loader_bot.mcaddon",
+    versao:"v1.0"
+  },
+  {
+    nome:"Simple Waystone",
+    categoria:"utilidades",
+    imagem:"Backpack addon.png",
+    arquivo:"Simple_Waystone_v8.2_Full.mcaddon",
+    versao:"v8.2"
+  }
+];
 
-function link(p,n){return p+"/"+String(n).split("/").map(encodeURIComponent).join("/")}
+const grid = document.querySelector("#grid");
+const search = document.querySelector("#search");
+const total = document.querySelector("#total");
+const empty = document.querySelector("#empty");
+const sort = document.querySelector("#sort");
+const tabs = document.querySelector("#tabs");
+const bgArt = document.querySelector("#bgArt");
+const featureImg = document.querySelector("#feature img");
+const heroCount = document.querySelector("#heroCount");
+
+let categoriaAtual = "todos";
+
+function link(pasta,nome){
+  return pasta + "/" + String(nome).split("/").map(encodeURIComponent).join("/");
+}
+
+function nomeCategoria(cat){
+  const nomes = {
+    todos:"TODOS",
+    utilidades:"UTILIDADES",
+    visual:"VISUAL",
+    construcao:"CONSTRUÇÃO",
+    java:"JAVA",
+    mobs:"MOBS",
+    textura:"TEXTURA",
+    mapas:"MAPAS"
+  };
+  return nomes[cat] || cat.toUpperCase();
+}
+
+function criarCategorias(){
+  const categorias = ["todos", ...new Set(ADDONS.map(a => a.categoria))];
+
+  tabs.innerHTML = categorias.map(cat => `
+    <button class="${cat === "todos" ? "active" : ""}" data-cat="${cat}">
+      ▦ ${nomeCategoria(cat)}
+    </button>
+  `).join("");
+
+  document.querySelectorAll("#tabs button").forEach(botao => {
+    botao.onclick = () => {
+      document.querySelector("#tabs .active").classList.remove("active");
+      botao.classList.add("active");
+      categoriaAtual = botao.dataset.cat;
+      render();
+    };
+  });
+}
+
+function criarFundo(){
+  bgArt.innerHTML = ADDONS.slice(0,6).map(addon => `
+    <img class="bg-card" src="${link("imagens",addon.imagem)}" alt="">
+  `).join("");
+}
+
+function criarDestaque(){
+  const destaque = ADDONS[0];
+  featureImg.src = link("imagens",destaque.imagem);
+  featureImg.alt = destaque.nome;
+}
 
 function render(){
-  let lista=ADDONS.filter(a=>(cat==="todos"||a.categoria===cat)&&a.nome.toLowerCase().includes(search.value.toLowerCase()));
-  if(document.querySelector("#sort").value==="az") lista.sort((a,b)=>a.nome.localeCompare(b.nome));
-  total.textContent=`${lista.length} addons curados. Busque, filtre e baixe.`;
-  empty.style.display=lista.length?"none":"block";
+  const busca = search.value.trim().toLowerCase();
 
-  grid.innerHTML=lista.map(a=>`
+  let lista = ADDONS.filter(addon => {
+    const bateCategoria = categoriaAtual === "todos" || addon.categoria === categoriaAtual;
+    const bateBusca = addon.nome.toLowerCase().includes(busca) ||
+      addon.arquivo.toLowerCase().includes(busca) ||
+      addon.categoria.toLowerCase().includes(busca);
+
+    return bateCategoria && bateBusca;
+  });
+
+  if(sort.value === "az"){
+    lista.sort((a,b) => a.nome.localeCompare(b.nome));
+  }
+
+  heroCount.textContent = `✣ ${ADDONS.length}+ ADDONS GRÁTIS`;
+  total.textContent = `${lista.length} addons curados. Busque, filtre e baixe.`;
+  empty.style.display = lista.length ? "none" : "block";
+
+  grid.innerHTML = lista.map(addon => `
     <article class="card">
       <div class="pic">
-        <span class="tag">◇ ${a.categoria.toUpperCase()}</span>
-        <span class="ver">${a.versao||"v1.0"}</span>
-        <img src="${link("imagens",a.imagem)}" alt="${a.nome}" onerror="this.parentElement.classList.add('missing');this.remove();">
+        <span class="tag">◇ ${nomeCategoria(addon.categoria)}</span>
+        <span class="ver">${addon.versao || "v1.0"}</span>
+        <img
+          src="${link("imagens",addon.imagem)}"
+          alt="${addon.nome}"
+          onerror="this.parentElement.classList.add('missing');this.parentElement.append('Imagem não encontrada');this.remove();"
+        >
       </div>
+
       <div class="body">
-        <h3>${a.nome}</h3>
-        <div class="meta">♙ Criador desconhecido</div>
-        <div class="desc">Addon para Minecraft Bedrock. Clique em baixar para fazer download.</div>
+        <h3>${addon.nome}</h3>
+        <div class="meta">♙ Minecraft Bedrock</div>
+        <div class="desc">Addon pronto para baixar. Clique no botão abaixo para fazer download.</div>
         <div class="stars">★★★★★</div>
+
         <div class="actions">
-          <a class="down" href="${link("addons",a.arquivo)}" download>⇩ BAIXAR</a>
-          <a class="share" href="${link("addons",a.arquivo)}">⌯</a>
+          <a class="down" href="${link("addons",addon.arquivo)}" download>⇩ BAIXAR</a>
+          <a class="share" href="${link("addons",addon.arquivo)}">⌯</a>
         </div>
       </div>
     </article>
   `).join("");
 }
 
-document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{
-  document.querySelector(".active").classList.remove("active");
-  b.classList.add("active");
-  cat=b.dataset.cat;
-  render();
-});
+search.oninput = render;
+sort.onchange = render;
 
-search.oninput=render;
-document.querySelector("#sort").onchange=render;
+criarCategorias();
+criarFundo();
+criarDestaque();
 render();
 </script>
+
 </body>
 </html>
