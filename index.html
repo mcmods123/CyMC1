@@ -7,7 +7,7 @@
 
 <style>
 *{box-sizing:border-box}
-:root{--p:#7b2cff;--p2:#a855ff;--b:#080808;--w:#fff;--g:#555}
+:root{--p:#7b2cff;--p2:#a855ff;--b:#080808}
 
 body{
   margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff;
@@ -27,14 +27,20 @@ body:before{
 
 .bg-art{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
 .bg-card{position:absolute;width:165px;height:165px;object-fit:cover;border:4px solid #111;box-shadow:9px 9px 0 rgba(0,0,0,.55);opacity:.14}
-.bg-card:nth-child(1){top:70px;left:7%;transform:rotate(-15deg)}
-.bg-card:nth-child(2){top:58px;right:10%;transform:rotate(12deg)}
-.bg-card:nth-child(3){top:260px;left:38%;transform:rotate(-8deg)}
-.bg-card:nth-child(4){top:440px;left:12%;transform:rotate(10deg)}
-.bg-card:nth-child(5){top:390px;right:17%;transform:rotate(-12deg)}
+.bg-card:nth-child(1){top:70px;left:7%;animation:m1 11s ease-in-out infinite}
+.bg-card:nth-child(2){top:58px;right:10%;animation:m2 13s ease-in-out infinite}
+.bg-card:nth-child(3){top:260px;left:38%;animation:m3 12s ease-in-out infinite}
+.bg-card:nth-child(4){top:440px;left:12%;animation:m4 14s ease-in-out infinite}
+.bg-card:nth-child(5){top:390px;right:17%;animation:m5 12.5s ease-in-out infinite}
 
-.top,.nav,.wrap{position:relative;z-index:1}
+@keyframes m1{0%,100%{transform:rotate(-15deg) translate(0,0)}50%{transform:rotate(-10deg) translate(14px,-18px)}}
+@keyframes m2{0%,100%{transform:rotate(12deg) translate(0,0)}50%{transform:rotate(7deg) translate(-18px,16px)}}
+@keyframes m3{0%,100%{transform:rotate(-8deg) translate(0,0)}50%{transform:rotate(-13deg) translate(10px,20px)}}
+@keyframes m4{0%,100%{transform:rotate(10deg) translate(0,0)}50%{transform:rotate(15deg) translate(-14px,-14px)}}
+@keyframes m5{0%,100%{transform:rotate(-12deg) translate(0,0)}50%{transform:rotate(-7deg) translate(16px,18px)}}
+
 .hide{display:none!important}
+.top,.nav,.wrap{position:relative;z-index:1}
 
 .top{text-align:center;padding:28px 14px 42px}
 .badge{display:inline-block;border:3px solid var(--b);box-shadow:5px 5px 0 var(--b);background:#fff;padding:8px 20px;font-weight:1000}
@@ -51,7 +57,7 @@ body:before{
 .free{display:inline-block;margin-top:20px;border:2px dashed #b88cff;background:rgba(255,255,255,.78);padding:14px 24px;font-weight:1000}
 
 .nav{display:flex;gap:26px;background:#050505;color:white;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}
-.nav a{color:white;text-decoration:none;white-space:nowrap}.nav span{color:var(--p)}
+.nav a{color:white;text-decoration:none;white-space:nowrap}
 
 .wrap{max-width:1240px;margin:auto;padding:24px 14px 50px}
 .social,.box,.how,.feedback,.discord{background:rgba(255,255,255,.94);border:3px solid #111;box-shadow:5px 5px 0 #111}
@@ -59,9 +65,8 @@ body:before{
 .social{padding:18px;text-align:center;margin-bottom:28px}
 .social h2{margin:0 0 14px;color:var(--p);letter-spacing:2px}
 .socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.socials button{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;color:#111;text-decoration:none;font-weight:1000;background:#fff;cursor:pointer;font-size:15px}
+.socials button{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;color:#111;font-weight:1000;background:#fff;cursor:pointer;font-size:15px}
 .socials button:nth-child(2){background:linear-gradient(90deg,var(--p),#d946ef);color:#fff}
-.socials button:hover{transform:translateY(-2px)}
 
 .head{display:grid;grid-template-columns:1fr 390px 120px;gap:10px;align-items:end;margin:28px 0 16px}
 .label{display:inline-block;background:#111;color:white;padding:5px 9px;font-weight:1000}
@@ -73,30 +78,24 @@ body:before{
 .tabs button{border:3px solid #111;background:white;padding:10px 16px;font-weight:1000;cursor:pointer}
 .tabs button.active,.tabs button:hover{background:var(--p);color:white}
 
-.feature{height:330px;border:3px solid #111;margin-bottom:20px;position:relative;overflow:hidden;background:#111;box-shadow:5px 5px 0 #111}
-.feature img{width:100%;height:100%;object-fit:cover;filter:brightness(.82) saturate(1.12)}
-.feature b{position:absolute;top:10px;left:10px;background:var(--p);color:white;border:3px solid white;padding:5px 10px;font-weight:1000}
-
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}
-.pic{height:160px;background:#111;position:relative;overflow:hidden;display:block;color:white;text-decoration:none}
+.pic{height:175px;background:#111;position:relative;overflow:hidden;display:block;color:white;text-decoration:none}
 .pic img{width:100%;height:100%;object-fit:cover}
-.pic.missing{display:grid;place-items:center;color:white;font-weight:1000;padding:20px;text-align:center}
-
 .tag,.ver{position:absolute;top:8px;border:2px solid #111;font-weight:1000;padding:3px 8px;z-index:2;font-size:12px}
-.tag{left:8px;background:var(--p);color:white}
-.ver{right:8px;background:white;color:#111}
+.tag{left:8px;background:var(--p);color:white}.ver{right:8px;background:white;color:#111}
 
 .body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
 .body h3{margin:0;font-size:20px;line-height:1.1}
 .meta,.desc{font-size:13px;color:#555;line-height:1.35}
 .stars{color:var(--p);font-size:18px;letter-spacing:1px}
-
 .actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}
+
 .btn{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;min-height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center;cursor:pointer;text-align:center;padding:0 12px}
 .btn:hover{background:var(--p);color:white}
 
 .empty{display:none;border:3px solid #111;background:white;padding:25px;font-weight:1000;box-shadow:5px 5px 0 #111}
+.loading{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;padding:24px;font-weight:1000}
 
 .detail-top{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:3px solid #111;padding:10px 0 12px;margin-bottom:20px}
 .back{font-weight:1000;text-decoration:none;color:#111;padding:10px}
@@ -110,35 +109,21 @@ body:before{
 .addon-info p{color:#555;line-height:1.55}
 .download-main{margin:18px 0 24px;min-height:54px;font-size:18px}
 
-.image-page{background:#fff;border:3px solid #111;box-shadow:6px 6px 0 #111;padding:18px;margin-bottom:24px}
-.image-page h1{font-size:38px;margin:0 0 16px;font-weight:1000}
-.image-full{width:100%;max-height:720px;object-fit:contain;background:#111;border:3px solid #111}
-
-.box{margin:20px 0;padding:24px}
-.box h2{margin:0;color:var(--p);font-size:22px;letter-spacing:2px}
 .how h2{margin:0;background:#111;color:white;padding:12px 16px;font-size:18px}
 .step{display:flex;gap:12px;margin:14px;border:2px solid #ccc;padding:12px}
 .num{min-width:34px;height:34px;border:3px solid #111;display:grid;place-items:center;font-weight:1000;background:#fff}
 .step:nth-child(3){border-color:var(--p);background:#f5efff}
 .account{margin:14px;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:14px;text-align:center;font-weight:1000}
-
-.feedback{padding:28px;margin-top:28px}
-.feedback h2{color:var(--p);letter-spacing:2px}
-.login-box{border:3px dashed #ddd;padding:42px;text-align:center;font-weight:1000;color:#555}
+.box{margin:20px 0;padding:24px}.box h2{margin:0;color:var(--p);font-size:22px;letter-spacing:2px}
 .more-title{margin:34px 0 18px;color:var(--p);letter-spacing:2px}
-.discord{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:36px 0 0;padding:28px}
 .footer{background:#050505;color:#aaa;text-align:center;padding:18px;font-weight:1000}
 
-.notice{
-  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);
-  background:#111;color:#fff;border:3px solid var(--p);box-shadow:6px 6px 0 #000;
-  padding:14px 20px;font-weight:1000;z-index:20;display:none;text-align:center
-}
+.notice{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111;color:#fff;border:3px solid var(--p);box-shadow:6px 6px 0 #000;padding:14px 20px;font-weight:1000;z-index:20;display:none;text-align:center}
 .notice.show{display:block}
 
 @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.head,.addon-hero{grid-template-columns:1fr}.addon-image{min-height:300px}}
-@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.feature{height:230px}.head h1{font-size:40px}.top-actions,.discord{flex-direction:column;align-items:stretch}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{gap:18px}.top{padding-top:20px}.addon-info h1{font-size:28px}}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.head h1{font-size:40px}.top-actions{flex-direction:column;align-items:stretch}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{gap:18px}.addon-info h1{font-size:28px}}
 </style>
 </head>
 
@@ -149,10 +134,10 @@ body:before{
 
 <section id="homeView">
   <section class="top">
-    <div class="badge" id="heroCount">ADDONS GRÁTIS</div>
-    <div class="live">● 209 PESSOAS BAIXANDO AGORA</div>
+    <div class="badge" id="heroCount">CARREGANDO ADDONS...</div>
+    <div class="live">● PESSOAS BAIXANDO AGORA</div>
     <div class="hero">ADDONS GRÁTIS</div>
-    <p class="sub">A maior biblioteca de addons de Minecraft Bedrock.<br><b>Escolha seu addon e baixe em 10 segundos.</b></p>
+    <p class="sub">Coloque arquivos nas pastas <b>imagens</b> e <b>addons</b> que eles aparecem sozinhos.</p>
     <div class="free">100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
   </section>
 
@@ -173,14 +158,14 @@ body:before{
         <button onclick="indisponivel()">INSTAGRAM</button>
         <button onclick="indisponivel()">YOUTUBE</button>
       </div>
-      <p>Toque em um addon abaixo para abrir a página dele. <b>Grátis, sem pegadinha.</b></p>
+      <p>Para juntar automático: <b>imagem e addon precisam ter o mesmo nome.</b></p>
     </section>
 
     <section class="head">
       <div>
         <span class="label">ADDONS</span>
         <h1>TODA A COLEÇÃO</h1>
-        <p id="total"></p>
+        <p id="total">Carregando arquivos do GitHub...</p>
       </div>
       <input class="search" id="search" placeholder="Buscar addon...">
       <select class="select" id="sort">
@@ -190,12 +175,7 @@ body:before{
     </section>
 
     <div class="tabs" id="tabs"></div>
-
-    <section class="feature" id="feature">
-      <b>DESTAQUE</b>
-      <img alt="Addon em destaque">
-    </section>
-
+    <div class="loading" id="loading">Buscando imagens e addons no GitHub...</div>
     <section class="grid" id="grid"></section>
     <p class="empty" id="empty">Nenhum addon encontrado.</p>
   </main>
@@ -212,17 +192,17 @@ body:before{
     </div>
 
     <section class="addon-hero">
-      <a class="addon-image" id="detailImageLink">
+      <div class="addon-image">
         <span class="tag" id="detailCat"></span>
         <img id="detailImg" alt="">
-      </a>
+      </div>
       <div class="addon-info">
         <h1 id="detailTitle"></h1>
         <div class="meta" id="detailMeta"></div>
         <div class="stars">★★★★★ <b style="color:#111;font-size:14px">5/5</b></div>
         <p id="detailDesc"></p>
-        <a class="btn download-main" id="detailDownload" download>BAIXAR ADDON</a>
-        <a class="btn" id="detailOpenImage">ABRIR IMAGEM</a>
+        <a class="btn download-main" id="detailDownload">BAIXAR ADDON</a>
+        <a class="btn" id="detailOpenImage" target="_blank">ABRIR IMAGEM</a>
       </div>
     </section>
 
@@ -230,102 +210,182 @@ body:before{
       <h2>COMO BAIXAR - PASSO A PASSO <span style="float:right;color:#00c875;font-size:12px">100% GRÁTIS</span></h2>
       <div class="step"><div class="num">1</div><div><b>TOQUE EM BAIXAR</b><br>O botão abre o arquivo do addon.</div></div>
       <div class="step"><div class="num">2</div><div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div></div>
-      <div class="step"><div class="num">3</div><div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar no Minecraft Bedrock.</div></div>
+      <div class="step"><div class="num">3</div><div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar.</div></div>
       <div class="account">CRIAR MINHA CONTA GRÁTIS</div>
     </section>
-
-    <a class="btn download-main" id="detailDownload2" download>BAIXAR ADDON</a>
 
     <section class="box">
       <h2>SOBRE ESTE ADDON</h2>
       <p id="detailAbout"></p>
     </section>
 
-    <section class="feedback">
-      <h2>ÁREA DE FEEDBACK</h2>
-      <div class="login-box">
-        FAÇA LOGIN PARA PARTICIPAR DA COMUNIDADE<br><br>
-        <button class="btn" onclick="indisponivel()" style="display:inline-grid;padding:0 22px">ENTRAR AGORA</button>
-      </div>
-    </section>
-
     <h2 class="more-title">CONTINUAR EXPLORANDO</h2>
     <section class="grid" id="moreGrid"></section>
-
-    <section class="discord">
-      <div>
-        <h2>ENTRE NO DISCORD</h2>
-        <p>Receba novos addons em primeira mão.</p>
-      </div>
-      <button class="btn" onclick="indisponivel()">ENTRAR AGORA</button>
-    </section>
-  </main>
-</section>
-
-<section id="imageView" class="hide">
-  <main class="wrap">
-    <div class="detail-top">
-      <a class="back" id="imageBack" href="#">← Voltar</a>
-      <div class="top-actions">
-        <button class="btn" onclick="indisponivel()">♡ FAVORITAR</button>
-        <button class="btn" id="imageShareBtn">COMPARTILHAR</button>
-      </div>
-    </div>
-
-    <section class="image-page">
-      <h1 id="imageTitle"></h1>
-      <img class="image-full" id="imageFull" alt="">
-      <br><br>
-      <a class="btn" id="imageDownload" download>BAIXAR IMAGEM</a>
-    </section>
-
-    <h2 class="more-title">OUTRAS IMAGENS</h2>
-    <section class="grid" id="imageMoreGrid"></section>
   </main>
 </section>
 
 <footer class="footer">© 2026 @ncmine · Todos os direitos reservados</footer>
 
 <script>
-const ADDONS=[
-  {nome:"Vein Miner",categoria:"utilidades",imagem:"veimaner.png",arquivo:"Utilities_Vein_Miner_v5.5 BP.zip",versao:"v5.5",descricao:"Minere vários blocos de uma vez no Minecraft Bedrock."},
-  {nome:"Night Vision",categoria:"visual",imagem:"nigth vision png.webp",arquivo:"NIGHT VISION ATUALIZADA.mcpack",versao:"v1.0",descricao:"Veja melhor no escuro com visão noturna atualizada."},
-  {nome:"Multiply Ores",categoria:"utilidades",imagem:"multiplidor de minerios png.webp",arquivo:"MultiplyOresby@ncmine.mcaddon",versao:"v1.0",descricao:"Multiplique minérios e deixe a mineração mais forte."},
-  {nome:"Backpack Addon",categoria:"utilidades",imagem:"Backpack addon.png",arquivo:"OTG Backpack v1.0.6.mcaddon",versao:"v1.0.6",descricao:"Adicione mochilas para carregar mais itens nas aventuras."},
-  {nome:"Camera Addon",categoria:"visual",imagem:"camera addon.png",arquivo:"Cinecam by domikalmazika.mcaddon",versao:"v1.0",descricao:"Use câmera cinematográfica para vídeos e cenas."},
-  {nome:"Construção Addon",categoria:"construcao",imagem:"construção addon.png",arquivo:"Effortless Building v3.1.mcaddon",versao:"v3.1",descricao:"Construa mais rápido com ferramentas de construção."},
-  {nome:"Diamante Ultra 200%",categoria:"visual",imagem:"diamante 200x.webp",arquivo:"_MConverter.eu_diamond ultra 200%.mcpack",versao:"v1.0",descricao:"Textura de diamante com visual mais forte e destacado."},
-  {nome:"Mini Map Addon",categoria:"utilidades",imagem:"mini map addon.jpg",arquivo:"Real Minimap Add-On addon.mcaddon",versao:"v1.0",descricao:"Adicione um minimapa para explorar melhor seu mundo."},
-  {nome:"Java Spawn In Bedrock",categoria:"java",imagem:"mob boster java.png",arquivo:"JavaSpawnInBedrock.mcpack",versao:"v1.0",descricao:"Deixe alguns comportamentos parecidos com Java no Bedrock."},
-  {nome:"OP Villagers",categoria:"utilidades",imagem:"op vilagers png.webp",arquivo:"oneesmeralde.mcpack",versao:"v1.0",descricao:"Villagers com trocas mais fortes e úteis."},
-  {nome:"Afk Chunk Loader",categoria:"utilidades",imagem:"Afk_Chunk_Loader.jpg",arquivo:"Afk_Chunk_Loader_bot.mcaddon",versao:"v1.0",descricao:"Mantenha chunks carregados para farms e sistemas."},
-  {nome:"Simple Waystone",categoria:"utilidades",imagem:"Backpack addon.png",arquivo:"Simple_Waystone_v8.2_Full.mcaddon",versao:"v8.2",descricao:"Sistema de teleporte com waystones para seu mundo."}
-];
+const GITHUB_OWNER = "mcmods123";
+const GITHUB_REPO = "CyMC1";
+const GITHUB_BRANCH = "main";
 
-const $=s=>document.querySelector(s);
-const grid=$("#grid"),search=$("#search"),total=$("#total"),empty=$("#empty"),sort=$("#sort"),tabs=$("#tabs");
-let categoriaAtual="todos";
+const IMAGE_DIR = "imagens";
+const ADDON_DIR = "addons";
+
+const IMAGE_EXT = ["png","jpg","jpeg","webp","gif"];
+const ADDON_EXT = ["mcaddon","mcpack","zip","m"];
+
+let ADDONS = [];
+let categoriaAtual = "todos";
 let noticeTimer;
 
-function link(p,n){return p+"/"+String(n).split("/").map(encodeURIComponent).join("/")}
-function slug(t){return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
-function catName(c){return({todos:"TODOS",utilidades:"UTILIDADES",visual:"VISUAL",construcao:"CONSTRUÇÃO",java:"JAVA",mobs:"MOBS",textura:"TEXTURA",mapas:"MAPAS"}[c]||c.toUpperCase())}
+const $ = s => document.querySelector(s);
+const grid = $("#grid");
+const search = $("#search");
+const total = $("#total");
+const empty = $("#empty");
+const sort = $("#sort");
+const tabs = $("#tabs");
 
-function indisponivel(){
+function indisponivel(){aviso("Indisponível por enquanto")}
+
+function aviso(texto){
   const n=$("#notice");
-  n.textContent="Indisponível por enquanto";
+  n.textContent=texto;
   n.classList.add("show");
   clearTimeout(noticeTimer);
   noticeTimer=setTimeout(()=>n.classList.remove("show"),2200);
 }
 
-function init(){
-  $("#heroCount").textContent=`${ADDONS.length}+ ADDONS GRÁTIS`;
-  $("#bgArt").innerHTML=ADDONS.slice(0,5).map(a=>`<img class="bg-card" src="${link("imagens",a.imagem)}" alt="">`).join("");
-  $("#feature img").src=link("imagens",ADDONS[0].imagem);
+function ext(name){
+  return String(name).split(".").pop().toLowerCase();
+}
 
-  const cats=["todos",...new Set(ADDONS.map(a=>a.categoria))];
-  tabs.innerHTML=cats.map(c=>`<button class="${c=="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
+function semExt(name){
+  return String(name).replace(/\.[^/.]+$/,"");
+}
+
+function normalizar(texto){
+  return semExt(texto)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .replace(/\b(addon|add-on|mcaddon|mcpack|minecraft|bedrock|v[0-9]+|png|jpg|webp|gif)\b/g,"")
+    .replace(/[^a-z0-9]+/g,"-")
+    .replace(/^-|-$/g,"");
+}
+
+function tituloArquivo(nome){
+  return semExt(nome)
+    .replace(/[-_]+/g," ")
+    .replace(/\s+/g," ")
+    .trim()
+    .replace(/\b\w/g,l=>l.toUpperCase());
+}
+
+function slug(t){
+  return normalizar(t);
+}
+
+function categoriaAuto(nome){
+  const n = normalizar(nome);
+  if(n.includes("vision") || n.includes("camera") || n.includes("light") || n.includes("luz") || n.includes("diamante")) return "visual";
+  if(n.includes("build") || n.includes("construcao")) return "construcao";
+  if(n.includes("java")) return "java";
+  return "utilidades";
+}
+
+function catName(c){
+  return {todos:"TODOS",utilidades:"UTILIDADES",visual:"VISUAL",construcao:"CONSTRUÇÃO",java:"JAVA"}[c] || c.toUpperCase();
+}
+
+async function listarPasta(pasta){
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${pasta}?ref=${GITHUB_BRANCH}`;
+  const res = await fetch(url);
+  if(!res.ok) throw new Error("Não consegui ler a pasta " + pasta);
+  const data = await res.json();
+  return data.filter(item => item.type === "file");
+}
+
+function montarAddons(imagens, arquivos){
+  const imagensPorNome = new Map();
+
+  imagens.forEach(img => {
+    imagensPorNome.set(normalizar(img.name), img);
+  });
+
+  const addons = arquivos.map(arq => {
+    const chave = normalizar(arq.name);
+    const img = imagensPorNome.get(chave);
+
+    return {
+      nome: tituloArquivo(arq.name),
+      categoria: categoriaAuto(arq.name),
+      imagem: img ? img.download_url : "",
+      imagemNome: img ? img.name : "",
+      arquivo: arq.download_url,
+      arquivoNome: arq.name,
+      versao: "v1.0",
+      descricao: img
+        ? "Addon carregado automaticamente das pastas imagens e addons."
+        : "Addon carregado automaticamente, mas ainda não encontrou imagem com o mesmo nome."
+    };
+  });
+
+  imagens.forEach(img => {
+    const chave = normalizar(img.name);
+    const existeAddon = arquivos.some(arq => normalizar(arq.name) === chave);
+
+    if(!existeAddon){
+      addons.push({
+        nome: tituloArquivo(img.name),
+        categoria: categoriaAuto(img.name),
+        imagem: img.download_url,
+        imagemNome: img.name,
+        arquivo: "",
+        arquivoNome: "",
+        versao: "IMG",
+        descricao: "Imagem encontrada, mas ainda não existe addon com o mesmo nome na pasta addons."
+      });
+    }
+  });
+
+  return addons;
+}
+
+async function carregarAutomatico(){
+  try{
+    const [imagensRaw, addonsRaw] = await Promise.all([
+      listarPasta(IMAGE_DIR),
+      listarPasta(ADDON_DIR)
+    ]);
+
+    const imagens = imagensRaw.filter(f => IMAGE_EXT.includes(ext(f.name)));
+    const arquivos = addonsRaw.filter(f => ADDON_EXT.includes(ext(f.name)));
+
+    ADDONS = montarAddons(imagens, arquivos);
+
+    $("#loading").style.display = "none";
+    iniciarSite();
+  }catch(e){
+    $("#loading").textContent = "Erro ao carregar do GitHub. Confira se as pastas imagens e addons existem e se o repositório está público.";
+    console.error(e);
+  }
+}
+
+function iniciarSite(){
+  $("#heroCount").textContent = `${ADDONS.length}+ ARQUIVOS GRÁTIS`;
+
+  $("#bgArt").innerHTML = ADDONS
+    .filter(a => a.imagem)
+    .slice(0,5)
+    .map(a => `<img class="bg-card" src="${a.imagem}" alt="">`)
+    .join("");
+
+  const cats = ["todos", ...new Set(ADDONS.map(a => a.categoria))];
+  tabs.innerHTML = cats.map(c => `<button class="${c==="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
 
   document.querySelectorAll("#tabs button").forEach(b=>{
     b.onclick=()=>{
@@ -333,126 +393,100 @@ function init(){
       b.classList.add("active");
       categoriaAtual=b.dataset.cat;
       renderHome();
-    }
+    };
   });
 
-  search.oninput=renderHome;
-  sort.onchange=renderHome;
-  window.onhashchange=route;
+  search.oninput = renderHome;
+  sort.onchange = renderHome;
+  window.onhashchange = route;
   route();
 }
 
 function card(a){
+  const temDownload = Boolean(a.arquivo);
+  const imagem = a.imagem || "";
+  const imagemHtml = imagem
+    ? `<img src="${imagem}" alt="${a.nome}">`
+    : `<div style="display:grid;place-items:center;height:100%;padding:20px;text-align:center">SEM IMAGEM COM O MESMO NOME</div>`;
+
   return `
   <article class="card">
     <a class="pic" href="#addon/${slug(a.nome)}">
       <span class="tag">${catName(a.categoria)}</span>
-      <span class="ver">${a.versao||"v1.0"}</span>
-      <img src="${link("imagens",a.imagem)}" alt="${a.nome}" onerror="this.parentElement.classList.add('missing');this.remove();">
+      <span class="ver">${a.versao}</span>
+      ${imagemHtml}
     </a>
     <div class="body">
       <h3>${a.nome}</h3>
-      <div class="meta">Minecraft Bedrock</div>
+      <div class="meta">${a.arquivoNome || "Só imagem"}</div>
       <div class="desc">${a.descricao}</div>
       <div class="stars">★★★★★</div>
       <div class="actions">
-        <a class="btn" href="#addon/${slug(a.nome)}">BAIXAR</a>
-        <a class="btn" href="#imagem/${slug(a.nome)}">IMG</a>
+        <a class="btn" href="#addon/${slug(a.nome)}">${temDownload ? "BAIXAR" : "VER"}</a>
+        <a class="btn" href="${imagem || "#"}" target="_blank">IMG</a>
       </div>
     </div>
   </article>`;
 }
 
 function renderHome(){
-  const busca=search.value.trim().toLowerCase();
+  const busca = search.value.trim().toLowerCase();
 
-  let lista=ADDONS.filter(a=>{
-    return (categoriaAtual==="todos"||a.categoria===categoriaAtual) &&
-    (a.nome.toLowerCase().includes(busca)||a.arquivo.toLowerCase().includes(busca)||a.categoria.toLowerCase().includes(busca));
+  let lista = ADDONS.filter(a=>{
+    return (categoriaAtual==="todos" || a.categoria===categoriaAtual) &&
+    (a.nome.toLowerCase().includes(busca) || a.arquivoNome.toLowerCase().includes(busca) || a.imagemNome.toLowerCase().includes(busca));
   });
 
-  if(sort.value==="az")lista.sort((a,b)=>a.nome.localeCompare(b.nome));
+  if(sort.value==="az") lista.sort((a,b)=>a.nome.localeCompare(b.nome));
 
-  total.textContent=`${lista.length} addons curados. Busque, filtre e baixe.`;
-  empty.style.display=lista.length?"none":"block";
-  grid.innerHTML=lista.map(card).join("");
+  total.textContent = `${lista.length} itens encontrados automaticamente.`;
+  empty.style.display = lista.length ? "none" : "block";
+  grid.innerHTML = lista.map(card).join("");
 }
 
 function renderDetail(a){
   $("#homeView").classList.add("hide");
-  $("#imageView").classList.add("hide");
   $("#detailView").classList.remove("hide");
 
-  $("#detailCat").textContent=catName(a.categoria);
-  $("#detailImg").src=link("imagens",a.imagem);
-  $("#detailImg").alt=a.nome;
-  $("#detailImageLink").href="#imagem/"+slug(a.nome);
-  $("#detailOpenImage").href="#imagem/"+slug(a.nome);
+  $("#detailCat").textContent = catName(a.categoria);
+  $("#detailImg").src = a.imagem || "";
+  $("#detailImg").alt = a.nome;
+  $("#detailTitle").textContent = a.nome.toUpperCase();
+  $("#detailMeta").innerHTML = `Arquivo: <b>${a.arquivoNome || "sem download"}</b>`;
+  $("#detailDesc").textContent = a.descricao;
+  $("#detailAbout").textContent = "Este item foi carregado automaticamente do GitHub. Para juntar imagem e addon sozinho, use o mesmo nome nos dois arquivos.";
 
-  $("#detailTitle").textContent=a.nome.toUpperCase();
-  $("#detailMeta").innerHTML=`Minecraft Bedrock &nbsp; 2026-06-21 &nbsp; <b>${a.versao||"v1.0"}</b>`;
-  $("#detailDesc").textContent=a.descricao;
-  $("#detailAbout").textContent=a.descricao+" Baixe o arquivo, abra no Minecraft Bedrock e ative no seu mundo. Se a imagem ou download não abrir no GitHub, confira se o nome do arquivo está exatamente igual na pasta.";
+  $("#detailDownload").href = a.arquivo || "#";
+  $("#detailDownload").textContent = a.arquivo ? "BAIXAR " + a.nome.toUpperCase() : "DOWNLOAD INDISPONÍVEL";
+  $("#detailDownload").onclick = a.arquivo ? null : e => {e.preventDefault(); aviso("Coloque o addon com o mesmo nome da imagem")};
 
-  $("#detailDownload").href=link("addons",a.arquivo);
-  $("#detailDownload").textContent="BAIXAR "+a.nome.toUpperCase();
-
-  $("#detailDownload2").href=link("addons",a.arquivo);
-  $("#detailDownload2").textContent="BAIXAR "+a.nome.toUpperCase();
+  $("#detailOpenImage").href = a.imagem || "#";
 
   $("#shareBtn").onclick=()=>{
-    if(navigator.clipboard){navigator.clipboard.writeText(location.href)}
-    indisponivel();
+    if(navigator.clipboard) navigator.clipboard.writeText(location.href);
+    aviso("Link copiado");
   };
 
-  $("#moreGrid").innerHTML=ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
-  scrollTo(0,0);
-}
-
-function renderImage(a){
-  $("#homeView").classList.add("hide");
-  $("#detailView").classList.add("hide");
-  $("#imageView").classList.remove("hide");
-
-  $("#imageBack").href="#addon/"+slug(a.nome);
-  $("#imageTitle").textContent="IMAGEM - "+a.nome.toUpperCase();
-  $("#imageFull").src=link("imagens",a.imagem);
-  $("#imageFull").alt=a.nome;
-  $("#imageDownload").href=link("imagens",a.imagem);
-  $("#imageDownload").download=a.imagem;
-
-  $("#imageShareBtn").onclick=()=>{
-    if(navigator.clipboard){navigator.clipboard.writeText(location.href)}
-    indisponivel();
-  };
-
-  $("#imageMoreGrid").innerHTML=ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
+  $("#moreGrid").innerHTML = ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
   scrollTo(0,0);
 }
 
 function route(){
-  const hash=location.hash;
+  const hash = location.hash;
 
   if(hash.startsWith("#addon/")){
-    const id=hash.replace("#addon/","");
-    const addon=ADDONS.find(a=>slug(a.nome)===id);
+    const id = hash.replace("#addon/","");
+    const addon = ADDONS.find(a => slug(a.nome) === id);
     if(addon){renderDetail(addon);return}
   }
 
-  if(hash.startsWith("#imagem/")){
-    const id=hash.replace("#imagem/","");
-    const addon=ADDONS.find(a=>slug(a.nome)===id);
-    if(addon){renderImage(addon);return}
-  }
-
   $("#detailView").classList.add("hide");
-  $("#imageView").classList.add("hide");
   $("#homeView").classList.remove("hide");
   renderHome();
   scrollTo(0,0);
 }
 
-init();
+carregarAutomatico();
 </script>
 
 </body>
