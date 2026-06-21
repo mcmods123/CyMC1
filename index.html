@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -16,126 +15,62 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#0a0a0a;
+background:#111;
 color:white;
 }
 
 header{
-background:#111;
-border-bottom:3px solid #8b5cf6;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-.logo{
-font-size:32px;
-font-weight:bold;
-color:#a855f7;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#a855f7;
-}
-
-.hero{
-padding:100px 20px;
+background:#000;
+padding:20px;
+border-bottom:4px solid #8b5cf6;
 text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
-linear-gradient(135deg,#7c3aed,#111);
 }
 
-.hero h1{
-font-size:65px;
-margin-bottom:15px;
+header h1{
+font-size:48px;
+color:#a855f7;
 }
 
-.hero p{
-font-size:22px;
-color:#ddd;
-max-width:700px;
-margin:auto;
-margin-bottom:25px;
-}
-
-.counter{
-display:inline-block;
-background:#8b5cf6;
-padding:15px 30px;
-border-radius:12px;
-font-weight:bold;
-font-size:18px;
+header p{
+color:#ccc;
+margin-top:10px;
 }
 
 .search{
-padding:40px 20px;
+padding:25px;
 text-align:center;
 }
 
 .search input{
 width:90%;
 max-width:800px;
-padding:15px;
-border:none;
-border-radius:10px;
-font-size:18px;
-background:#181818;
+padding:14px;
+font-size:16px;
+border:2px solid #8b5cf6;
+background:#1a1a1a;
 color:white;
-}
-
-.categorias{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:10px;
-padding-bottom:30px;
-}
-
-.categorias span{
-background:#181818;
-border:1px solid #8b5cf6;
-padding:10px 15px;
-border-radius:20px;
-}
-
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:20px;
+outline:none;
 }
 
 .mods{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
-padding:30px;
+padding:25px;
 max-width:1400px;
 margin:auto;
 }
 
 .card{
-background:#181818;
-border:2px solid #8b5cf6;
-border-radius:15px;
-overflow:hidden;
+background:#1a1a1a;
+border:3px solid black;
 box-shadow:8px 8px 0 #8b5cf6;
-transition:.3s;
+overflow:hidden;
+transition:.2s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translate(-3px,-3px);
 box-shadow:12px 12px 0 #a855f7;
 }
 
@@ -152,17 +87,17 @@ padding:15px;
 .tag{
 display:inline-block;
 background:#8b5cf6;
-padding:5px 10px;
-border-radius:5px;
+padding:6px 10px;
 font-size:12px;
+font-weight:bold;
 margin-bottom:10px;
 }
 
-.info h3{
+h3{
 margin-bottom:10px;
 }
 
-.info p{
+.desc{
 color:#bbb;
 font-size:14px;
 margin-bottom:15px;
@@ -174,228 +109,145 @@ text-align:center;
 padding:12px;
 background:#8b5cf6;
 color:white;
-text-decoration:none;
 font-weight:bold;
-border-radius:8px;
+text-decoration:none;
 }
 
 .download:hover{
 background:#a855f7;
 }
 
-.embreve{
-opacity:.6;
-}
-
 footer{
-margin-top:60px;
-padding:40px;
+margin-top:40px;
+padding:25px;
+background:#000;
 text-align:center;
-background:#111;
-border-top:3px solid #8b5cf6;
-}
-
-footer h3{
-color:#a855f7;
-margin-bottom:10px;
+border-top:4px solid #8b5cf6;
 }
 
 </style>
-
 </head>
-
 <body>
 
 <header>
-
-<div class="logo">
-⚡ CY MODS
-</div>
-
-<nav>
-<a href="#">ADDONS</a>
-<a href="#">DISCORD</a>
-<a href="#">YOUTUBE</a>
-</nav>
-
+<h1>⚡ CY MODS ⚡</h1>
+<p>Rumo a 113+ Addons para Minecraft Bedrock</p>
 </header>
 
-<section class="hero">
-
-<h1>CY MODS</h1>
-
-<p>
-A sua biblioteca de addons para Minecraft Bedrock.
-Downloads rápidos, grátis e organizados.
-</p>
-
-<div class="counter">
-🚀 Rumo a 113+ Addons
+<div class="search">
+<input type="text" id="search" placeholder="Buscar addon..." onkeyup="buscarAddon()">
 </div>
 
-</section>
-
-<section class="search">
-
-<input type="text" placeholder="Buscar addon...">
-
-</section>
-
-<div class="categorias">
-
-<span>Todos</span> <span>Utilidades</span> <span>Mineração</span> <span>Villagers</span> <span>Visual</span> <span>PvP</span> <span>Mobs</span>
-
-</div>
-
-<h2 class="section-title">
-Addons Disponíveis
-</h2>
-
-<div class="mods">
-
-<!-- VEIN MINER -->
+<div class="mods" id="mods">
 
 <div class="card">
-
 <img src="imagens/veimaner.png">
-
 <div class="info">
-
 <span class="tag">UTILIDADES</span>
-
 <h3>VEIN MINER</h3>
-
-<p>
-Quebre veios inteiros de minério automaticamente.
-</p>
-
-<a class="download"
-href="addons/Utilities_Vein_Miner_v5.5 BP.zip">
-BAIXAR </a>
-
+<p class="desc">Quebre veios inteiros de minério de uma vez.</p>
+<a class="download" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
 </div>
 </div>
-
-<!-- NIGHT VISION -->
 
 <div class="card">
-
 <img src="imagens/nigth vision png.webp">
-
 <div class="info">
-
 <span class="tag">VISUAL</span>
-
 <h3>NIGHT VISION</h3>
-
-<p>
-Visão noturna permanente para qualquer ambiente.
-</p>
-
-<a class="download"
-href="addons/NIGHT VISION ATUALIZADA.mcpack">
-BAIXAR </a>
-
+<p class="desc">Visão noturna permanente.</p>
+<a class="download" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
 </div>
 </div>
-
-<!-- OP VILLAGERS -->
 
 <div class="card">
-
 <img src="imagens/op vilagers png.webp">
-
 <div class="info">
-
 <span class="tag">VILLAGERS</span>
-
 <h3>OP VILLAGERS</h3>
-
-<p>
-Trocas extremamente vantajosas com aldeões.
-</p>
-
-<a class="download"
-href="addons/oneesmeralde.mcpack">
-BAIXAR </a>
-
+<p class="desc">Trocas extremamente vantajosas.</p>
+<a class="download" href="addons/oneesmeralde.mcpack">BAIXAR</a>
 </div>
 </div>
-
-<!-- MULTIPLY ORES -->
 
 <div class="card">
-
 <img src="imagens/multiplidor de minerios png.webp">
-
 <div class="info">
-
 <span class="tag">MINERAÇÃO</span>
-
 <h3>MULTIPLY ORES</h3>
-
-<p>
-Multiplique a quantidade de minérios obtidos.
-</p>
-
-<a class="download"
-href="addons/MultiplyOresby@ncmine.mcaddon">
-BAIXAR </a>
-
+<p class="desc">Multiplique os minérios obtidos.</p>
+<a class="download" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<!-- ESPAÇOS FUTUROS -->
-
-<div class="card embreve">
+<div class="card">
+<img src="imagens/Afk_Chunk_Loader.jpg">
 <div class="info">
-<span class="tag">EM BREVE</span>
-<h3>NOVO ADDON</h3>
-<p>Reservado para futuros addons.</p>
+<span class="tag">UTILIDADES</span>
+<h3>AFK CHUNK LOADER</h3>
+<p class="desc">Mantém chunks carregados automaticamente.</p>
+<a class="download" href="addons/Afk_Chunk_Loader_bot.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card embreve">
+<div class="card">
+<img src="imagens/camera addon.png">
 <div class="info">
-<span class="tag">EM BREVE</span>
-<h3>NOVO ADDON</h3>
-<p>Reservado para futuros addons.</p>
+<span class="tag">CÂMERA</span>
+<h3>CINECAM</h3>
+<p class="desc">Crie gravações cinematográficas.</p>
+<a class="download" href="addons/Cinecam by domikalmazika.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card embreve">
+<div class="card">
+<img src="imagens/construção addon.png">
 <div class="info">
-<span class="tag">EM BREVE</span>
-<h3>NOVO ADDON</h3>
-<p>Reservado para futuros addons.</p>
+<span class="tag">CONSTRUÇÃO</span>
+<h3>EFFORTLESS BUILDING</h3>
+<p class="desc">Construa estruturas gigantes rapidamente.</p>
+<a class="download" href="addons/Effortless Building v3.1.mcaddon">BAIXAR</a>
 </div>
 </div>
 
-<div class="card embreve">
+<div class="card">
+<img src="imagens/mob boster java.png">
 <div class="info">
-<span class="tag">EM BREVE</span>
-<h3>NOVO ADDON</h3>
-<p>Reservado para futuros addons.</p>
+<span class="tag">JAVA</span>
+<h3>JAVA SPAWN IN BEDROCK</h3>
+<p class="desc">Recursos inspirados na versão Java.</p>
+<a class="download" href="addons/JavaSpawnInBedrock.mcpack">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/600x300/111111/8b5cf6?text=Diamond+Ultra">
+<div class="info">
+<span class="tag">MINERAÇÃO</span>
+<h3>DIAMOND ULTRA 200%</h3>
+<p class="desc">Mais diamantes e progressão acelerada.</p>
+<a class="download" href="addons/_MConverter.eu_diamond ultra 200%.mcpack">BAIXAR</a>
 </div>
 </div>
 
 </div>
 
 <footer>
-
-<h3>⚡ CY MODS</h3>
-
-<p>
-Minecraft Bedrock Addons
-</p>
-
-<br>
-
-<p>
-Rumo aos 113+ addons.
-</p>
-
+<h3>CY MODS</h3>
+<p>Biblioteca de Addons Minecraft Bedrock</p>
 </footer>
+
+<script>
+function buscarAddon() {
+let input = document.getElementById("search").value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+let texto = card.innerText.toLowerCase();
+card.style.display = texto.includes(input) ? "block" : "none";
+});
+}
+</script>
 
 </body>
 </html>
