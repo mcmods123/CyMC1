@@ -6,7 +6,7 @@
 
 <title>CY Mods</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,18 +17,73 @@ box-sizing:border-box;
 }
 
 body{
-background:#0b0b0f;
+background:#09090b;
 font-family:'Rajdhani',sans-serif;
 color:white;
+overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at 20% 20%, rgba(168,85,247,.25), transparent 300px),
+radial-gradient(circle at 80% 20%, rgba(124,58,237,.25), transparent 350px),
+radial-gradient(circle at 50% 90%, rgba(147,51,234,.20), transparent 300px);
+
+animation:bgmove 15s infinite alternate ease-in-out;
+
+z-index:-2;
+}
+
+@keyframes bgmove{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(-40px);
+}
+}
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+z-index:-1;
+}
+
+.particles span{
+position:absolute;
+width:4px;
+height:4px;
+background:#a855f7;
+border-radius:50%;
+opacity:.5;
+animation:float 20s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100px);
+}
 }
 
 header{
 height:80px;
-background:#111;
-border-bottom:2px solid #7c3aed;
+background:#111111;
+border-bottom:1px solid #7c3aed;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:0 40px;
 }
 
@@ -41,13 +96,13 @@ color:#a855f7;
 
 nav{
 display:flex;
-gap:30px;
+gap:25px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-weight:700;
+font-weight:600;
 }
 
 nav a:hover{
@@ -57,62 +112,54 @@ color:#a855f7;
 .hero{
 padding:100px 20px;
 text-align:center;
-background:linear-gradient(
-180deg,
-#111,
-#0b0b0f
-);
 }
 
 .hero h1{
-font-size:80px;
 font-family:'Orbitron';
+font-size:70px;
 color:#a855f7;
 }
 
 .hero p{
-font-size:24px;
+font-size:22px;
 margin-top:15px;
+color:#d4d4d8;
 }
 
-.stats{
-margin-top:25px;
-font-size:20px;
-}
-
-.search-area{
+.search-box{
 display:flex;
 justify-content:center;
 padding:30px;
 }
 
-.search{
+.search-box input{
 width:700px;
 max-width:90%;
 height:55px;
 padding:15px;
-border:none;
-outline:none;
 background:#18181b;
+border:2px solid #7c3aed;
 color:white;
 font-size:18px;
-border:2px solid #7c3aed;
+outline:none;
 }
 
 .categories{
 display:flex;
 justify-content:center;
-gap:12px;
+gap:10px;
 flex-wrap:wrap;
 padding:20px;
 }
+  <style>
 
 .category{
-background:#15151c;
-border:2px solid #7c3aed;
-padding:12px 25px;
+padding:10px 20px;
+background:#18181b;
+border:1px solid #7c3aed;
 cursor:pointer;
 font-weight:700;
+transition:.3s;
 }
 
 .category:hover{
@@ -120,31 +167,33 @@ background:#7c3aed;
 }
 
 .addons{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-gap:25px;
 padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+gap:25px;
 }
 
 .card{
-background:#111;
-border:2px solid #222;
+background:#111111;
+border:1px solid #27272a;
+overflow:hidden;
 transition:.3s;
 }
 
 .card:hover{
-border-color:#7c3aed;
-transform:translateY(-5px);
+transform:translateY(-8px);
+border-color:#a855f7;
+box-shadow:0 0 30px rgba(168,85,247,.4);
 }
 
 .card img{
 width:100%;
-height:180px;
+height:200px;
 object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:18px;
 }
 
 .card-title{
@@ -154,19 +203,20 @@ margin-bottom:10px;
 }
 
 .card-desc{
-color:#bdbdbd;
+color:#a1a1aa;
 margin-bottom:15px;
 }
 
 .download-btn{
 display:block;
 width:100%;
-background:#7c3aed;
-color:white;
-text-align:center;
 padding:14px;
+background:#7c3aed;
+text-align:center;
 text-decoration:none;
+color:white;
 font-weight:700;
+transition:.3s;
 }
 
 .download-btn:hover{
@@ -176,8 +226,8 @@ background:#9333ea;
 footer{
 margin-top:80px;
 padding:40px;
-background:#111;
-border-top:2px solid #7c3aed;
+background:#111111;
+border-top:1px solid #7c3aed;
 text-align:center;
 }
 
@@ -185,56 +235,64 @@ text-align:center;
 </head>
 <body>
 
+<div class="particles">
+
+<span style="left:5%;animation-delay:0s"></span>
+<span style="left:15%;animation-delay:2s"></span>
+<span style="left:25%;animation-delay:5s"></span>
+<span style="left:35%;animation-delay:3s"></span>
+<span style="left:45%;animation-delay:1s"></span>
+<span style="left:55%;animation-delay:4s"></span>
+<span style="left:65%;animation-delay:6s"></span>
+<span style="left:75%;animation-delay:2s"></span>
+<span style="left:85%;animation-delay:7s"></span>
+<span style="left:95%;animation-delay:5s"></span>
+
+</div>
+
 <header>
+
 <div class="logo">CY MODS</div>
 
 <nav>
 <a href="#">Addons</a>
 <a href="#">Discord</a>
 <a href="#">YouTube</a>
-<a href="#">Sobre</a>
+<a href="#">Contato</a>
 </nav>
+
 </header>
 
 <section class="hero">
 
-<h1>117+ ADDONS</h1>
+<h1>CY MODS</h1>
 
-<p>A maior biblioteca de addons Bedrock da CY Mods</p>
-
-<div class="stats">
-⬇ Downloads rápidos • ✔ Arquivos verificados
-</div>
+<p>
+Biblioteca de Addons Minecraft Bedrock
+</p>
 
 </section>
 
-<div class="search-area">
-<input
-class="search"
-placeholder="Buscar addon..."
->
+<div class="search-box">
+<input type="text" placeholder="Buscar addon...">
 </div>
 
 <div class="categories">
+
 <div class="category">Todos</div>
 <div class="category">Utilidades</div>
-<div class="category">Construção</div>
 <div class="category">Visual</div>
+<div class="category">Construção</div>
 <div class="category">Java</div>
-<div class="category">Minérios</div>
-<div class="category">Outros</div>
+
 </div>
 
 <section class="addons">
-
-<div class="card">
+  <div class="card">
 <img src="veimaner.png">
 <div class="card-content">
 <div class="card-title">Vein Miner</div>
-<div class="card-desc">
-Mine veios inteiros instantaneamente.
-</div>
-<a href="#" class="download-btn">BAIXAR</a>
+<a class="download-btn" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
 </div>
 </div>
 
@@ -242,21 +300,7 @@ Mine veios inteiros instantaneamente.
 <img src="nigth vision png.webp">
 <div class="card-content">
 <div class="card-title">Night Vision</div>
-<div class="card-desc">
-Visão noturna permanente.
-</div>
-<a href="#" class="download-btn">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="construção addon.png">
-<div class="card-content">
-<div class="card-title">Effortless Building</div>
-<div class="card-desc">
-Construa rapidamente.
-</div>
-<a href="#" class="download-btn">BAIXAR</a>
+<a class="download-btn" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
 </div>
 </div>
 
@@ -264,21 +308,73 @@ Construa rapidamente.
 <img src="multiplidor de minerios png.webp">
 <div class="card-content">
 <div class="card-title">Multiply Ores</div>
-<div class="card-desc">
-Mais recursos ao minerar.
-</div>
-<a href="#" class="download-btn">BAIXAR</a>
+<a class="download-btn" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
 </div>
 </div>
 
+<div class="card">
+<img src="op vilagers png.webp">
+<div class="card-content">
+<div class="card-title">One Emerald</div>
+<a class="download-btn" href="addons/oneesmeralde.mcpack">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="Afk_Chunk_Loader.jpg">
+<div class="card-content">
+<div class="card-title">AFK Chunk Loader</div>
+<a class="download-btn" href="addons/Afk_Chunk_Loader_bot.mcaddon">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="camera addon.png">
+<div class="card-content">
+<div class="card-title">Cinecam</div>
+<a class="download-btn" href="addons/Cinecam by domikalmazika.mcaddon">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="construção addon.png">
+<div class="card-content">
+<div class="card-title">Effortless Building</div>
+<a class="download-btn" href="addons/Effortless Building v3.1.mcaddon">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="mob boster java.png">
+<div class="card-content">
+<div class="card-title">Java Spawn In Bedrock</div>
+<a class="download-btn" href="addons/JavaSpawnInBedrock.mcpack">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="diamante 200x.webp">
+<div class="card-content">
+<div class="card-title">Diamond Ultra 200%</div>
+<a class="download-btn" href="addons/_MConverter.eu_diamond ultra 200%.mcpack">BAIXAR</a>
+</div>
+</div>
+
+<div class="card">
+<img src="mini map addon.jpg">
+<div class="card-content">
+<div class="card-title">Real Minimap</div>
+<a class="download-btn" href="addons/Real Minimap Add-On addon.mcaddon">BAIXAR</a>
+</div>
+</div>
 </section>
 
 <footer>
 
-<h2>CY Mods</h2>
+<h2>CY MODS</h2>
 
 <p>
-Hub brasileiro de addons para Minecraft Bedrock.
+Todos os créditos pertencem aos criadores originais dos addons.
 </p>
 
 </footer>
