@@ -1,383 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CY Mods</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Addons Minecraft Bedrock</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#09090b;
-font-family:'Rajdhani',sans-serif;
-color:white;
-overflow-x:hidden;
-position:relative;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(circle at 20% 20%, rgba(168,85,247,.25), transparent 300px),
-radial-gradient(circle at 80% 20%, rgba(124,58,237,.25), transparent 350px),
-radial-gradient(circle at 50% 90%, rgba(147,51,234,.20), transparent 300px);
-
-animation:bgmove 15s infinite alternate ease-in-out;
-
-z-index:-2;
-}
-
-@keyframes bgmove{
-from{
-transform:translateY(0px);
-}
-to{
-transform:translateY(-40px);
-}
-}
-
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-pointer-events:none;
-z-index:-1;
-}
-
-.particles span{
-position:absolute;
-width:4px;
-height:4px;
-background:#a855f7;
-border-radius:50%;
-opacity:.5;
-animation:float 20s linear infinite;
-}
-
-@keyframes float{
-from{
-transform:translateY(100vh);
-}
-to{
-transform:translateY(-100px);
-}
-}
-
-header{
-height:80px;
-background:#111111;
-border-bottom:1px solid #7c3aed;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 40px;
-}
-
-.logo{
-font-family:'Orbitron';
-font-size:28px;
-font-weight:900;
-color:#a855f7;
-}
-
-nav{
-display:flex;
-gap:25px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:600;
-}
-
-nav a:hover{
-color:#a855f7;
-}
-
-.hero{
-padding:100px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-family:'Orbitron';
-font-size:70px;
-color:#a855f7;
-}
-
-.hero p{
-font-size:22px;
-margin-top:15px;
-color:#d4d4d8;
-}
-
-.search-box{
-display:flex;
-justify-content:center;
-padding:30px;
-}
-
-.search-box input{
-width:700px;
-max-width:90%;
-height:55px;
-padding:15px;
-background:#18181b;
-border:2px solid #7c3aed;
-color:white;
-font-size:18px;
-outline:none;
-}
-
-.categories{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-padding:20px;
-}
-  <style>
-
-.category{
-padding:10px 20px;
-background:#18181b;
-border:1px solid #7c3aed;
-cursor:pointer;
-font-weight:700;
-transition:.3s;
-}
-
-.category:hover{
-background:#7c3aed;
-}
-
-.addons{
-padding:40px;
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-gap:25px;
-}
-
-.card{
-background:#111111;
-border:1px solid #27272a;
-overflow:hidden;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#a855f7;
-box-shadow:0 0 30px rgba(168,85,247,.4);
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.card-content{
-padding:18px;
-}
-
-.card-title{
-font-size:24px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.card-desc{
-color:#a1a1aa;
-margin-bottom:15px;
-}
-
-.download-btn{
-display:block;
-width:100%;
-padding:14px;
-background:#7c3aed;
-text-align:center;
-text-decoration:none;
-color:white;
-font-weight:700;
-transition:.3s;
-}
-
-.download-btn:hover{
-background:#9333ea;
-}
-
-footer{
-margin-top:80px;
-padding:40px;
-background:#111111;
-border-top:1px solid #7c3aed;
-text-align:center;
-}
-
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111;background-image:linear-gradient(45deg,#eee 25%,transparent 25%),linear-gradient(-45deg,#eee 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eee 75%),linear-gradient(-45deg,transparent 75%,#eee 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
+.top{padding:28px 14px 36px;text-align:center;position:relative;overflow:hidden}.badge{display:inline-block;border:3px solid #111;box-shadow:5px 5px 0 #111;background:#fff;padding:7px 18px;font-weight:900}.live{margin:16px 0;color:#7b2cff;font-weight:900}.hero{display:inline-block;margin:12px auto;background:#7b2cff;color:#fff;font-size:clamp(42px,9vw,92px);line-height:.95;font-weight:1000;padding:8px 18px;box-shadow:8px 8px 0 #111;transform:rotate(-1deg)}.sub{font-size:20px;font-weight:900}.sub b{color:#7b2cff}.free{display:inline-block;margin-top:24px;border:2px dashed #b68cff;background:#fff;padding:14px 24px;font-weight:900}
+.nav{display:flex;gap:26px;align-items:center;background:#050505;color:#fff;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}.nav a{white-space:nowrap;text-decoration:none;color:#fff}.nav span{color:#7b2cff}
+.wrap{max-width:1200px;margin:auto;padding:24px 14px}.social{background:#fff;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:18px;text-align:center;margin-bottom:24px}.social h2{margin:0 0 14px;color:#7b2cff;letter-spacing:2px}.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.socials a{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;text-decoration:none;color:#111;font-weight:1000}.socials a:nth-child(2){background:linear-gradient(90deg,#8d35ff,#e23bba);color:#fff}
+.head{display:grid;grid-template-columns:1fr 390px 110px;gap:10px;align-items:end;margin:28px 0 16px}.head h1{font-size:54px;margin:0;font-weight:1000}.head p{margin:8px 0 0;color:#555}.search,.select{height:46px;border:3px solid #111;background:#fff;padding:0 14px;font-weight:900;font-size:15px}
+.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}.tabs button{border:3px solid #111;background:#fff;padding:10px 16px;font-weight:1000;cursor:pointer}.tabs button.active{background:#111;color:#fff}.tabs button:hover{background:#7b2cff;color:#fff}
+.feature{height:330px;border:3px solid #111;margin-bottom:20px;position:relative;overflow:hidden;background:#111}.feature img{width:100%;height:100%;object-fit:cover;filter:brightness(.82)}.feature b{position:absolute;top:10px;left:10px;background:#7b2cff;color:#fff;border:3px solid #fff;padding:5px 10px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}.pic{height:160px;background:#111;position:relative;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.tag,.ver{position:absolute;top:8px;border:2px solid #111;background:#7b2cff;color:#fff;font-weight:1000;padding:3px 8px}.tag{left:8px}.ver{right:8px;background:#fff;color:#111}.body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}.body h3{margin:0;font-size:20px}.meta,.desc{font-size:13px;color:#555}.stars{color:#7b2cff;font-size:18px}.actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}.down,.share{border:3px solid #111;background:#fff;box-shadow:5px 5px 0 #111;height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center}.down:hover,.share:hover{background:#7b2cff;color:#fff}
+.how{margin-top:32px;background:#fff;border:3px solid #111}.how h2{margin:0;background:#111;color:#fff;padding:12px 16px}.step{display:flex;gap:12px;margin:14px;border:2px solid #ccc;padding:12px}.num{min-width:34px;height:34px;border:3px solid #111;display:grid;place-items:center;font-weight:1000}.step:nth-child(3){border-color:#7b2cff;background:#f5efff}.account{margin:14px;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:14px;text-align:center;font-weight:1000}
+@media(max-width:900px){.head{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.feature{height:220px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.head h1{font-size:38px}.nav{gap:16px}.card{min-height:auto}}
 </style>
 </head>
 <body>
 
-<div class="particles">
+<section class="top">
+  <div class="badge">✣ 12+ ADDONS GRÁTIS</div>
+  <div class="live">● ↗ 209 PESSOAS BAIXANDO AGORA</div>
+  <div class="hero">ADDONS GRÁTIS</div>
+  <p class="sub">A maior biblioteca de addons de Minecraft Bedrock.<br><b>Escolha seu addon e baixe em 10 segundos.</b></p>
+  <div class="free">★ 100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
+</section>
 
-<span style="left:5%;animation-delay:0s"></span>
-<span style="left:15%;animation-delay:2s"></span>
-<span style="left:25%;animation-delay:5s"></span>
-<span style="left:35%;animation-delay:3s"></span>
-<span style="left:45%;animation-delay:1s"></span>
-<span style="left:55%;animation-delay:4s"></span>
-<span style="left:65%;animation-delay:6s"></span>
-<span style="left:75%;animation-delay:2s"></span>
-<span style="left:85%;animation-delay:7s"></span>
-<span style="left:95%;animation-delay:5s"></span>
-
-</div>
-
-<header>
-
-<div class="logo">CY MODS</div>
-
-<nav>
-<a href="#">Addons</a>
-<a href="#">Discord</a>
-<a href="#">YouTube</a>
-<a href="#">Contato</a>
+<nav class="nav">
+  <a href="#"><span>■</span> ADDONS</a><a href="#"><span>■</span> TEXTURAS</a><a href="#"><span>■</span> MOBS</a>
+  <a href="#"><span>■</span> MAPAS</a><a href="#"><span>■</span> UTILIDADES</a><a href="#"><span>■</span> VISUAL</a>
 </nav>
 
-</header>
+<main class="wrap">
+  <section class="social">
+    <h2>SIGA O CRIADOR</h2>
+    <div class="socials"><a>DISCORD</a><a>INSTAGRAM</a><a>YOUTUBE</a></div>
+    <p>Toque em um addon abaixo para baixar. <b>Grátis, sem pegadinha.</b></p>
+  </section>
 
-<section class="hero">
+  <section class="head">
+    <div><small style="background:#111;color:#fff;padding:5px 8px;font-weight:900">ADDONS</small><h1>TODA A COLEÇÃO</h1><p id="total"></p></div>
+    <input class="search" id="search" placeholder="⌕ Buscar addon...">
+    <select class="select" id="sort"><option value="mix">MIX</option><option value="az">A-Z</option></select>
+  </section>
 
-<h1>CY MODS</h1>
+  <div class="tabs" id="tabs">
+    <button class="active" data-cat="todos">▦ TODOS</button><button data-cat="utilidades">▦ UTILIDADES</button>
+    <button data-cat="visual">▦ VISUAL</button><button data-cat="construcao">▦ CONSTRUÇÃO</button>
+    <button data-cat="java">▦ JAVA</button>
+  </div>
 
-<p>
-Biblioteca de Addons Minecraft Bedrock
-</p>
+  <section class="feature"><b>☆ DESTAQUE</b><img src="imagens/Backpack%20addon.png" alt="Destaque"></section>
+  <section class="grid" id="grid"></section>
 
-</section>
+  <section class="how">
+    <h2>▷ COMO BAIXAR - PASSO A PASSO</h2>
+    <div class="step"><div class="num">1</div><div><b>TOQUE EM BAIXAR</b><br>O botão roxo abre o arquivo do addon.</div></div>
+    <div class="step"><div class="num">2</div><div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div></div>
+    <div class="step"><div class="num">3</div><div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar.</div></div>
+    <div class="account">CRIAR MINHA CONTA GRÁTIS NO TERABOX</div>
+  </section>
+</main>
 
-<div class="search-box">
-<input type="text" placeholder="Buscar addon...">
-</div>
+<script>
+const addons=[
+{name:"Vein Miner",cat:"utilidades",img:"veimaner.png",file:"Utilities_Vein_Miner_v5.5 BP.zip"},
+{name:"Night Vision",cat:"visual",img:"nigth vision png.webp",file:"NIGHT VISION ATUALIZADA.mcpack"},
+{name:"Multiply Ores",cat:"utilidades",img:"multiplidor de minerios png.webp",file:"MultiplyOresby@ncmine.mcaddon"},
+{name:"Backpack Addon",cat:"utilidades",img:"Backpack addon.png",file:"OTG Backpack v1.0.6.mcaddon"},
+{name:"Camera Addon",cat:"visual",img:"camera addon.png",file:"Cinecam by domikalmazika.mcaddon"},
+{name:"Construção Addon",cat:"construcao",img:"construção addon.png",file:"Effortless Building v3.1.mcaddon"},
+{name:"Diamante Ultra 200%",cat:"visual",img:"diamante 200x.webp",file:"_MConverter.eu_diamond ultra 200%.mcpack"},
+{name:"Mini Map Addon",cat:"utilidades",img:"mini map addon.jpg",file:"Real Minimap Add-On addon.mcaddon"},
+{name:"Java Spawn In Bedrock",cat:"java",img:"mob boster java.png",file:"JavaSpawnInBedrock.mcpack"},
+{name:"OP Villagers",cat:"utilidades",img:"op vilagers png.webp",file:"oneesmeralde.mcpack"},
+{name:"Afk Chunk Loader",cat:"utilidades",img:"Afk_Chunk_Loader.jpg",file:"Afk_Chunk_Loader_bot.mcaddon"}
+];
 
-<div class="categories">
+const $=s=>document.querySelector(s), grid=$("#grid"), search=$("#search"), total=$("#total");
+let cat="todos";
 
-<div class="category">Todos</div>
-<div class="category">Utilidades</div>
-<div class="category">Visual</div>
-<div class="category">Construção</div>
-<div class="category">Java</div>
-
-</div>
-
-<section class="addons">
-  <div class="card">
-<img src="veimaner.png">
-<div class="card-content">
-<div class="card-title">Vein Miner</div>
-<a class="download-btn" href="addons/Utilities_Vein_Miner_v5.5 BP.zip">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="nigth vision png.webp">
-<div class="card-content">
-<div class="card-title">Night Vision</div>
-<a class="download-btn" href="addons/NIGHT VISION ATUALIZADA.mcpack">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="multiplidor de minerios png.webp">
-<div class="card-content">
-<div class="card-title">Multiply Ores</div>
-<a class="download-btn" href="addons/MultiplyOresby@ncmine.mcaddon">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="op vilagers png.webp">
-<div class="card-content">
-<div class="card-title">One Emerald</div>
-<a class="download-btn" href="addons/oneesmeralde.mcpack">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="Afk_Chunk_Loader.jpg">
-<div class="card-content">
-<div class="card-title">AFK Chunk Loader</div>
-<a class="download-btn" href="addons/Afk_Chunk_Loader_bot.mcaddon">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="camera addon.png">
-<div class="card-content">
-<div class="card-title">Cinecam</div>
-<a class="download-btn" href="addons/Cinecam by domikalmazika.mcaddon">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="construção addon.png">
-<div class="card-content">
-<div class="card-title">Effortless Building</div>
-<a class="download-btn" href="addons/Effortless Building v3.1.mcaddon">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="mob boster java.png">
-<div class="card-content">
-<div class="card-title">Java Spawn In Bedrock</div>
-<a class="download-btn" href="addons/JavaSpawnInBedrock.mcpack">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="diamante 200x.webp">
-<div class="card-content">
-<div class="card-title">Diamond Ultra 200%</div>
-<a class="download-btn" href="addons/_MConverter.eu_diamond ultra 200%.mcpack">BAIXAR</a>
-</div>
-</div>
-
-<div class="card">
-<img src="mini map addon.jpg">
-<div class="card-content">
-<div class="card-title">Real Minimap</div>
-<a class="download-btn" href="addons/Real Minimap Add-On addon.mcaddon">BAIXAR</a>
-</div>
-</div>
-</section>
-
-<footer>
-
-<h2>CY MODS</h2>
-
-<p>
-Todos os créditos pertencem aos criadores originais dos addons.
-</p>
-
-</footer>
-
+function link(folder,name){return folder+"/"+name.split("/").map(encodeURIComponent).join("/")}
+function render(){
+ let list=addons.filter(a=>(cat==="todos"||a.cat===cat)&&a.name.toLowerCase().includes(search.value.toLowerCase()));
+ if($("#sort").value==="az") list.sort((a,b)=>a.name.localeCompare(b.name));
+ total.textContent=`${list.length} addons curados. Busque, filtre e baixe.`;
+ grid.innerHTML=list.map(a=>`
+ <article class="card">
+  <div class="pic"><span class="tag">◇ ${a.cat.toUpperCase()}</span><span class="ver">v1.0</span><img src="${link("imagens",a.img)}" alt="${a.name}"></div>
+  <div class="body">
+   <h3>${a.name}</h3><div class="meta">♙ Desconhecido &nbsp; ▣ 2026-06-21</div>
+   <div class="desc">Addon para Minecraft Bedrock. Clique em baixar para fazer download.</div>
+   <div class="stars">★★★★★</div>
+   <div class="actions"><a class="down" href="${link("addons",a.file)}" download>⇩ BAIXAR</a><a class="share" href="${link("addons",a.file)}">⌯</a></div>
+  </div>
+ </article>`).join("");
+}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{document.querySelector(".active").classList.remove("active");b.classList.add("active");cat=b.dataset.cat;render()});
+search.oninput=render; $("#sort").onchange=render; render();
+</script>
 </body>
 </html>
