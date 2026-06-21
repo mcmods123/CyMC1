@@ -4,33 +4,56 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Addons Minecraft Bedrock</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111;background-image:linear-gradient(45deg,#eee 25%,transparent 25%),linear-gradient(-45deg,#eee 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eee 75%),linear-gradient(-45deg,transparent 75%,#eee 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
-.top{padding:28px 14px 36px;text-align:center;position:relative;overflow:hidden}.badge{display:inline-block;border:3px solid #111;box-shadow:5px 5px 0 #111;background:#fff;padding:7px 18px;font-weight:900}.live{margin:16px 0;color:#7b2cff;font-weight:900}.hero{display:inline-block;margin:12px auto;background:#7b2cff;color:#fff;font-size:clamp(42px,9vw,92px);line-height:.95;font-weight:1000;padding:8px 18px;box-shadow:8px 8px 0 #111;transform:rotate(-1deg)}.sub{font-size:20px;font-weight:900}.sub b{color:#7b2cff}.free{display:inline-block;margin-top:24px;border:2px dashed #b68cff;background:#fff;padding:14px 24px;font-weight:900}
-.nav{display:flex;gap:26px;align-items:center;background:#050505;color:#fff;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}.nav a{white-space:nowrap;text-decoration:none;color:#fff}.nav span{color:#7b2cff}
-.wrap{max-width:1200px;margin:auto;padding:24px 14px}.social{background:#fff;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:18px;text-align:center;margin-bottom:24px}.social h2{margin:0 0 14px;color:#7b2cff;letter-spacing:2px}.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.socials a{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;text-decoration:none;color:#111;font-weight:1000}.socials a:nth-child(2){background:linear-gradient(90deg,#8d35ff,#e23bba);color:#fff}
-.head{display:grid;grid-template-columns:1fr 390px 110px;gap:10px;align-items:end;margin:28px 0 16px}.head h1{font-size:54px;margin:0;font-weight:1000}.head p{margin:8px 0 0;color:#555}.search,.select{height:46px;border:3px solid #111;background:#fff;padding:0 14px;font-weight:900;font-size:15px}
-.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}.tabs button{border:3px solid #111;background:#fff;padding:10px 16px;font-weight:1000;cursor:pointer}.tabs button.active{background:#111;color:#fff}.tabs button:hover{background:#7b2cff;color:#fff}
-.feature{height:330px;border:3px solid #111;margin-bottom:20px;position:relative;overflow:hidden;background:#111}.feature img{width:100%;height:100%;object-fit:cover;filter:brightness(.82)}.feature b{position:absolute;top:10px;left:10px;background:#7b2cff;color:#fff;border:3px solid #fff;padding:5px 10px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}.pic{height:160px;background:#111;position:relative;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.tag,.ver{position:absolute;top:8px;border:2px solid #111;background:#7b2cff;color:#fff;font-weight:1000;padding:3px 8px}.tag{left:8px}.ver{right:8px;background:#fff;color:#111}.body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}.body h3{margin:0;font-size:20px}.meta,.desc{font-size:13px;color:#555}.stars{color:#7b2cff;font-size:18px}.actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}.down,.share{border:3px solid #111;background:#fff;box-shadow:5px 5px 0 #111;height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center}.down:hover,.share:hover{background:#7b2cff;color:#fff}
-.how{margin-top:32px;background:#fff;border:3px solid #111}.how h2{margin:0;background:#111;color:#fff;padding:12px 16px}.step{display:flex;gap:12px;margin:14px;border:2px solid #ccc;padding:12px}.num{min-width:34px;height:34px;border:3px solid #111;display:grid;place-items:center;font-weight:1000}.step:nth-child(3){border-color:#7b2cff;background:#f5efff}.account{margin:14px;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:14px;text-align:center;font-weight:1000}
-@media(max-width:900px){.head{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.feature{height:220px}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.head h1{font-size:38px}.nav{gap:16px}.card{min-height:auto}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff;background-image:linear-gradient(45deg,#eee 25%,transparent 25%),linear-gradient(-45deg,#eee 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eee 75%),linear-gradient(-45deg,transparent 75%,#eee 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
+.top{text-align:center;padding:28px 14px 40px}
+.badge{display:inline-block;border:3px solid #111;box-shadow:5px 5px 0 #111;background:white;padding:8px 20px;font-weight:900}
+.live{margin:16px 0;color:#7b2cff;font-weight:900}
+.hero{display:inline-block;background:#7b2cff;color:white;font-size:clamp(42px,9vw,92px);font-weight:1000;line-height:.95;padding:10px 20px;box-shadow:8px 8px 0 #111;transform:rotate(-1deg)}
+.sub{font-size:20px;font-weight:900}.sub b{color:#7b2cff}
+.nav{display:flex;gap:26px;background:#050505;color:white;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}
+.nav a{color:white;text-decoration:none;white-space:nowrap}.nav span{color:#7b2cff}
+.wrap{max-width:1200px;margin:auto;padding:24px 14px}
+.social{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:18px;text-align:center;margin-bottom:26px}
+.social h2{margin:0 0 14px;color:#7b2cff;letter-spacing:2px}
+.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.socials a{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;font-weight:1000}.socials a:nth-child(2){background:#7b2cff;color:white}
+.head{display:grid;grid-template-columns:1fr 390px 110px;gap:10px;align-items:end;margin-bottom:16px}
+.head h1{font-size:54px;margin:8px 0 0;font-weight:1000}
+.label{background:#111;color:white;padding:5px 8px;font-weight:900}
+.search,.select{height:46px;border:3px solid #111;background:white;padding:0 14px;font-weight:900;font-size:15px}
+.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.tabs button{border:3px solid #111;background:white;padding:10px 16px;font-weight:1000;cursor:pointer}
+.tabs button.active,.tabs button:hover{background:#7b2cff;color:white}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}
+.pic{height:160px;background:#111;position:relative;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover}.pic.missing{display:grid;place-items:center;color:white;font-weight:900;padding:20px;text-align:center}
+.tag,.ver{position:absolute;top:8px;border:2px solid #111;font-weight:1000;padding:3px 8px}.tag{left:8px;background:#7b2cff;color:white}.ver{right:8px;background:white;color:#111}
+.body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h3{margin:0;font-size:20px}.meta,.desc{font-size:13px;color:#555}.stars{color:#7b2cff;font-size:18px}
+.actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}
+.down,.share{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center}
+.down:hover,.share:hover{background:#7b2cff;color:white}
+.empty{display:none;border:3px solid #111;background:white;padding:25px;font-weight:900}
+@media(max-width:900px){.head{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.head h1{font-size:38px}}
 </style>
 </head>
-<body>
 
+<body>
 <section class="top">
-  <div class="badge">✣ 12+ ADDONS GRÁTIS</div>
-  <div class="live">● ↗ 209 PESSOAS BAIXANDO AGORA</div>
+  <div class="badge">✣ ADDONS GRÁTIS</div>
+  <div class="live">● ↗ PESSOAS BAIXANDO AGORA</div>
   <div class="hero">ADDONS GRÁTIS</div>
   <p class="sub">A maior biblioteca de addons de Minecraft Bedrock.<br><b>Escolha seu addon e baixe em 10 segundos.</b></p>
-  <div class="free">★ 100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
 </section>
 
 <nav class="nav">
-  <a href="#"><span>■</span> ADDONS</a><a href="#"><span>■</span> TEXTURAS</a><a href="#"><span>■</span> MOBS</a>
-  <a href="#"><span>■</span> MAPAS</a><a href="#"><span>■</span> UTILIDADES</a><a href="#"><span>■</span> VISUAL</a>
+  <a><span>■</span> ADDONS</a><a><span>■</span> TEXTURAS</a><a><span>■</span> MOBS</a>
+  <a><span>■</span> MAPAS</a><a><span>■</span> UTILIDADES</a><a><span>■</span> VISUAL</a>
 </nav>
 
 <main class="wrap">
@@ -41,65 +64,67 @@
   </section>
 
   <section class="head">
-    <div><small style="background:#111;color:#fff;padding:5px 8px;font-weight:900">ADDONS</small><h1>TODA A COLEÇÃO</h1><p id="total"></p></div>
+    <div><span class="label">ADDONS</span><h1>TODA A COLEÇÃO</h1><p id="total"></p></div>
     <input class="search" id="search" placeholder="⌕ Buscar addon...">
     <select class="select" id="sort"><option value="mix">MIX</option><option value="az">A-Z</option></select>
   </section>
 
   <div class="tabs" id="tabs">
-    <button class="active" data-cat="todos">▦ TODOS</button><button data-cat="utilidades">▦ UTILIDADES</button>
-    <button data-cat="visual">▦ VISUAL</button><button data-cat="construcao">▦ CONSTRUÇÃO</button>
+    <button class="active" data-cat="todos">▦ TODOS</button>
+    <button data-cat="utilidades">▦ UTILIDADES</button>
+    <button data-cat="visual">▦ VISUAL</button>
+    <button data-cat="construcao">▦ CONSTRUÇÃO</button>
     <button data-cat="java">▦ JAVA</button>
   </div>
 
-  <section class="feature"><b>☆ DESTAQUE</b><img src="imagens/Backpack%20addon.png" alt="Destaque"></section>
   <section class="grid" id="grid"></section>
-
-  <section class="how">
-    <h2>▷ COMO BAIXAR - PASSO A PASSO</h2>
-    <div class="step"><div class="num">1</div><div><b>TOQUE EM BAIXAR</b><br>O botão roxo abre o arquivo do addon.</div></div>
-    <div class="step"><div class="num">2</div><div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div></div>
-    <div class="step"><div class="num">3</div><div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar.</div></div>
-    <div class="account">CRIAR MINHA CONTA GRÁTIS NO TERABOX</div>
-  </section>
+  <p class="empty" id="empty">Nenhum addon encontrado.</p>
 </main>
 
+<script src="data/addons.js"></script>
 <script>
-const addons=[
-{name:"Vein Miner",cat:"utilidades",img:"veimaner.png",file:"Utilities_Vein_Miner_v5.5 BP.zip"},
-{name:"Night Vision",cat:"visual",img:"nigth vision png.webp",file:"NIGHT VISION ATUALIZADA.mcpack"},
-{name:"Multiply Ores",cat:"utilidades",img:"multiplidor de minerios png.webp",file:"MultiplyOresby@ncmine.mcaddon"},
-{name:"Backpack Addon",cat:"utilidades",img:"Backpack addon.png",file:"OTG Backpack v1.0.6.mcaddon"},
-{name:"Camera Addon",cat:"visual",img:"camera addon.png",file:"Cinecam by domikalmazika.mcaddon"},
-{name:"Construção Addon",cat:"construcao",img:"construção addon.png",file:"Effortless Building v3.1.mcaddon"},
-{name:"Diamante Ultra 200%",cat:"visual",img:"diamante 200x.webp",file:"_MConverter.eu_diamond ultra 200%.mcpack"},
-{name:"Mini Map Addon",cat:"utilidades",img:"mini map addon.jpg",file:"Real Minimap Add-On addon.mcaddon"},
-{name:"Java Spawn In Bedrock",cat:"java",img:"mob boster java.png",file:"JavaSpawnInBedrock.mcpack"},
-{name:"OP Villagers",cat:"utilidades",img:"op vilagers png.webp",file:"oneesmeralde.mcpack"},
-{name:"Afk Chunk Loader",cat:"utilidades",img:"Afk_Chunk_Loader.jpg",file:"Afk_Chunk_Loader_bot.mcaddon"}
-];
-
-const $=s=>document.querySelector(s), grid=$("#grid"), search=$("#search"), total=$("#total");
+const grid=document.querySelector("#grid"),search=document.querySelector("#search"),total=document.querySelector("#total"),empty=document.querySelector("#empty");
 let cat="todos";
 
-function link(folder,name){return folder+"/"+name.split("/").map(encodeURIComponent).join("/")}
+function link(p,n){return p+"/"+String(n).split("/").map(encodeURIComponent).join("/")}
+
 function render(){
- let list=addons.filter(a=>(cat==="todos"||a.cat===cat)&&a.name.toLowerCase().includes(search.value.toLowerCase()));
- if($("#sort").value==="az") list.sort((a,b)=>a.name.localeCompare(b.name));
- total.textContent=`${list.length} addons curados. Busque, filtre e baixe.`;
- grid.innerHTML=list.map(a=>`
- <article class="card">
-  <div class="pic"><span class="tag">◇ ${a.cat.toUpperCase()}</span><span class="ver">v1.0</span><img src="${link("imagens",a.img)}" alt="${a.name}"></div>
-  <div class="body">
-   <h3>${a.name}</h3><div class="meta">♙ Desconhecido &nbsp; ▣ 2026-06-21</div>
-   <div class="desc">Addon para Minecraft Bedrock. Clique em baixar para fazer download.</div>
-   <div class="stars">★★★★★</div>
-   <div class="actions"><a class="down" href="${link("addons",a.file)}" download>⇩ BAIXAR</a><a class="share" href="${link("addons",a.file)}">⌯</a></div>
-  </div>
- </article>`).join("");
+  let lista=ADDONS.filter(a=>(cat==="todos"||a.categoria===cat)&&a.nome.toLowerCase().includes(search.value.toLowerCase()));
+  if(document.querySelector("#sort").value==="az") lista.sort((a,b)=>a.nome.localeCompare(b.nome));
+  total.textContent=`${lista.length} addons curados. Busque, filtre e baixe.`;
+  empty.style.display=lista.length?"none":"block";
+
+  grid.innerHTML=lista.map(a=>`
+    <article class="card">
+      <div class="pic">
+        <span class="tag">◇ ${a.categoria.toUpperCase()}</span>
+        <span class="ver">${a.versao||"v1.0"}</span>
+        <img src="${link("imagens",a.imagem)}" alt="${a.nome}" onerror="this.parentElement.classList.add('missing');this.remove();">
+      </div>
+      <div class="body">
+        <h3>${a.nome}</h3>
+        <div class="meta">♙ Criador desconhecido</div>
+        <div class="desc">Addon para Minecraft Bedrock. Clique em baixar para fazer download.</div>
+        <div class="stars">★★★★★</div>
+        <div class="actions">
+          <a class="down" href="${link("addons",a.arquivo)}" download>⇩ BAIXAR</a>
+          <a class="share" href="${link("addons",a.arquivo)}">⌯</a>
+        </div>
+      </div>
+    </article>
+  `).join("");
 }
-document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{document.querySelector(".active").classList.remove("active");b.classList.add("active");cat=b.dataset.cat;render()});
-search.oninput=render; $("#sort").onchange=render; render();
+
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{
+  document.querySelector(".active").classList.remove("active");
+  b.classList.add("active");
+  cat=b.dataset.cat;
+  render();
+});
+
+search.oninput=render;
+document.querySelector("#sort").onchange=render;
+render();
 </script>
 </body>
 </html>
