@@ -284,5 +284,196 @@ function route(){
 
 carregar();
 </script>
+
+<!-- Additional light-weight features script:
+     - favorites (localStorage)
+     - export/import backup (keyboard shortcuts + console API)
+     - AI helpers (getCyAddonsContext, registerAiProcessing)
+     - keyboard shortcuts: "/" focus search, "f" favorite on detail, Ctrl+Shift+E export, Ctrl+Shift+I import
+     This script keeps the UI exactly as before; it wires existing buttons and exposes useful functions to the console.
+-->
+<script>
+(function(){
+  const KEY_FAV = 'cy_favorites_v1';
+  const KEY_RAT = 'cy_ratings_v1';
+  const KEY_COM = 'cy_comments_v1';
+  const KEY_AILOG = 'cy_ai_logs_v1';
+
+  // load or init
+  let favorites = new Set(JSON.parse(localStorage.getItem(KEY_FAV) || "[]"));
+  let ratings = JSON.parse(localStorage.getItem(KEY_RAT) || "{}");
+  let comments = JSON.parse(localStorage.getItem(KEY_COM) || "{}");
+
+  function saveAll(){
+    try{
+      localStorage.setItem(KEY_FAV, JSON.stringify(Array.from(favorites)));
+      localStorage.setItem(KEY_RAT, JSON.stringify(ratings));
+      localStorage.setItem(KEY_COM, JSON.stringify(comments));
+    }catch(e){console.warn("cy: falha ao salvar localStorage", e)}
+  }
+
+  function getAddonByHash(){
+    const id = location.hash.replace('#addon/','');
+    if(!id) return null;
+    if(typeof ADDONS === 'undefined') return null;
+    return ADDONS.find(a => slug(a.nome) === id) || null;
+  }
+
+  function toggleFavoriteAddon(addon){
+    if(!addon) return;
+    const key = addon.arquivoName || addon.arquivo || addon.arquivoNome || addon.nome;
+    if(favorites.has(key)) favorites.delete(key);
+    else favorites.add(key);
+    saveAll();
+    aviso(favorites.has(key) ? "Adicionado aos favoritos" : "Removido dos favoritos");
+    return favorites.has(key);
+  }
+
+  function isFavoriteAddon(addon){
+    if(!addon) return false;
+    const key = addon.arquivoName || addon.arquivo || addon.arquivoNome || addon.nome;
+    return favorites.has(key);
+  }
+
+  // Attach to detail favorite button (override its onclick that called indisponivel)
+  function attachDetailFavoriteButton(){
+    const btns = document.querySelectorAll("#detailView .top-actions .btn");
+    if(!btns || btns.length === 0) return;
+    // First button is the FAVORITAR
+    const favBtn = btns[0];
+    if(!favBtn) return;
+    // remove inline onclick if present
+    favBtn.onclick = null;
+    favBtn.addEventListener('click', ()=>{
+      const addon = getAddonByHash();
+      if(!addon){ aviso("Nenhum addon selecionado"); return; }
+      const nowFav = toggleFavoriteAddon(addon);
+      // give visual cue: change innerText slightly
+      try{
+        favBtn.textContent = (nowFav ? "♡ FAVORITADO" : "♡ FAVORITAR");
+        setTimeout(()=>{ favBtn.textContent = "♡ FAVORITAR"; }, 2200);
+      }catch(e){}
+    });
+  }
+
+  // Keyboard shortcuts
+  window.addEventListener('keydown', function(e){
+    // "/" focus search
+    if(e.key === '/' && document.activeElement.tagName.toLowerCase() !== 'input' && document.activeElement.tagName.toLowerCase() !== 'textarea'){
+      e.preventDefault();
+      const s = document.getElementById('search');
+      if(s){ s.focus(); s.select(); }
+    }
+    // "f" favorite when in detail view
+    if(e.key.toLowerCase() === 'f'){
+      // only if detail view visible
+      const dv = document.getElementById('detailView');
+      if(dv && !dv.classList.contains('hide') && dv.style.display !== 'none'){
+        const addon = getAddonByHash();
+        if(addon){
+          toggleFavoriteAddon(addon);
+        }
+      }
+    }
+    // Ctrl+Shift+E => export
+    if(e.key === 'E' && e.ctrlKey && e.shiftKey){
+      e.preventDefault();
+      exportBackup();
+    }
+    // Ctrl+Shift+I => import
+    if(e.key === 'I' && e.ctrlKey && e.shiftKey){
+      e.preventDefault();
+      importBackup();
+    }
+  });
+
+  // Export/import backup
+  function exportBackup(){
+    const payload = {
+      favorites: Array.from(favorites),
+      ratings: ratings,
+      comments: comments,
+      generatedAt: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'cy_addons_backup.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    aviso("Backup exportado");
+  }
+
+  function importBackup(){
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/json';
+    input.onchange = function(ev){
+      const f = ev.target.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = function(){
+        try{
+          const j = JSON.parse(reader.result);
+          if(j.favorites && Array.isArray(j.favorites)) favorites = new Set(j.favorites);
+          if(j.ratings) ratings = j.ratings;
+          if(j.comments) comments = j.comments;
+          saveAll();
+          aviso("Backup importado");
+        }catch(err){
+          aviso("Arquivo inválido");
+        }
+      };
+      reader.readAsText(f);
+    };
+    input.click();
+  }
+
+  // AI helpers for external agents
+  window.getCyAddonsContext = function(){
+    return Object.assign({}, window.CY_ADDONS_CONTEXT || {}, {ts: new Date().toISOString()});
+  };
+
+  window.registerAiProcessing = function(agentName, details){
+    try{
+      const logs = JSON.parse(localStorage.getItem(KEY_AILOG) || "[]");
+      logs.unshift({agent: agentName||"unknown", details: details||null, ts: new Date().toISOString()});
+      localStorage.setItem(KEY_AILOG, JSON.stringify(logs.slice(0,200)));
+      return {ok:true};
+    }catch(e){
+      return {ok:false, error: e && e.message};
+    }
+  };
+
+  // Public console API
+  window.CyAddonsApp = {
+    listAddons: function(){ return (typeof ADDONS !== 'undefined') ? ADDONS : []; },
+    getFavorites: function(){ return Array.from(favorites); },
+    isFavorite: function(addonOrKey){
+      if(!addonOrKey) return false;
+      if(typeof addonOrKey === 'string') return favorites.has(addonOrKey);
+      const key = addonOrKey.arquivo || addonOrKey.arquivoName || addonOrKey.arquivoNome || addonOrKey.nome;
+      return favorites.has(key);
+    },
+    toggleFavoriteByHash: function(){ const a = getAddonByHash(); if(a) return toggleFavoriteAddon(a); return null; },
+    exportBackup: exportBackup,
+    importBackup: importBackup,
+    getContext: window.getCyAddonsContext,
+    registerAiProcessing: window.registerAiProcessing
+  };
+
+  // Hook into SPA events: when route changes, re-attach favorite button handler
+  window.addEventListener('hashchange', function(){ setTimeout(attachDetailFavoriteButton, 120); });
+  // initial attach after page load
+  window.addEventListener('load', function(){ setTimeout(attachDetailFavoriteButton, 300); });
+
+  // If user calls this script before ADDONS are loaded, it's okay — functions will still work when used.
+  console.log("CyAddons features loaded: favorites, backup, AI helpers (window.CyAddonsApp, getCyAddonsContext, registerAiProcessing). Shortcuts: '/', 'f', Ctrl+Shift+E/I.");
+})();
+</script>
+
 </body>
 </html>
