@@ -17,14 +17,12 @@ body{
   linear-gradient(-45deg,transparent 75%,rgba(0,0,0,.055) 75%);
   background-size:30px 30px;background-position:0 0,0 15px,15px -15px,-15px 0;overflow-x:hidden
 }
-
 body:before{
   content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;
   background:radial-gradient(circle at 50% 0,rgba(123,44,255,.25),transparent 390px),
   radial-gradient(circle at 8% 22%,rgba(123,44,255,.16),transparent 250px),
   linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.9))
 }
-
 .bg-art{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
 .bg-card{position:absolute;width:165px;height:165px;object-fit:cover;border:4px solid #111;box-shadow:9px 9px 0 rgba(0,0,0,.55);opacity:.14}
 .bg-card:nth-child(1){top:70px;left:7%;animation:m1 11s ease-in-out infinite}
@@ -32,75 +30,54 @@ body:before{
 .bg-card:nth-child(3){top:260px;left:38%;animation:m3 12s ease-in-out infinite}
 .bg-card:nth-child(4){top:440px;left:12%;animation:m4 14s ease-in-out infinite}
 .bg-card:nth-child(5){top:390px;right:17%;animation:m5 12.5s ease-in-out infinite}
-
 @keyframes m1{0%,100%{transform:rotate(-15deg) translate(0,0)}50%{transform:rotate(-10deg) translate(14px,-18px)}}
 @keyframes m2{0%,100%{transform:rotate(12deg) translate(0,0)}50%{transform:rotate(7deg) translate(-18px,16px)}}
 @keyframes m3{0%,100%{transform:rotate(-8deg) translate(0,0)}50%{transform:rotate(-13deg) translate(10px,20px)}}
 @keyframes m4{0%,100%{transform:rotate(10deg) translate(0,0)}50%{transform:rotate(15deg) translate(-14px,-14px)}}
 @keyframes m5{0%,100%{transform:rotate(-12deg) translate(0,0)}50%{transform:rotate(-7deg) translate(16px,18px)}}
 
-.hide{display:none!important}
-.top,.nav,.wrap{position:relative;z-index:1}
-
+.hide{display:none!important}.top,.nav,.wrap{position:relative;z-index:1}
 .top{text-align:center;padding:28px 14px 42px}
 .badge{display:inline-block;border:3px solid var(--b);box-shadow:5px 5px 0 var(--b);background:#fff;padding:8px 20px;font-weight:1000}
 .live{margin:16px 0;color:var(--p);font-weight:1000}
-
-.hero{
-  display:inline-block;background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;
-  font-size:clamp(42px,9vw,94px);font-weight:1000;line-height:.95;padding:10px 22px;
-  border:4px solid #fff;box-shadow:9px 9px 0 #111,0 0 42px rgba(123,44,255,.46);
-  transform:rotate(-1deg);text-shadow:4px 4px 0 rgba(0,0,0,.22)
-}
-
+.hero{display:inline-block;background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;font-size:clamp(42px,9vw,94px);font-weight:1000;line-height:.95;padding:10px 22px;border:4px solid #fff;box-shadow:9px 9px 0 #111,0 0 42px rgba(123,44,255,.46);transform:rotate(-1deg);text-shadow:4px 4px 0 rgba(0,0,0,.22)}
 .sub{font-size:20px;font-weight:900;line-height:1.35}.sub b{color:var(--p)}
 .free{display:inline-block;margin-top:20px;border:2px dashed #b88cff;background:rgba(255,255,255,.78);padding:14px 24px;font-weight:1000}
-
 .nav{display:flex;gap:26px;background:#050505;color:white;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}
 .nav a{color:white;text-decoration:none;white-space:nowrap}
-
 .wrap{max-width:1240px;margin:auto;padding:24px 14px 50px}
 .social,.box,.how,.feedback,.discord{background:rgba(255,255,255,.94);border:3px solid #111;box-shadow:5px 5px 0 #111}
-
 .social{padding:18px;text-align:center;margin-bottom:28px}
 .social h2{margin:0 0 14px;color:var(--p);letter-spacing:2px}
 .socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .socials button{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;color:#111;font-weight:1000;background:#fff;cursor:pointer;font-size:15px}
 .socials button:nth-child(2){background:linear-gradient(90deg,var(--p),#d946ef);color:#fff}
-
 .head{display:grid;grid-template-columns:1fr 390px 120px;gap:10px;align-items:end;margin:28px 0 16px}
 .label{display:inline-block;background:#111;color:white;padding:5px 9px;font-weight:1000}
 .head h1{font-size:54px;margin:8px 0 0;font-weight:1000;line-height:.95}
 .head p{margin:10px 0 0;color:#555}
 .search,.select{height:46px;border:3px solid #111;background:white;padding:0 14px;font-weight:900;font-size:15px;outline:none}
-
 .tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
 .tabs button{border:3px solid #111;background:white;padding:10px 16px;font-weight:1000;cursor:pointer}
 .tabs button.active,.tabs button:hover{background:var(--p);color:white}
-
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}
 .pic{height:175px;background:#111;position:relative;overflow:hidden;display:block;color:white;text-decoration:none}
 .pic img{width:100%;height:100%;object-fit:cover}
 .tag,.ver{position:absolute;top:8px;border:2px solid #111;font-weight:1000;padding:3px 8px;z-index:2;font-size:12px}
 .tag{left:8px;background:var(--p);color:white}.ver{right:8px;background:white;color:#111}
-
 .body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
 .body h3{margin:0;font-size:20px;line-height:1.1}
 .meta,.desc{font-size:13px;color:#555;line-height:1.35}
 .stars{color:var(--p);font-size:18px;letter-spacing:1px}
 .actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}
-
 .btn{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;min-height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center;cursor:pointer;text-align:center;padding:0 12px}
 .btn:hover{background:var(--p);color:white}
-
-.empty{display:none;border:3px solid #111;background:white;padding:25px;font-weight:1000;box-shadow:5px 5px 0 #111}
-.loading{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;padding:24px;font-weight:1000}
-
+.empty,.loading{border:3px solid #111;background:white;padding:25px;font-weight:1000;box-shadow:5px 5px 0 #111}
+.empty{display:none}
 .detail-top{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:3px solid #111;padding:10px 0 12px;margin-bottom:20px}
 .back{font-weight:1000;text-decoration:none;color:#111;padding:10px}
 .top-actions{display:flex;gap:10px}
-
 .addon-hero{display:grid;grid-template-columns:1fr 1fr;border:3px solid #111;box-shadow:6px 6px 0 #111;background:#fff;margin-bottom:24px}
 .addon-image{min-height:430px;background:#111;position:relative}
 .addon-image img{width:100%;height:100%;object-fit:cover}
@@ -108,7 +85,6 @@ body:before{
 .addon-info h1{font-size:34px;line-height:1;margin:0 0 14px;font-weight:1000}
 .addon-info p{color:#555;line-height:1.55}
 .download-main{margin:18px 0 24px;min-height:54px;font-size:18px}
-
 .how h2{margin:0;background:#111;color:white;padding:12px 16px;font-size:18px}
 .step{display:flex;gap:12px;margin:14px;border:2px solid #ccc;padding:12px}
 .num{min-width:34px;height:34px;border:3px solid #111;display:grid;place-items:center;font-weight:1000;background:#fff}
@@ -117,10 +93,8 @@ body:before{
 .box{margin:20px 0;padding:24px}.box h2{margin:0;color:var(--p);font-size:22px;letter-spacing:2px}
 .more-title{margin:34px 0 18px;color:var(--p);letter-spacing:2px}
 .footer{background:#050505;color:#aaa;text-align:center;padding:18px;font-weight:1000}
-
 .notice{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111;color:#fff;border:3px solid var(--p);box-shadow:6px 6px 0 #000;padding:14px 20px;font-weight:1000;z-index:20;display:none;text-align:center}
 .notice.show{display:block}
-
 @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.head,.addon-hero{grid-template-columns:1fr}.addon-image{min-height:300px}}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.head h1{font-size:40px}.top-actions{flex-direction:column;align-items:stretch}}
 @media(max-width:520px){.grid{grid-template-columns:1fr}.nav{gap:18px}.addon-info h1{font-size:28px}}
@@ -137,7 +111,7 @@ body:before{
     <div class="badge" id="heroCount">CARREGANDO ADDONS...</div>
     <div class="live">● PESSOAS BAIXANDO AGORA</div>
     <div class="hero">ADDONS GRÁTIS</div>
-    <p class="sub">Coloque arquivos nas pastas <b>imagens</b> e <b>addons</b> que eles aparecem sozinhos.</p>
+    <p class="sub">Seus addons antigos continuam certos.<br><b>Os novos aparecem sozinhos quando imagem e addon tiverem o mesmo nome.</b></p>
     <div class="free">100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
   </section>
 
@@ -158,7 +132,7 @@ body:before{
         <button onclick="indisponivel()">INSTAGRAM</button>
         <button onclick="indisponivel()">YOUTUBE</button>
       </div>
-      <p>Para juntar automático: <b>imagem e addon precisam ter o mesmo nome.</b></p>
+      <p>Botões sociais indisponíveis por enquanto.</p>
     </section>
 
     <section class="head">
@@ -175,7 +149,7 @@ body:before{
     </section>
 
     <div class="tabs" id="tabs"></div>
-    <div class="loading" id="loading">Buscando imagens e addons no GitHub...</div>
+    <div class="loading" id="loading">Buscando addons...</div>
     <section class="grid" id="grid"></section>
     <p class="empty" id="empty">Nenhum addon encontrado.</p>
   </main>
@@ -227,29 +201,36 @@ body:before{
 <footer class="footer">© 2026 @ncmine · Todos os direitos reservados</footer>
 
 <script>
-const GITHUB_OWNER = "mcmods123";
-const GITHUB_REPO = "CyMC1";
-const GITHUB_BRANCH = "main";
+const GITHUB_OWNER="mcmods123";
+const GITHUB_REPO="CyMC1";
+const GITHUB_BRANCH="main";
+const IMAGE_DIR="imagens";
+const ADDON_DIR="addons";
+const IMAGE_EXT=["png","jpg","jpeg","webp","gif"];
+const ADDON_EXT=["mcaddon","mcpack","zip","m"];
 
-const IMAGE_DIR = "imagens";
-const ADDON_DIR = "addons";
+const ADDONS_FIXOS=[
+  {nome:"Afk Chunk Loader",categoria:"utilidades",imagem:"Afk_Chunk_Loader.jpg",arquivo:"Afk_Chunk_Loader_bot.mcaddon",versao:"v1.0",descricao:"Mantenha chunks carregados para farms e sistemas."},
+  {nome:"Backpack Addon",categoria:"utilidades",imagem:"Backpack addon.png",arquivo:"OTG Backpack v1.0.6.mcaddon",versao:"v1.0.6",descricao:"Adicione mochilas para carregar mais itens nas aventuras."},
+  {nome:"Camera Addon",categoria:"visual",imagem:"camera addon.png",arquivo:"Cinecam by domikalmazika.mcaddon",versao:"v1.0",descricao:"Use câmera cinematográfica para vídeos e cenas."},
+  {nome:"Construção Addon",categoria:"construcao",imagem:"construção addon.png",arquivo:"Effortless Building v3.1.mcaddon",versao:"v3.1",descricao:"Construa mais rápido com ferramentas de construção."},
+  {nome:"Diamante Ultra 200%",categoria:"visual",imagem:"diamante 200x.webp",arquivo:"_MConverter.eu_diamond ultra 200%.mcpack",versao:"v1.0",descricao:"Textura de diamante com visual mais forte e destacado."},
+  {nome:"Mini Map Addon",categoria:"utilidades",imagem:"mini map addon.jpg",arquivo:"Real Minimap Add-On addon.mcaddon",versao:"v1.0",descricao:"Adicione um minimapa para explorar melhor seu mundo."},
+  {nome:"Java Spawn In Bedrock",categoria:"java",imagem:"mob boster java.png",arquivo:"JavaSpawnInBedrock.mcpack",versao:"v1.0",descricao:"Deixe alguns comportamentos parecidos com Java no Bedrock."},
+  {nome:"Multiply Ores",categoria:"utilidades",imagem:"multiplidor de minerios png.webp",arquivo:"MultiplyOresby@ncmine.mcaddon",versao:"v1.0",descricao:"Multiplique minérios e deixe a mineração mais forte."},
+  {nome:"Night Vision",categoria:"visual",imagem:"nigth vision png.webp",arquivo:"NIGHT VISION ATUALIZADA.mcpack",versao:"v1.0",descricao:"Veja melhor no escuro com visão noturna atualizada."},
+  {nome:"OP Villagers",categoria:"utilidades",imagem:"op vilagers png.webp",arquivo:"oneesmeralde.mcpack",versao:"v1.0",descricao:"Villagers com trocas mais fortes e úteis."},
+  {nome:"Vein Miner",categoria:"utilidades",imagem:"veimaner.png",arquivo:"Utilities_Vein_Miner_v5.5 BP.zip",versao:"v5.5",descricao:"Minere vários blocos de uma vez no Minecraft Bedrock."},
+  {nome:"Simple Waystone",categoria:"utilidades",imagem:"Backpack addon.png",arquivo:"Simple_Waystone_v8.2_Full.mcaddon",versao:"v8.2",descricao:"Sistema de teleporte com waystones para seu mundo."},
+  {nome:"System Dynamic Lights",categoria:"visual",imagem:"iluminacao addon.gif",arquivo:"System Dynamic Lights BH V3.2.3.mcpack",versao:"v3.2.3",descricao:"Adiciona iluminação dinâmica no Minecraft Bedrock."}
+];
 
-const IMAGE_EXT = ["png","jpg","jpeg","webp","gif"];
-const ADDON_EXT = ["mcaddon","mcpack","zip","m"];
-
-let ADDONS = [];
-let categoriaAtual = "todos";
+let ADDONS=[];
+let categoriaAtual="todos";
 let noticeTimer;
 
-const $ = s => document.querySelector(s);
-const grid = $("#grid");
-const search = $("#search");
-const total = $("#total");
-const empty = $("#empty");
-const sort = $("#sort");
-const tabs = $("#tabs");
-
-function indisponivel(){aviso("Indisponível por enquanto")}
+const $=s=>document.querySelector(s);
+const grid=$("#grid"),search=$("#search"),total=$("#total"),empty=$("#empty"),sort=$("#sort"),tabs=$("#tabs");
 
 function aviso(texto){
   const n=$("#notice");
@@ -258,134 +239,106 @@ function aviso(texto){
   clearTimeout(noticeTimer);
   noticeTimer=setTimeout(()=>n.classList.remove("show"),2200);
 }
-
-function ext(name){
-  return String(name).split(".").pop().toLowerCase();
-}
-
-function semExt(name){
-  return String(name).replace(/\.[^/.]+$/,"");
-}
-
+function indisponivel(){aviso("Indisponível por enquanto")}
+function ext(n){return String(n).split(".").pop().toLowerCase()}
+function semExt(n){return String(n).replace(/\.[^/.]+$/,"")}
+function encodePath(nome){return String(nome).split("/").map(encodeURIComponent).join("/")}
+function rawUrl(pasta,nome){return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${pasta}/${encodePath(nome)}`}
 function normalizar(texto){
-  return semExt(texto)
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g,"")
-    .replace(/\b(addon|add-on|mcaddon|mcpack|minecraft|bedrock|v[0-9]+|png|jpg|webp|gif)\b/g,"")
-    .replace(/[^a-z0-9]+/g,"-")
-    .replace(/^-|-$/g,"");
+  return semExt(texto).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+  .replace(/\b(addon|add-on|mcaddon|mcpack|minecraft|bedrock|png|jpg|jpeg|webp|gif|zip)\b/g,"")
+  .replace(/v[0-9]+(\.[0-9]+)*/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")
 }
-
-function tituloArquivo(nome){
-  return semExt(nome)
-    .replace(/[-_]+/g," ")
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/\b\w/g,l=>l.toUpperCase());
-}
-
-function slug(t){
-  return normalizar(t);
-}
-
+function tituloArquivo(nome){return semExt(nome).replace(/[-_]+/g," ").replace(/\s+/g," ").trim().replace(/\b\w/g,l=>l.toUpperCase())}
+function slug(t){return normalizar(t)}
+function catName(c){return{todos:"TODOS",utilidades:"UTILIDADES",visual:"VISUAL",construcao:"CONSTRUÇÃO",java:"JAVA"}[c]||c.toUpperCase()}
 function categoriaAuto(nome){
-  const n = normalizar(nome);
-  if(n.includes("vision") || n.includes("camera") || n.includes("light") || n.includes("luz") || n.includes("diamante")) return "visual";
-  if(n.includes("build") || n.includes("construcao")) return "construcao";
-  if(n.includes("java")) return "java";
-  return "utilidades";
-}
-
-function catName(c){
-  return {todos:"TODOS",utilidades:"UTILIDADES",visual:"VISUAL",construcao:"CONSTRUÇÃO",java:"JAVA"}[c] || c.toUpperCase();
+  const n=normalizar(nome);
+  if(n.includes("vision")||n.includes("camera")||n.includes("light")||n.includes("luz")||n.includes("diamante"))return"visual";
+  if(n.includes("build")||n.includes("construcao"))return"construcao";
+  if(n.includes("java"))return"java";
+  return"utilidades";
 }
 
 async function listarPasta(pasta){
-  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${pasta}?ref=${GITHUB_BRANCH}`;
-  const res = await fetch(url);
-  if(!res.ok) throw new Error("Não consegui ler a pasta " + pasta);
-  const data = await res.json();
-  return data.filter(item => item.type === "file");
+  const url=`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${pasta}?ref=${GITHUB_BRANCH}`;
+  const res=await fetch(url);
+  if(!res.ok)throw new Error("Não consegui ler "+pasta);
+  const data=await res.json();
+  return data.filter(i=>i.type==="file");
 }
 
-function montarAddons(imagens, arquivos){
-  const imagensPorNome = new Map();
-
-  imagens.forEach(img => {
-    imagensPorNome.set(normalizar(img.name), img);
-  });
-
-  const addons = arquivos.map(arq => {
-    const chave = normalizar(arq.name);
-    const img = imagensPorNome.get(chave);
-
-    return {
-      nome: tituloArquivo(arq.name),
-      categoria: categoriaAuto(arq.name),
-      imagem: img ? img.download_url : "",
-      imagemNome: img ? img.name : "",
-      arquivo: arq.download_url,
-      arquivoNome: arq.name,
-      versao: "v1.0",
-      descricao: img
-        ? "Addon carregado automaticamente das pastas imagens e addons."
-        : "Addon carregado automaticamente, mas ainda não encontrou imagem com o mesmo nome."
-    };
-  });
-
-  imagens.forEach(img => {
-    const chave = normalizar(img.name);
-    const existeAddon = arquivos.some(arq => normalizar(arq.name) === chave);
-
-    if(!existeAddon){
-      addons.push({
-        nome: tituloArquivo(img.name),
-        categoria: categoriaAuto(img.name),
-        imagem: img.download_url,
-        imagemNome: img.name,
-        arquivo: "",
-        arquivoNome: "",
-        versao: "IMG",
-        descricao: "Imagem encontrada, mas ainda não existe addon com o mesmo nome na pasta addons."
-      });
-    }
-  });
-
-  return addons;
+function criarFixos(){
+  return ADDONS_FIXOS.map(a=>({
+    ...a,
+    imagemUrl:rawUrl(IMAGE_DIR,a.imagem),
+    arquivoUrl:rawUrl(ADDON_DIR,a.arquivo),
+    imagemNome:a.imagem,
+    arquivoNome:a.arquivo,
+    fixo:true
+  }));
 }
 
-async function carregarAutomatico(){
+function criarAutomaticos(imagens,arquivos){
+  const usadosImagem=new Set(ADDONS_FIXOS.map(a=>a.imagem.toLowerCase()));
+  const usadosArquivo=new Set(ADDONS_FIXOS.map(a=>a.arquivo.toLowerCase()));
+  const mapaImagem=new Map();
+
+  imagens.forEach(img=>{
+    if(!IMAGE_EXT.includes(ext(img.name)))return;
+    if(usadosImagem.has(img.name.toLowerCase()))return;
+    mapaImagem.set(normalizar(img.name),img);
+  });
+
+  const novos=[];
+
+  arquivos.forEach(arq=>{
+    if(!ADDON_EXT.includes(ext(arq.name)))return;
+    if(usadosArquivo.has(arq.name.toLowerCase()))return;
+
+    const chave=normalizar(arq.name);
+    const img=mapaImagem.get(chave);
+
+    if(!img)return;
+
+    novos.push({
+      nome:tituloArquivo(arq.name),
+      categoria:categoriaAuto(arq.name),
+      imagem:img.name,
+      arquivo:arq.name,
+      imagemNome:img.name,
+      arquivoNome:arq.name,
+      imagemUrl:img.download_url,
+      arquivoUrl:arq.download_url,
+      versao:"v1.0",
+      descricao:"Addon carregado automaticamente porque a imagem e o arquivo têm o mesmo nome.",
+      fixo:false
+    });
+  });
+
+  return novos;
+}
+
+async function carregar(){
   try{
-    const [imagensRaw, addonsRaw] = await Promise.all([
-      listarPasta(IMAGE_DIR),
-      listarPasta(ADDON_DIR)
-    ]);
-
-    const imagens = imagensRaw.filter(f => IMAGE_EXT.includes(ext(f.name)));
-    const arquivos = addonsRaw.filter(f => ADDON_EXT.includes(ext(f.name)));
-
-    ADDONS = montarAddons(imagens, arquivos);
-
-    $("#loading").style.display = "none";
+    const [imagens,arquivos]=await Promise.all([listarPasta(IMAGE_DIR),listarPasta(ADDON_DIR)]);
+    ADDONS=[...criarFixos(),...criarAutomaticos(imagens,arquivos)];
+    $("#loading").style.display="none";
     iniciarSite();
   }catch(e){
-    $("#loading").textContent = "Erro ao carregar do GitHub. Confira se as pastas imagens e addons existem e se o repositório está público.";
-    console.error(e);
+    ADDONS=criarFixos();
+    $("#loading").style.display="none";
+    iniciarSite();
+    aviso("Use GitHub Pages público para carregar novos automaticamente");
   }
 }
 
 function iniciarSite(){
-  $("#heroCount").textContent = `${ADDONS.length}+ ARQUIVOS GRÁTIS`;
+  $("#heroCount").textContent=`${ADDONS.length}+ ADDONS GRÁTIS`;
+  $("#bgArt").innerHTML=ADDONS.slice(0,5).map(a=>`<img class="bg-card" src="${a.imagemUrl}" alt="">`).join("");
 
-  $("#bgArt").innerHTML = ADDONS
-    .filter(a => a.imagem)
-    .slice(0,5)
-    .map(a => `<img class="bg-card" src="${a.imagem}" alt="">`)
-    .join("");
-
-  const cats = ["todos", ...new Set(ADDONS.map(a => a.categoria))];
-  tabs.innerHTML = cats.map(c => `<button class="${c==="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
+  const cats=["todos",...new Set(ADDONS.map(a=>a.categoria))];
+  tabs.innerHTML=cats.map(c=>`<button class="${c==="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
 
   document.querySelectorAll("#tabs button").forEach(b=>{
     b.onclick=()=>{
@@ -396,87 +349,80 @@ function iniciarSite(){
     };
   });
 
-  search.oninput = renderHome;
-  sort.onchange = renderHome;
-  window.onhashchange = route;
+  search.oninput=renderHome;
+  sort.onchange=renderHome;
+  window.onhashchange=route;
   route();
 }
 
 function card(a){
-  const temDownload = Boolean(a.arquivo);
-  const imagem = a.imagem || "";
-  const imagemHtml = imagem
-    ? `<img src="${imagem}" alt="${a.nome}">`
-    : `<div style="display:grid;place-items:center;height:100%;padding:20px;text-align:center">SEM IMAGEM COM O MESMO NOME</div>`;
-
   return `
   <article class="card">
     <a class="pic" href="#addon/${slug(a.nome)}">
       <span class="tag">${catName(a.categoria)}</span>
       <span class="ver">${a.versao}</span>
-      ${imagemHtml}
+      <img src="${a.imagemUrl}" alt="${a.nome}">
     </a>
     <div class="body">
       <h3>${a.nome}</h3>
-      <div class="meta">${a.arquivoNome || "Só imagem"}</div>
+      <div class="meta">${a.arquivoNome}</div>
       <div class="desc">${a.descricao}</div>
       <div class="stars">★★★★★</div>
       <div class="actions">
-        <a class="btn" href="#addon/${slug(a.nome)}">${temDownload ? "BAIXAR" : "VER"}</a>
-        <a class="btn" href="${imagem || "#"}" target="_blank">IMG</a>
+        <a class="btn" href="#addon/${slug(a.nome)}">BAIXAR</a>
+        <a class="btn" href="${a.imagemUrl}" target="_blank">IMG</a>
       </div>
     </div>
   </article>`;
 }
 
 function renderHome(){
-  const busca = search.value.trim().toLowerCase();
-
-  let lista = ADDONS.filter(a=>{
-    return (categoriaAtual==="todos" || a.categoria===categoriaAtual) &&
-    (a.nome.toLowerCase().includes(busca) || a.arquivoNome.toLowerCase().includes(busca) || a.imagemNome.toLowerCase().includes(busca));
+  const busca=search.value.trim().toLowerCase();
+  let lista=ADDONS.filter(a=>{
+    return(categoriaAtual==="todos"||a.categoria===categoriaAtual)&&
+    (a.nome.toLowerCase().includes(busca)||a.arquivoNome.toLowerCase().includes(busca)||a.imagemNome.toLowerCase().includes(busca));
   });
 
-  if(sort.value==="az") lista.sort((a,b)=>a.nome.localeCompare(b.nome));
+  if(sort.value==="az")lista.sort((a,b)=>a.nome.localeCompare(b.nome));
 
-  total.textContent = `${lista.length} itens encontrados automaticamente.`;
-  empty.style.display = lista.length ? "none" : "block";
-  grid.innerHTML = lista.map(card).join("");
+  total.textContent=`${lista.length} addons prontos com imagem e download.`;
+  empty.style.display=lista.length?"none":"block";
+  grid.innerHTML=lista.map(card).join("");
 }
 
 function renderDetail(a){
   $("#homeView").classList.add("hide");
   $("#detailView").classList.remove("hide");
 
-  $("#detailCat").textContent = catName(a.categoria);
-  $("#detailImg").src = a.imagem || "";
-  $("#detailImg").alt = a.nome;
-  $("#detailTitle").textContent = a.nome.toUpperCase();
-  $("#detailMeta").innerHTML = `Arquivo: <b>${a.arquivoNome || "sem download"}</b>`;
-  $("#detailDesc").textContent = a.descricao;
-  $("#detailAbout").textContent = "Este item foi carregado automaticamente do GitHub. Para juntar imagem e addon sozinho, use o mesmo nome nos dois arquivos.";
+  $("#detailCat").textContent=catName(a.categoria);
+  $("#detailImg").src=a.imagemUrl;
+  $("#detailImg").alt=a.nome;
+  $("#detailTitle").textContent=a.nome.toUpperCase();
+  $("#detailMeta").innerHTML=`Arquivo: <b>${a.arquivoNome}</b>`;
+  $("#detailDesc").textContent=a.descricao;
+  $("#detailAbout").textContent="Este addon está pronto com imagem e download. Os antigos usam a lista fixa; os novos entram automaticamente quando a imagem e o addon têm o mesmo nome.";
 
-  $("#detailDownload").href = a.arquivo || "#";
-  $("#detailDownload").textContent = a.arquivo ? "BAIXAR " + a.nome.toUpperCase() : "DOWNLOAD INDISPONÍVEL";
-  $("#detailDownload").onclick = a.arquivo ? null : e => {e.preventDefault(); aviso("Coloque o addon com o mesmo nome da imagem")};
+  $("#detailDownload").href=a.arquivoUrl;
+  $("#detailDownload").textContent="BAIXAR "+a.nome.toUpperCase();
+  $("#detailDownload").setAttribute("download",a.arquivoNome);
 
-  $("#detailOpenImage").href = a.imagem || "#";
+  $("#detailOpenImage").href=a.imagemUrl;
 
   $("#shareBtn").onclick=()=>{
-    if(navigator.clipboard) navigator.clipboard.writeText(location.href);
+    if(navigator.clipboard)navigator.clipboard.writeText(location.href);
     aviso("Link copiado");
   };
 
-  $("#moreGrid").innerHTML = ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
+  $("#moreGrid").innerHTML=ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
   scrollTo(0,0);
 }
 
 function route(){
-  const hash = location.hash;
+  const hash=location.hash;
 
   if(hash.startsWith("#addon/")){
-    const id = hash.replace("#addon/","");
-    const addon = ADDONS.find(a => slug(a.nome) === id);
+    const id=hash.replace("#addon/","");
+    const addon=ADDONS.find(a=>slug(a.nome)===id);
     if(addon){renderDetail(addon);return}
   }
 
@@ -486,7 +432,7 @@ function route(){
   scrollTo(0,0);
 }
 
-carregarAutomatico();
+carregar();
 </script>
 
 </body>
