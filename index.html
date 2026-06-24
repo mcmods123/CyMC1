@@ -213,28 +213,23 @@ function criarAutomaticos(files){
 
 async function carregar(){
   try{
-    const res = await fetch("addons.json");
-    const dados = await res.json();
-
-    ADDONS = dados.map(a => ({
-      ...a,
-      imagemUrl: raw(a.imagem),
-      arquivoUrl: raw(a.arquivo),
-      imagemNome: a.imagem,
-      arquivoNome: a.arquivo
-    }));
-
-  } catch (e) {
-
-    console.error(e);
-    aviso("Erro ao carregar addons.json");
-    ADDONS = [];
-
+    const files=await carregarArquivos();
+    ADDONS=[...criarFixos(),...criarAutomaticos(files)];
+  }catch(e){
+    ADDONS=criarFixos();
+    aviso("Não consegui ler novos arquivos agora");
   }
-
-  $("#loading").style.display = "none";
+  $("#loading").style.display="none";
   iniciarSite();
+}
 
+function iniciarSite(){
+  $("#heroCount").textContent=`${ADDONS.length}+ ADDONS GRÁTIS`;
+  $("#bgArt").innerHTML=ADDONS.filter(a=>a.imagemUrl).slice(0,5).map(a=>`<img class="bg-card" src="${a.imagemUrl}" alt="">`).join("");
+  const cats=["todos",...new Set(ADDONS.map(a=>a.categoria))];
+  tabs.innerHTML=cats.map(c=>`<button class="${c==="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
+  document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{document.querySelector("#tabs .active").classList.remove("active");b.classList.add("active");categoriaAtual=b.dataset.cat;renderHome()});
+  search.oninput=renderHome;sort.onchange=renderHome;window.onhashchange=route;route();
 }
 
 function card(a){
