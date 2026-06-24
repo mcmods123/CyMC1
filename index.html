@@ -3,719 +3,286 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Cy Addons - Minecraft Bedrock</title>
-
-<meta name="description" content="52+ Addons gratuitos para Minecraft Bedrock">
-
+<title>Addons Minecraft Bedrock</title>
+<meta name="description" content="Cy Addons — Addons gratuitos para Minecraft Bedrock. Proprietário: Cy Addons.">
+<!-- AI SITE CONTEXT: {"site":"Cy Addons","purpose":"Addons Minecraft Bedrock","owner":"Cy Addons","language":"pt-BR"} -->
+<meta name="ai:site-info" content='{"site":"Cy Addons","purpose":"Addons Minecraft Bedrock","owner":"Cy Addons","language":"pt-BR"}'>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-:root{
---roxo:#7b2cff;
---roxo2:#b05cff;
---preto:#0a0a0a;
---cinza:#181818;
---branco:#ffffff;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#fff;
-overflow-x:hidden;
-color:#111;
-}
-
-/* FUNDO */
-
-.bg{
-position:fixed;
-inset:0;
-z-index:-5;
-overflow:hidden;
-}
-
-.bg::before{
-content:"";
-position:absolute;
-inset:0;
-background:
-radial-gradient(circle at top,
-rgba(123,44,255,.25),
-transparent 45%);
-}
-
-.floating{
-position:absolute;
-width:180px;
-height:180px;
-object-fit:cover;
-border:4px solid #111;
-box-shadow:8px 8px 0 #111;
-opacity:.13;
-animation:float 18s ease-in-out infinite;
-}
-
-@keyframes float{
-
-0%{
-transform:
-translateY(0px)
-rotate(-8deg)
-scale(1);
-}
-
-50%{
-transform:
-translateY(-25px)
-rotate(4deg)
-scale(1.05);
-}
-
-100%{
-transform:
-translateY(0px)
-rotate(-8deg)
-scale(1);
-}
-
-}
-
-.floating:nth-child(2){
-animation-duration:20s;
-}
-
-.floating:nth-child(3){
-animation-duration:22s;
-}
-
-.floating:nth-child(4){
-animation-duration:24s;
-}
-
-.floating:nth-child(5){
-animation-duration:26s;
-}
-
-.floating:nth-child(6){
-animation-duration:28s;
-}
-
-/* HERO */
-
-.hero{
-padding:35px 15px 50px;
-text-align:center;
-}
-
-.counter{
-display:inline-block;
-background:#fff;
-border:3px solid #111;
-box-shadow:5px 5px 0 #111;
-padding:10px 20px;
-font-weight:900;
-margin-bottom:15px;
-}
-
-.live{
-font-weight:900;
-color:var(--roxo);
-margin-bottom:15px;
-}
-
-.logo{
-font-size:clamp(48px,8vw,110px);
-font-weight:1000;
-color:#fff;
-display:inline-block;
-padding:10px 25px;
-background:linear-gradient(
-90deg,
-var(--roxo),
-var(--roxo2)
-);
-border:4px solid #fff;
-box-shadow:
-10px 10px 0 #111,
-0 0 40px rgba(123,44,255,.4);
-}
-
-.sub{
-margin-top:20px;
-font-size:20px;
-font-weight:900;
-line-height:1.4;
-}
-
-.free{
-margin-top:20px;
-display:inline-block;
-padding:15px 25px;
-border:3px dashed var(--roxo);
-background:#fff;
-font-weight:900;
-}
-
-/* MENU */
-
-.nav{
-background:#050505;
-display:flex;
-justify-content:center;
-gap:25px;
-padding:15px;
-overflow:auto;
-border-top:4px solid #111;
-border-bottom:4px solid #111;
-}
-
-.nav a{
-text-decoration:none;
-color:white;
-font-weight:900;
-white-space:nowrap;
-}
-
-/* CONTAINER */
-
-.container{
-max-width:1350px;
-margin:auto;
-padding:20px;
-}
-
-/* SOCIAL */
-
-.social{
-background:#fff;
-border:3px solid #111;
-box-shadow:5px 5px 0 #111;
-padding:20px;
-margin-bottom:30px;
-text-align:center;
-}
-
-.social h2{
-color:var(--roxo);
-margin-bottom:15px;
-}
-
-.social-buttons{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-}
-
-.social-buttons button{
-height:55px;
-font-weight:900;
-border:3px solid #111;
-background:#fff;
-cursor:pointer;
-box-shadow:5px 5px 0 #111;
-}
-
-/* TOPO ADDONS */
-
-.topbar{
-display:grid;
-grid-template-columns:1fr 350px 150px;
-gap:12px;
-align-items:end;
-margin-bottom:25px;
-}
-
-.title{
-font-size:55px;
-font-weight:1000;
-line-height:1;
-}
-
-.search,
-.select{
-height:48px;
-border:3px solid #111;
-padding:0 12px;
-font-weight:900;
-}
-
-/* CATEGORIAS */
-
-.tabs{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:25px;
-}
-
-.tabs button{
-padding:10px 18px;
-font-weight:900;
-border:3px solid #111;
-background:#fff;
-cursor:pointer;
-}
-
-.tabs button:hover,
-.tabs .active{
-background:var(--roxo);
-color:white;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.card{
-background:white;
-border:3px solid #111;
-box-shadow:5px 5px 0 #111;
-overflow:hidden;
-transition:.2s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-}
-
-.card-img{
-height:190px;
-background:#111;
-overflow:hidden;
-}
-
-.card-img img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.card-body{
-padding:15px;
-}
-
-.card-body h3{
-margin-bottom:10px;
-}
-
-.card-body p{
-font-size:13px;
-line-height:1.4;
-color:#555;
-margin-bottom:12px;
-}
-
-.download{
-display:block;
-text-align:center;
-height:45px;
-line-height:39px;
-font-weight:900;
-border:3px solid #111;
-text-decoration:none;
-color:#111;
-box-shadow:4px 4px 0 #111;
-}
-
-.download:hover{
-background:var(--roxo);
-color:white;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:1100px){
-
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
-
-.topbar{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:700px){
-
-.grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.social-buttons{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:500px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.logo{
-font-size:52px;
-}
-
-}
-
+*{box-sizing:border-box}:root{--p:#7b2cff;--p2:#a855ff;--b:#080808}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff;background-image:linear-gradient(45deg,rgba(0,0,0,.055) 25%,transparent 25%),linear-gradient(-45deg,rgba(0,0,0,.055) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,rgba(0,0,0,.055) 75%),linear-gradient(-45deg,transparent 75%,rgba(0,0,0,.055) 75%);background-size:30px 30px;background-position:0 0,0 15px,15px -15px,-15px 0;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;background:radial-gradient(circle at 50% 0,rgba(123,44,255,.25),transparent 390px),radial-gradient(circle at 8% 22%,rgba(123,44,255,.16),transparent 250px),linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.9))}.bg-art{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none}.bg-card{position:absolute;width:165px;height:165px;object-fit:cover;border:4px solid #111;box-shadow:9px 9px 0 rgba(0,0,0,.55);opacity:.14}.bg-card:nth-child(1){top:70px;left:7%;animation:m1 11s ease-in-out infinite}.bg-card:nth-child(2){top:58px;right:10%;animation:m2 13s ease-in-out infinite}.bg-card:nth-child(3){top:260px;left:38%;animation:m3 12s ease-in-out infinite}.bg-card:nth-child(4){top:440px;left:12%;animation:m4 14s ease-in-out infinite}.bg-card:nth-child(5){top:390px;right:17%;animation:m5 12.5s ease-in-out infinite}@keyframes m1{0%,100%{transform:rotate(-15deg) translate(0,0)}50%{transform:rotate(-10deg) translate(14px,-18px)}}@keyframes m2{0%,100%{transform:rotate(12deg) translate(0,0)}50%{transform:rotate(7deg) translate(-18px,16px)}}@keyframes m3{0%,100%{transform:rotate(-8deg) translate(0,0)}50%{transform:rotate(-13deg) translate(10px,20px)}}@keyframes m4{0%,100%{transform:rotate(10deg) translate(0,0)}50%{transform:rotate(15deg) translate(-14px,-14px)}}@keyframes m5{0%,100%{transform:rotate(-12deg) translate(0,0)}50%{transform:rotate(-7deg) translate(16px,18px)}}.hide{display:none!important}.top,.nav,.wrap{position:relative;z-index:1}.top{text-align:center;padding:28px 14px 42px}.badge{display:inline-block;border:3px solid var(--b);box-shadow:5px 5px 0 var(--b);background:#fff;padding:8px 20px;font-weight:1000}.live{margin:16px 0;color:var(--p);font-weight:1000}.hero{display:inline-block;background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;font-size:clamp(42px,9vw,94px);font-weight:1000;line-height:.95;padding:10px 22px;border:4px solid #fff;box-shadow:9px 9px 0 #111,0 0 42px rgba(123,44,255,.46);transform:rotate(-1deg);text-shadow:4px 4px 0 rgba(0,0,0,.22)}.sub{font-size:20px;font-weight:900;line-height:1.35}.sub b{color:var(--p)}.free{display:inline-block;margin-top:20px;border:2px dashed #b88cff;background:rgba(255,255,255,.78);padding:14px 24px;font-weight:1000}.nav{display:flex;gap:26px;background:#050505;color:white;border-top:4px solid #111;border-bottom:4px solid #111;padding:14px;overflow:auto;font-weight:1000}.nav a{color:white;text-decoration:none;white-space:nowrap}.wrap{max-width:1240px;margin:auto;padding:24px 14px 50px}.social,.box,.how{background:rgba(255,255,255,.94);border:3px solid #111;box-shadow:5px 5px 0 #111}.social{padding:18px;text-align:center;margin-bottom:28px}.social h2{margin:0 0 14px;color:var(--p);letter-spacing:2px}.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.socials button{border:3px solid #111;box-shadow:5px 5px 0 #111;padding:16px;color:#111;font-weight:1000;background:#fff;cursor:pointer;font-size:15px}.socials button:nth-child(2){background:linear-gradient(90deg,var(--p),#d946ef);color:#fff}.head{display:grid;grid-template-columns:1fr 390px 120px;gap:10px;align-items:end;margin:28px 0 16px}.label{display:inline-block;background:#111;color:white;padding:5px 9px;font-weight:1000}.head h1{font-size:54px;margin:8px 0 0;font-weight:1000;line-height:.95}.head p{margin:10px 0 0;color:#555}.search,.select{height:46px;border:3px solid #111;background:white;padding:0 14px;font-weight:900;font-size:15px;outline:none}.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}.tabs button{border:3px solid #111;background:white;padding:10px 16px;font-weight:1000;cursor:pointer}.tabs button.active,.tabs button:hover{background:var(--p);color:white}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:white;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;flex-direction:column;min-height:390px}.pic{height:175px;background:#111;position:relative;overflow:hidden;display:block;color:white;text-decoration:none}.pic img{width:100%;height:100%;object-fit:cover}.auto-cover{height:100%;display:grid;place-items:center;text-align:center;padding:18px;background:linear-gradient(135deg,#7b2cff,#111);color:white;font-weight:1000;font-size:22px}.tag,.ver{position:absolute;top:8px;border:2px solid #111;font-weight:1000;padding:3px 8px;z-index:2;font-size:12px}.tag{left:8px;background:var(--p);color:white}.ver{right:8px;background:white;color:#111}.body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}.body h3{margin:0;font-size:20px;line-height:1.1}.meta,.desc{font-size:13px;color:#555;line-height:1.35}.stars{color:var(--p);font-size:18px;letter-spacing:1px}.actions{margin-top:auto;display:grid;grid-template-columns:1fr 44px;gap:9px}.btn{border:3px solid #111;background:white;box-shadow:5px 5px 0 #111;min-height:43px;font-weight:1000;text-decoration:none;color:#111;display:grid;place-items:center;cursor:pointer;text-align:center;padding:0 12px}.btn:hover{background:var(--p);color:white}.empty,.loading{border:3px solid #111;background:white;padding:25px;font-weight:1000;box-shadow:5px 5px 0 #111}.empty{display:none}.detail-top{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:3px solid #111;padding:10px 0 12px;margin-bottom:20px}.back{font-weight:1000;text-decoration:none;color:#111;padding:10px}.top-actions{display:flex;gap:10px}.addon-hero{display:grid;grid-template-columns:1fr 1fr;border:3px solid #111;box-shadow:6px 6px 0 #111;background:#fff;margin-bottom:24px}.addon-image{min-height:430px;background:#111;position:relative}.addon-image img{width:100%;height:100%;object-fit:cover}.addon-info{padding:26px}.addon-info h1{font-size:34px;line-height:1;margin:0 0 14px;font-weight:1000}.addon-info p{color:#555;line-height:1.55}.download-main{margin:18px 0 24px;min-height:54px;font-size:18px}.how h2{margin:0;background:#111;color:white;padding:12px 16px;font-size:18px}.step{display:flex;gap:12px;margin:14px;border:2px solid #ccc;padding:12px}.num{min-width:34px;height:34px;border:3px solid #111;display:grid;place-items:center;font-weight:1000;background:#fff}.step:nth-child(3){border-color:var(--p);background:#f5efff}.account{margin:14px;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:14px;text-align:center;font-weight:1000}.box{margin:20px 0;padding:24px}.box h2{margin:0;color:var(--p);font-size:22px;letter-spacing:2px}.more-title{margin:34px 0 18px;color:var(--p);letter-spacing:2px}.footer{background:#050505;color:#aaa;text-align:center;padding:18px;font-weight:1000}.notice{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111;color:#fff;border:3px solid var(--p);box-shadow:6px 6px 0 #000;padding:14px 20px;font-weight:1000;z-index:20;display:none;text-align:center}.notice.show{display:block}@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.head,.addon-hero{grid-template-columns:1fr}.addon-image{min-height:300px}}@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.socials{grid-template-columns:1fr}.hero{font-size:48px}.head h1{font-size:40px}.top-actions{flex-direction:column;align-items:stretch}}@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{gap:18px}.addon-info h1{font-size:28px}}
 </style>
 </head>
+
 <body>
+<div class="bg-art" id="bgArt"></div>
+<div class="notice" id="notice">Indisponível por enquanto</div>
 
-<div class="bg" id="bg"></div>
-<section class="hero">
+<section id="homeView">
+  <section class="top">
+    <div class="badge" id="heroCount">CARREGANDO ADDONS...</div>
+    <div class="live">● PESSOAS BAIXANDO AGORA</div>
+    <div class="hero">ADDONS GRÁTIS</div>
+    <p class="sub">Seus addons antigos continuam certos.<br><b>Os novos aparecem até se estiverem em colocar-aqui.</b></p>
+    <div class="free">100% GRÁTIS - SEM CADASTRO OBRIGATÓRIO</div>
+  </section>
 
-<div class="counter">
-52+ ADDONS GRÁTIS
-</div>
+  <nav class="nav">
+    <a href="#">■ ADDONS</a><a href="#">■ TEXTURAS</a><a href="#">■ MOBS</a>
+    <a href="#">■ MAPAS</a><a href="#">■ UTILIDADES</a><a href="#">■ VISUAL</a>
+  </nav>
 
-<div class="live">
-● PESSOAS BAIXANDO AGORA
-</div>
+  <main class="wrap">
+    <section class="social">
+      <h2>SIGA O CRIADOR</h2>
+      <div class="socials">
+        <button onclick="indisponivel()">DISCORD</button>
+        <button onclick="indisponivel()">INSTAGRAM</button>
+        <button onclick="indisponivel()">YOUTUBE</button>
+      </div>
+      <p>Botões sociais indisponíveis por enquanto.</p>
+    </section>
 
-<div class="logo">
-CY ADDONS
-</div>
+    <section class="head">
+      <div>
+        <span class="label">ADDONS</span>
+        <h1>TODA A COLEÇÃO</h1>
+        <p id="total">Carregando arquivos do GitHub...</p>
+      </div>
+      <input class="search" id="search" placeholder="Buscar addon...">
+      <select class="select" id="sort">
+        <option value="mix">MIX</option>
+        <option value="az">A-Z</option>
+      </select>
+    </section>
 
-<p class="sub">
-Os addons mais populares ficam no topo.<br>
-Novos addons aparecem automaticamente.
-</p>
-
-<div class="free">
-100% GRÁTIS • SEM CADASTRO
-</div>
-
+    <div class="tabs" id="tabs"></div>
+    <div class="loading" id="loading">Buscando addons...</div>
+    <section class="grid" id="grid"></section>
+    <p class="empty" id="empty">Nenhum addon encontrado.</p>
+  </main>
 </section>
 
-<nav class="nav">
-<a href="#">ADDONS</a>
-<a href="#">TEXTURAS</a>
-<a href="#">MOBS</a>
-<a href="#">MAPAS</a>
-<a href="#">UTILIDADES</a>
-<a href="#">VISUAL</a>
-<a href="#">RPG</a>
-<a href="#">SURVIVAL</a>
-</nav>
+<section id="detailView" class="hide">
+  <main class="wrap">
+    <div class="detail-top">
+      <a class="back" href="#">← Voltar</a>
+      <div class="top-actions">
+        <button class="btn" onclick="indisponivel()">♡ FAVORITAR</button>
+        <button class="btn" id="shareBtn">COMPARTILHAR</button>
+      </div>
+    </div>
 
-<div class="container">
+    <section class="addon-hero">
+      <div class="addon-image" id="detailImageBox">
+        <span class="tag" id="detailCat"></span>
+      </div>
+      <div class="addon-info">
+        <h1 id="detailTitle"></h1>
+        <div class="meta" id="detailMeta"></div>
+        <div class="stars">★★★★★ <b style="color:#111;font-size:14px">5/5</b></div>
+        <p id="detailDesc"></p>
+        <a class="btn download-main" id="detailDownload">BAIXAR ADDON</a>
+        <a class="btn" id="detailOpenImage" target="_blank">ABRIR IMAGEM</a>
+      </div>
+    </section>
 
-<section class="social">
+    <section class="how">
+      <h2>COMO BAIXAR - PASSO A PASSO <span style="float:right;color:#00c875;font-size:12px">100% GRÁTIS</span></h2>
+      <div class="step"><div class="num">1</div><div><b>TOQUE EM BAIXAR</b><br>O botão abre o arquivo do addon.</div></div>
+      <div class="step"><div class="num">2</div><div><b>BAIXE O ARQUIVO</b><br>Salve o .mcaddon, .mcpack ou .zip no celular.</div></div>
+      <div class="step"><div class="num">3</div><div><b>ABRA COM O MINECRAFT</b><br>Toque no arquivo baixado para instalar.</div></div>
+      <div class="account">CRIAR MINHA CONTA GRÁTIS</div>
+    </section>
 
-<h2>SIGA O CRIADOR</h2>
+    <section class="box">
+      <h2>SOBRE ESTE ADDON</h2>
+      <p id="detailAbout"></p>
+    </section>
 
-<div class="social-buttons">
-<button>DISCORD</button>
-<button>INSTAGRAM</button>
-<button>YOUTUBE</button>
-</div>
-
+    <h2 class="more-title">CONTINUAR EXPLORANDO</h2>
+    <section class="grid" id="moreGrid"></section>
+  </main>
 </section>
 
-<div class="topbar">
+<footer class="footer">© 2026 Cy Addons · Todos os direitos reservados</footer>
 
-<div>
-<div style="font-weight:900;">
-ADDONS
-</div>
-
-<div class="title">
-TODA A COLEÇÃO
-</div>
-
-<p id="totalAddons">
-Carregando addons...
-</p>
-
-</div>
-
-<input
-id="search"
-class="search"
-placeholder="Buscar addon..."
->
-
-<select
-id="category"
-class="select"
->
-<option value="todos">TODOS</option>
-<option value="utilidades">UTILIDADES</option>
-<option value="visual">VISUAL</option>
-<option value="texturas">TEXTURAS</option>
-<option value="construcao">CONSTRUÇÃO</option>
-<option value="java">JAVA</option>
-<option value="mobs">MOBS</option>
-<option value="survival">SURVIVAL</option>
-<option value="rpg">RPG</option>
-</select>
-
-</div>
-
-<div class="grid" id="grid"></div>
-
-</div>
-<script>
-
-const addons = [
-
+<script type="application/ld+json">
 {
-nome:"Afk Chunk Loader",
-categoria:"utilidades",
-imagem:"imagens/Afk_Chunk_Loader.jpg",
-arquivo:"addons/Afk_Chunk_Loader_bot.mcaddon",
-descricao:"Mantém chunks carregados para farms automáticas."
-},
-
-{
-nome:"Backpack Addon",
-categoria:"utilidades",
-imagem:"imagens/backpack addon.png",
-arquivo:"addons/OTG Backpack v1.0.6.mcaddon",
-descricao:"Mochilas para carregar mais itens."
-},
-
-{
-nome:"Camera Addon",
-categoria:"visual",
-imagem:"imagens/camera addon.png",
-arquivo:"addons/Cinecam by domikalmazika.mcaddon",
-descricao:"Câmera cinematográfica para vídeos."
-},
-
-{
-nome:"Effortless Building",
-categoria:"construcao",
-imagem:"imagens/construção addon.png",
-arquivo:"addons/Effortless Building v3.1.mcaddon",
-descricao:"Construa estruturas rapidamente."
-},
-
-{
-nome:"Java Spawn In Bedrock",
-categoria:"java",
-imagem:"imagens/mob boster java.png",
-arquivo:"addons/JavaSpawnInBedrock.mcpack",
-descricao:"Recursos inspirados na versão Java."
-},
-
-{
-nome:"Multiply Ores",
-categoria:"utilidades",
-imagem:"imagens/multiplidor de minerios png.webp",
-arquivo:"addons/MultiplyOresby@ncmine.mcaddon",
-descricao:"Multiplica a quantidade de minérios."
-},
-
-{
-nome:"Night Vision",
-categoria:"visual",
-imagem:"imagens/nigth vision png.webp",
-arquivo:"addons/NIGHT VISION ATUALIZADA.mcpack",
-descricao:"Visão noturna permanente."
-},
-
-{
-nome:"OP Villagers",
-categoria:"survival",
-imagem:"imagens/op vilagers png.webp",
-arquivo:"addons/oneesmeralde.mcpack",
-descricao:"Trocas extremamente fortes."
-},
-
-{
-nome:"Vein Miner",
-categoria:"utilidades",
-imagem:"imagens/veimaner.png",
-arquivo:"addons/Utilities_Vein_Miner_v5.5 BP.zip",
-descricao:"Quebre uma veia inteira de minério."
-},
-
-{
-nome:"Simple Waystone",
-categoria:"survival",
-imagem:"imagens/waystone.jpg",
-arquivo:"addons/Simple_Waystone_v8.2_Full.mcaddon",
-descricao:"Sistema de teleporte."
-},
-
-{
-nome:"Mini Map",
-categoria:"utilidades",
-imagem:"imagens/mini map addon.jpg",
-arquivo:"addons/Real Minimap Add-On addon.mcaddon",
-descricao:"Minimapa em tempo real."
-},
-
-{
-nome:"Diamante Ultra 200%",
-categoria:"texturas",
-imagem:"imagens/diamante 200x.webp",
-arquivo:"addons/_MConverter.eu_diamond ultra 200%.mcpack",
-descricao:"Textura HD para diamantes."
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Cy Addons",
+  "description": "Site de addons grátis para Minecraft Bedrock. Proprietário: Cy Addons.",
+  "author": {
+    "@type": "Person",
+    "name": "Cy Addons"
+  }
 }
-
-];
-
-const prioridade = [
-"Vein Miner",
-"Effortless Building",
-"Night Vision",
-"Mini Map",
-"Backpack Addon",
-"Simple Waystone"
-];
-
-addons.sort((a,b)=>{
-let pa=prioridade.indexOf(a.nome);
-let pb=prioridade.indexOf(b.nome);
-
-if(pa===-1) pa=999;
-if(pb===-1) pb=999;
-
-return pa-pb;
-});
-
-document.getElementById("totalAddons").innerHTML =
-addons.length + " addons prontos para baixar.";
-
-const grid = document.getElementById("grid");
-
-function render(){
-
-let busca =
-document.getElementById("search")
-.value
-.toLowerCase();
-
-let categoria =
-document.getElementById("category")
-.value;
-
-grid.innerHTML="";
-
-addons
-.filter(addon=>{
-
-let okBusca =
-addon.nome.toLowerCase().includes(busca);
-
-let okCategoria =
-categoria==="todos" ||
-addon.categoria===categoria;
-
-return okBusca && okCategoria;
-
-})
-
-.forEach(addon=>{
-
-grid.innerHTML += `
-
-<div class="card">
-
-<div class="card-img">
-<img src="${addon.imagem}">
-</div>
-
-<div class="card-body">
-
-<h3>${addon.nome}</h3>
-
-<p>
-${addon.descricao}
-</p>
-
-<a
-class="download"
-href="${addon.arquivo}"
-download
->
-BAIXAR
-</a>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-}
-
-document
-.getElementById("search")
-.addEventListener("input",render);
-
-document
-.getElementById("category")
-.addEventListener("change",render);
-
-render();
-
-/* FUNDO ALEATÓRIO */
-
-const fundo = document.getElementById("bg");
-
-const imagens = [
-
-"imagens/Afk_Chunk_Loader.jpg",
-"imagens/camera addon.png",
-"imagens/construção addon.png",
-"imagens/mini map addon.jpg",
-"imagens/diamante 200x.webp",
-"imagens/nigth vision png.webp",
-"imagens/op vilagers png.webp",
-"imagens/veimaner.png"
-
-];
-
-for(let i=0;i<12;i++){
-
-let img =
-document.createElement("img");
-
-img.src =
-imagens[
-Math.floor(
-Math.random()*imagens.length
-)
-];
-
-img.className="floating";
-
-img.style.left =
-Math.random()*100+"%";
-
-img.style.top =
-Math.random()*100+"%";
-
-img.style.transform =
-`rotate(${Math.random()*40-20}deg)`;
-
-fundo.appendChild(img);
-
-}
-
 </script>
 
+<script>
+/*
+  Contexto legível por máquinas para AIs e scrapers:
+  - A I pode ler window.CY_ADDONS_CONTEXT ou meta[name="ai:site-info"] ou o JSON-LD acima.
+  - Isso comunica: site de addons para Minecraft Bedrock, proprietário "Cy Addons", idioma pt-BR.
+*/
+window.CY_ADDONS_CONTEXT = {
+  site: "Cy Addons",
+  purpose: "Addons Minecraft Bedrock",
+  owner: "Cy Addons",
+  language: "pt-BR",
+  note: "Este site lista e permite baixar addons (.mcaddon, .mcpack, .zip) para Minecraft Bedrock."
+};
+</script>
+
+<script>
+const GITHUB_OWNER="mcmods123";
+const GITHUB_REPO="CyMC1";
+const GITHUB_BRANCH="main";
+const PASTAS=["imagens","addons","colocar-aqui"];
+const IMAGE_EXT=["png","jpg","jpeg","webp","gif"];
+const ADDON_EXT=["mcaddon","mcpack","zip","m"];
+
+const ADDONS_FIXOS=[
+  {nome:"Afk Chunk Loader",categoria:"utilidades",imagem:"imagens/Afk_Chunk_Loader.jpg",arquivo:"addons/Afk_Chunk_Loader_bot.mcaddon",versao:"v1.0",descricao:"Mantenha chunks carregados para farms e sistemas."},
+  {nome:"Backpack Addon",categoria:"utilidades",imagem:"imagens/Backpack addon.png",arquivo:"addons/OTG Backpack v1.0.6.mcaddon",versao:"v1.0.6",descricao:"Adicione mochilas para carregar mais itens nas aventuras."},
+  {nome:"Camera Addon",categoria:"visual",imagem:"imagens/camera addon.png",arquivo:"addons/Cinecam by domikalmazika.mcaddon",versao:"v1.0",descricao:"Use câmera cinematográfica para vídeos e cenas."},
+  {nome:"Construção Addon",categoria:"construcao",imagem:"imagens/construção addon.png",arquivo:"addons/Effortless Building v3.1.mcaddon",versao:"v3.1",descricao:"Construa mais rápido com ferramentas de construção."},
+  {nome:"Diamante Ultra 200%",categoria:"visual",imagem:"imagens/diamante 200x.webp",arquivo:"addons/_MConverter.eu_diamond ultra 200%.mcpack",versao:"v1.0",descricao:"Textura de diamante com visual mais forte."},
+  {nome:"Mini Map Addon",categoria:"utilidades",imagem:"imagens/mini map addon.jpg",arquivo:"addons/Real Minimap Add-On addon.mcaddon",versao:"v1.0",descricao:"Adicione um minimapa ao seu mundo."},
+  {nome:"Java Spawn In Bedrock",categoria:"java",imagem:"imagens/mob boster java.png",arquivo:"addons/JavaSpawnInBedrock.mcpack",versao:"v1.0",descricao:"Deixe alguns comportamentos parecidos com Java no Bedrock."},
+  {nome:"Multiply Ores",categoria:"utilidades",imagem:"imagens/multiplidor de minerios png.webp",arquivo:"addons/MultiplyOresby@ncmine.mcaddon",versao:"v1.0",descricao:"Multiplique minérios e deixe a mineração mais forte."},
+  {nome:"Night Vision",categoria:"visual",imagem:"imagens/nigth vision png.webp",arquivo:"addons/NIGHT VISION ATUALIZADA.mcpack",versao:"v1.0",descricao:"Veja melhor no escuro."},
+  {nome:"OP Villagers",categoria:"utilidades",imagem:"imagens/op vilagers png.webp",arquivo:"addons/oneesmeralde.mcpack",versao:"v1.0",descricao:"Villagers com trocas mais fortes e úteis."},
+  {nome:"Vein Miner",categoria:"utilidades",imagem:"imagens/veimaner.png",arquivo:"addons/Utilities_Vein_Miner_v5.5 BP.zip",versao:"v5.5",descricao:"Minere vários blocos de uma vez."},
+  {nome:"Simple Waystone",categoria:"utilidades",imagem:"imagens/Backpack addon.png",arquivo:"addons/Simple_Waystone_v8.2_Full.mcaddon",versao:"v8.2",descricao:"Sistema de teleporte com waystones para seu mundo."},
+  {nome:"System Dynamic Lights",categoria:"visual",imagem:"imagens/iluminacao addon.gif",arquivo:"addons/System Dynamic Lights BH V3.2.3.mcpack",versao:"v3.2.3",descricao:"Adiciona iluminação dinâmica no Minecraft Bedrock."}
+];
+
+let ADDONS=[],categoriaAtual="todos",noticeTimer;
+const $=s=>document.querySelector(s);
+const grid=$("#grid"),search=$("#search"),total=$("#total"),empty=$("#empty"),sort=$("#sort"),tabs=$("#tabs");
+
+function aviso(t){const n=$("#notice");n.textContent=t;n.classList.add("show");clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>n.classList.remove("show"),2200)}
+function indisponivel(){aviso("Indisponível por enquanto")}
+function ext(n){return String(n).split(".").pop().toLowerCase()}
+function semExt(n){return String(n).replace(/\.[^/.]+$/,"")}
+function enc(p){return String(p).split("/").map(encodeURIComponent).join("/")}
+function raw(p){return`https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${enc(p)}`}
+function nomeArquivo(p){return String(p).split("/").pop()}
+function nomeBonito(n){return semExt(n).replace(/[-_]+/g," ").replace(/[⟦⟧▸]/g," ").replace(/\s+/g," ").trim().replace(/\b\w/g,l=>l.toUpperCase())}
+function normalizar(t){return semExt(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[⟦⟧▸]/g," ").replace(/\b(addon|add-on|mcaddon|mcpack|minecraft|bedrock|achievement|friendly|png|jpg|jpeg|webp|gif|zip|htm|html)\b/g,"").replace(/v[0-9]+(\.[0-9]+)*/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function slug(t){return normalizar(t)}
+function catName(c){return{todos:"TODOS",utilidades:"UTILIDADES",visual:"VISUAL",construcao:"CONSTRUÇÃO",java:"JAVA"}[c]||c.toUpperCase()}
+function categoriaAuto(n){n=normalizar(n);if(n.includes("vision")||n.includes("camera")||n.includes("light")||n.includes("luz"))return"visual";if(n.includes("build")||n.includes("construcao"))return"construcao";if(n.includes("java"))return"java";return"utilidades"}
+function capaAuto(nome){return`<div class="auto-cover">${nome}</div>`}
+
+async function carregarArquivos(){
+  const url=`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+  const res=await fetch(url);
+  if(!res.ok)throw new Error("Erro ao ler GitHub");
+  const data=await res.json();
+  return data.tree.filter(f=>f.type==="blob"&&PASTAS.some(p=>f.path.startsWith(p+"/")));
+}
+
+function criarFixos(){
+  return ADDONS_FIXOS.map(a=>({...a,imagemUrl:raw(a.imagem),arquivoUrl:raw(a.arquivo),imagemNome:a.imagem,arquivoNome:a.arquivo,fixo:true}));
+}
+
+function criarAutomaticos(files){
+  const usados=new Set(ADDONS_FIXOS.map(a=>a.arquivo.toLowerCase()));
+  const imagens=files.filter(f=>IMAGE_EXT.includes(ext(f.path))).map(f=>({...f,chave:normalizar(nomeArquivo(f.path))}));
+  const addons=files.filter(f=>ADDON_EXT.includes(ext(f.path))&&!usados.has(f.path.toLowerCase()));
+
+  return addons.map(a=>{
+    const nome=nomeArquivo(a.path);
+    const chave=normalizar(nome);
+    const img=imagens.find(i=>i.chave===chave);
+    return {
+      nome:nomeBonito(nome),
+      categoria:categoriaAuto(nome),
+      imagem:img?img.path:"",
+      arquivo:a.path,
+      imagemUrl:img?raw(img.path):"",
+      arquivoUrl:raw(a.path),
+      imagemNome:img?img.path:"",
+      arquivoNome:a.path,
+      versao:"v1.0",
+      descricao:img?"Addon carregado automaticamente com imagem e download.":"Addon carregado automaticamente sem imagem real, usando capa automática."
+    };
+  });
+}
+
+async function carregar(){
+  try{
+    const files=await carregarArquivos();
+    ADDONS=[...criarFixos(),...criarAutomaticos(files)];
+  }catch(e){
+    ADDONS=criarFixos();
+    aviso("Não consegui ler novos arquivos agora");
+  }
+  $("#loading").style.display="none";
+  iniciarSite();
+}
+
+function iniciarSite(){
+  $("#heroCount").textContent=`${ADDONS.length}+ ADDONS GRÁTIS`;
+  $("#bgArt").innerHTML=ADDONS.filter(a=>a.imagemUrl).slice(0,5).map(a=>`<img class="bg-card" src="${a.imagemUrl}" alt="">`).join("");
+  const cats=["todos",...new Set(ADDONS.map(a=>a.categoria))];
+  tabs.innerHTML=cats.map(c=>`<button class="${c==="todos"?"active":""}" data-cat="${c}">${catName(c)}</button>`).join("");
+  document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{document.querySelector("#tabs .active").classList.remove("active");b.classList.add("active");categoriaAtual=b.dataset.cat;renderHome()});
+  search.oninput=renderHome;sort.onchange=renderHome;window.onhashchange=route;route();
+}
+
+function card(a){
+  return `<article class="card">
+    <a class="pic" href="#addon/${slug(a.nome)}">
+      <span class="tag">${catName(a.categoria)}</span><span class="ver">${a.versao}</span>
+      ${a.imagemUrl?`<img src="${a.imagemUrl}" alt="${a.nome}">`:capaAuto(a.nome)}
+    </a>
+    <div class="body">
+      <h3>${a.nome}</h3><div class="meta">${a.arquivoNome}</div><div class="desc">${a.descricao}</div><div class="stars">★★★★★</div>
+      <div class="actions"><a class="btn" href="#addon/${slug(a.nome)}">BAIXAR</a><a class="btn" href="${a.imagemUrl||a.arquivoUrl}" target="_blank">IMG</a></div>
+    </div>
+  </article>`;
+}
+
+function renderHome(){
+  const b=search.value.trim().toLowerCase();
+  let lista=ADDONS.filter(a=>(categoriaAtual==="todos"||a.categoria===categoriaAtual)&&(a.nome.toLowerCase().includes(b)||a.arquivoNome.toLowerCase().includes(b)));
+  if(sort.value==="az")lista.sort((a,b)=>a.nome.localeCompare(b.nome));
+  total.textContent=`${lista.length} addons prontos para baixar.`;
+  empty.style.display=lista.length?"none":"block";
+  grid.innerHTML=lista.map(card).join("");
+}
+
+function renderDetail(a){
+  $("#homeView").classList.add("hide");
+  $("#detailView").classList.remove("hide");
+  $("#detailCat").textContent=catName(a.categoria);
+  $("#detailImageBox").innerHTML=`<span class="tag" id="detailCat">${catName(a.categoria)}</span>${a.imagemUrl?`<img src="${a.imagemUrl}" alt="${a.nome}">`:capaAuto(a.nome)}`;
+  $("#detailTitle").textContent=a.nome.toUpperCase();
+  $("#detailMeta").innerHTML=`Arquivo: <b>${a.arquivoNome}</b>`;
+  $("#detailDesc").textContent=a.descricao;
+  $("#detailAbout").textContent="Este addon está pronto para download. Se não tiver imagem, o site cria uma capa automática.";
+  $("#detailDownload").href=a.arquivoUrl;
+  $("#detailDownload").textContent="BAIXAR "+a.nome.toUpperCase();
+  $("#detailDownload").setAttribute("download",nomeArquivo(a.arquivoNome));
+  $("#detailOpenImage").href=a.imagemUrl||a.arquivoUrl;
+  $("#shareBtn").onclick=()=>{if(navigator.clipboard)navigator.clipboard.writeText(location.href);aviso("Link copiado")};
+  $("#moreGrid").innerHTML=ADDONS.filter(x=>x.nome!==a.nome).slice(0,4).map(card).join("");
+  scrollTo(0,0);
+}
+
+function route(){
+  const id=location.hash.replace("#addon/","");
+  const addon=ADDONS.find(a=>slug(a.nome)===id);
+  if(location.hash.startsWith("#addon/")&&addon){renderDetail(addon);return}
+  $("#detailView").classList.add("hide");
+  $("#homeView").classList.remove("hide");
+  renderHome();
+  scrollTo(0,0);
+}
+
+carregar();
+</script>
 </body>
 </html>
