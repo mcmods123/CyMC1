@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cy Addons</title>
 
@@ -20,17 +20,15 @@
 
 <div class="bg-art">
 
-<img class="bg-card" src="imagens/background1.png">
-
-<img class="bg-card" src="imagens/background2.png">
-
-<img class="bg-card" src="imagens/background3.png">
+<img class="bg-card" src="imagens/ma00gm.jpg">
+<img class="bg-card" src="imagens/itemphysics.jpg">
+<img class="bg-card" src="imagens/waystone.jpg">
 
 </div>
 
 
 
-<section class="top">
+<header class="top">
 
 
 <div class="badge">
@@ -61,13 +59,11 @@ Seus conteúdos favoritos de Minecraft Bedrock.<br>
 
 
 <div class="free">
-
 100% GRÁTIS - SEM CADASTRO
-
 </div>
 
 
-</section>
+</header>
 
 
 
@@ -107,7 +103,14 @@ Seus conteúdos favoritos de Minecraft Bedrock.<br>
 
 
 </nav>
+
+
+
+
+
+
 <main class="wrap">
+
 
 
 <section class="social">
@@ -116,7 +119,6 @@ Seus conteúdos favoritos de Minecraft Bedrock.<br>
 <h2>
 SIGA O CRIADOR
 </h2>
-
 
 
 <div class="socials">
@@ -146,19 +148,23 @@ YOUTUBE
 
 
 
+
 <section class="head">
 
 
 <div>
+
 
 <span class="label">
 ADDONS
 </span>
 
 
+
 <h1>
 TODA A COLEÇÃO
 </h1>
+
 
 
 <p>
@@ -171,7 +177,8 @@ Explore conteúdos para Minecraft Bedrock
 
 
 
-<input
+
+<input 
 class="search"
 id="search"
 placeholder="Buscar addon..."
@@ -189,49 +196,32 @@ placeholder="Buscar addon..."
 
 
 <button class="active" data-cat="todos">
-
 TODOS
-
 </button>
-
 
 
 <button data-cat="utilidades">
-
 UTILIDADES
-
 </button>
-
 
 
 <button data-cat="visual">
-
 VISUAL
-
 </button>
-
 
 
 <button data-cat="construcao">
-
 CONSTRUÇÃO
-
 </button>
-
 
 
 <button data-cat="mobs">
-
 MOBS
-
 </button>
 
 
-
 <button data-cat="performance">
-
 PERFORMANCE
-
 </button>
 
 
@@ -242,8 +232,11 @@ PERFORMANCE
 
 
 
-
 <section class="grid" id="grid">
+
+
+
+<!-- OS ADDONS VÃO APARECER AQUI PELO JAVASCRIPT -->
 
 
 </section>
@@ -251,35 +244,27 @@ PERFORMANCE
 
 
 
-
 <p class="empty" id="empty">
 
-Nenhum resultado encontrado.
+Nenhum addon encontrado.
 
 </p>
 
 
 
+
 </main>
-
-
-
-
-
-<footer class="footer">
-
-© 2026 Cy Addons · Todos os direitos reservados
-
-</footer>
 <script>
+
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty");
 
 let addons = [];
 
-let categoriaAtual = "todos";
 
 
-
-// CARREGAR ADDONS DO JSON
+// CARREGAR ARQUIVO LINKS
 
 fetch("links/addons.json")
 
@@ -287,59 +272,37 @@ fetch("links/addons.json")
 
 .then(data => {
 
+addons = data;
 
-
-    let nomes = new Set();
-
-
-
-    // REMOVE DUPLICADOS PELO NOME
-
-    addons = data.filter(addon => {
-
-
-        let nome = addon.nome
-        .toLowerCase()
-        .trim();
-
-
-
-        if(nomes.has(nome)){
-
-            return false;
-
-        }
-
-
-
-        nomes.add(nome);
-
-
-        return true;
-
-
-    });
-
-
-
-    mostrarAddons();
-
-
+mostrarAddons(addons);
 
 })
 
 .catch(error => {
 
+console.log("Erro carregando addons:", error);
 
-    console.log(
-        "Erro ao carregar addons:",
-        error
-    );
+grid.innerHTML = `
 
+<div class="card">
+
+<div class="body">
+
+<h3>
+Erro ao carregar addons
+</h3>
+
+<p>
+Verifique se o arquivo addons.json está correto.
+</p>
+
+</div>
+
+</div>
+
+`;
 
 });
-
-
 
 
 
@@ -349,130 +312,62 @@ fetch("links/addons.json")
 // CRIAR CARDS
 
 
-function mostrarAddons(){
-
-
-const grid = document.getElementById("grid");
+function mostrarAddons(lista){
 
 
 grid.innerHTML = "";
 
 
 
-let pesquisa = document
-.getElementById("search")
-.value
-.toLowerCase();
+if(lista.length === 0){
 
+empty.style.display="block";
 
+return;
 
+}
 
-let lista = addons.filter(addon => {
+else{
 
-
-
-let nome =
-addon.nome
-.toLowerCase();
-
-
-
-let categoria =
-addon.categoria
-.toLowerCase();
-
-
-
-
-
-let buscaOK =
-nome.includes(pesquisa);
-
-
-
-
-
-let categoriaOK =
-
-categoriaAtual === "todos"
-
-||
-
-categoria.includes(categoriaAtual);
-
-
-
-
-
-
-return buscaOK && categoriaOK;
-
-
-
-});
-
-
-
-
-
-
-lista.forEach(addon => {
-
-
-
-let imagem = addon.imagem;
-
-
-
-if(imagem){
-
-imagem = imagem.replace(
-"imagens/",
-"imagens/"
-);
+empty.style.display="none";
 
 }
 
 
 
 
-let link =
-addon.download
-||
-addon.link
-||
-"#";
+
+lista.forEach(addon=>{
+
+
+
+let imagem = addon.imagem 
+? addon.imagem 
+: "";
+
+
+
+let link = addon.download || addon.link || "#";
 
 
 
 
 
-let card = document.createElement("div");
+grid.innerHTML += `
 
 
-card.className = "card";
-
-
-
-
-card.innerHTML = `
+<div class="card">
 
 
 <div class="pic">
 
 
-${
-imagem
-
-?
-
-`
+${imagem ? `
 
 <img src="${imagem}" 
-loading="lazy">
+onerror="this.style.display='none'">
 
 `
-
 :
 
 `
@@ -488,8 +383,8 @@ ${addon.nome}
 }
 
 
-</div>
 
+</div>
 
 
 
@@ -498,13 +393,12 @@ ${addon.nome}
 <div class="body">
 
 
+
 <h3>
 
 ${addon.nome}
 
 </h3>
-
-
 
 
 
@@ -517,13 +411,11 @@ Minecraft Bedrock • ${addon.versao || "1.0"}
 
 
 
-
 <div class="desc">
 
-${addon.descricao || "Addon para Minecraft Bedrock."}
+${addon.descricao}
 
 </div>
-
 
 
 
@@ -537,19 +429,26 @@ ${addon.descricao || "Addon para Minecraft Bedrock."}
 
 
 
-
-
 <div class="actions">
 
 
-<a 
-href="${link}" 
+<a href="${link}" 
 target="_blank"
-class="btn">
+style="text-decoration:none">
 
-BAIXAR ADDON
+
+<div class="btn">
+
+DOWNLOAD
+
+</div>
+
 
 </a>
+
+
+</div>
+
 
 
 </div>
@@ -564,32 +463,7 @@ BAIXAR ADDON
 
 
 
-grid.appendChild(card);
-
-
-
 });
-
-
-
-
-
-
-
-document.getElementById("empty").style.display =
-
-lista.length === 0
-
-?
-
-"block"
-
-:
-
-"none";
-
-
-
 
 
 }
@@ -600,17 +474,39 @@ lista.length === 0
 
 
 
+// PESQUISA
 
 
-// BUSCA
+search.addEventListener("input",()=>{
 
 
-document
-.getElementById("search")
-.addEventListener(
-"input",
-mostrarAddons
+let texto = search.value.toLowerCase();
+
+
+
+let resultado = addons.filter(addon=>{
+
+
+return (
+
+addon.nome.toLowerCase().includes(texto)
+
+||
+
+addon.categoria.toLowerCase().includes(texto)
+
 );
+
+
+});
+
+
+
+mostrarAddons(resultado);
+
+
+
+});
 
 
 
@@ -622,27 +518,21 @@ mostrarAddons
 // CATEGORIAS
 
 
-document
-.querySelectorAll(".tabs button")
-.forEach(botao => {
+const botoes = document.querySelectorAll(".tabs button");
 
 
 
-botao.addEventListener(
-"click",
-()=>{
+botoes.forEach(botao=>{
 
 
+botao.addEventListener("click",()=>{
 
-document
-.querySelectorAll(".tabs button")
-.forEach(btn => {
 
-btn.classList.remove("active");
+botoes.forEach(b=>{
+
+b.classList.remove("active");
 
 });
-
-
 
 
 
@@ -651,54 +541,38 @@ botao.classList.add("active");
 
 
 
-
-categoriaAtual =
-botao.dataset.cat;
+let categoria = botao.dataset.cat;
 
 
 
+if(categoria === "todos"){
 
 
-mostrarAddons();
+mostrarAddons(addons);
 
 
+}
+
+else{
 
 
-});
+let filtrado = addons.filter(addon=>{
 
 
-
-});
-
-
-
-
-
-
-
-
-
-// BOTÕES SOCIAIS
-
-
-document
-.querySelectorAll(".socials button")
-.forEach(botao => {
-
-
-
-botao.addEventListener(
-"click",
-()=>{
-
-
-alert(
-"Link em breve!"
-);
+return addon.categoria === categoria;
 
 
 });
 
+
+mostrarAddons(filtrado);
+
+
+}
+
+
+
+});
 
 
 });
@@ -706,11 +580,64 @@ alert(
 
 
 
+
+
+
+// EFEITO CARD
+
+
+document.addEventListener("mouseover",e=>{
+
+
+let card = e.target.closest(".card");
+
+
+
+if(card){
+
+
+card.style.transform="translateY(-8px)";
+
+
+}
+
+
+
+});
+
+
+
+
+
+document.addEventListener("mouseout",e=>{
+
+
+let card = e.target.closest(".card");
+
+
+
+if(card){
+
+
+card.style.transform="translateY(0)";
+
+
+}
+
+
+
+});
 
 
 
 
 </script>
+<footer class="footer">
+
+© 2026 Cy Addons · Todos os direitos reservados
+
+</footer>
+
 
 
 </body>
