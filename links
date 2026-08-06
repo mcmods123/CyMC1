@@ -1,1 +1,988 @@
-
+[
+  {
+    "nome": "Ma00gm",
+    "categoria": "utilidades",
+    "imagem": "imagens/ma00gm.jpg",
+    "versao": "v1.0",
+    "descricao": "Addon que adiciona novos recursos e melhorias para a jogabilidade do Minecraft Bedrock.",
+    "download": "https://1024terabox.com/s/10CvDhXwAxIAt866GsqJ24Q"
+  },
+  {
+    "nome": "Item Physics",
+    "categoria": "visual",
+    "imagem": "imagens/itemphysics.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona física aos itens no chão deixando o Minecraft mais realista.",
+    "download": "https://1024terabox.com/s/16pDtn94oWlbeQIyY_0sRng"
+  },
+  {
+    "nome": "Infinity XP",
+    "categoria": "utilidades",
+    "imagem": "imagens/infinity xp.webp",
+    "versao": "v1.0",
+    "descricao": "Melhora o sistema de experiência permitindo novas possibilidades de uso.",
+    "download": "https://1024terabox.com/s/1HPegUEXYB9m1qS30TwFjzw"
+  },
+  {
+    "nome": "Infinity Bone",
+    "categoria": "utilidades",
+    "imagem": "imagens/infinity bone.webp",
+    "versao": "v1.0",
+    "descricao": "Addon que permite utilizar ossos de forma ilimitada para facilitar plantações.",
+    "download": "https://1024terabox.com/s/1bc3dgMzMNQfGTBdstkqdwA"
+  },
+  {
+    "nome": "Honeyfrost Mowzies",
+    "categoria": "mobs",
+    "imagem": "imagens/honeyfrost-mowzies1.1..jpg",
+    "versao": "1.1",
+    "descricao": "Adiciona novos conteúdos inspirados em criaturas e desafios para sobrevivência.",
+    "download": "https://1024terabox.com/s/1pJ6i6HxHB4WfDjpP97JgCA"
+  },
+  {
+    "nome": "Enchantments Plus",
+    "categoria": "utilidades",
+    "imagem": "imagens/enchantments-plus.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona novos encantamentos e melhora as possibilidades dos equipamentos.",
+    "download": "https://1024terabox.com/s/1B7Ejt3GZk9XwCj_WhXiWtg"
+  },
+  {
+    "nome": "Effortless Building",
+    "categoria": "construcao",
+    "imagem": "imagens/construção addon.png",
+    "versao": "v3.1",
+    "descricao": "Facilita construções permitindo criar estruturas de forma mais rápida.",
+    "download": "https://1024terabox.com/s/1HsBCW73qwFhZfjSiUfo5qw"
+  },
+  {
+    "nome": "Easy Redstone",
+    "categoria": "tecnologia",
+    "imagem": "imagens/easy-redstone.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona melhorias e facilita o uso de sistemas com redstone.",
+    "download": "https://1024terabox.com/s/1LscZmIyVPrQMfzhZpvZU6Q"
+  },
+  {
+    "nome": "CPU Optimizer",
+    "categoria": "performance",
+    "imagem": "imagens/cpuoptimizer.png",
+    "versao": "v1.0",
+    "descricao": "Melhora o desempenho do Minecraft reduzindo travamentos e consumo de recursos.",
+    "download": "https://1024terabox.com/s/1q6qeAE6PNZ_HLAmofKkt4g"
+  },
+  {
+    "nome": "CommonSense",
+    "categoria": "utilidades",
+    "imagem": "imagens/CommonSense 1.7.1 (Trinkets ON).png",
+    "versao": "1.7.1",
+    "descricao": "Adiciona novas mecânicas e melhorias para a experiência de sobrevivência.",
+    "download": "https://1024terabox.com/s/1F1TF0tfPbMQ7hKM1jpuVeQ"
+  }
+]
+[
+  {
+    "nome": "Combat Plus",
+    "categoria": "pvp",
+    "imagem": "imagens/combat-plus.jpg",
+    "versao": "v1.0",
+    "descricao": "Melhora o combate do Minecraft adicionando novas mecânicas e recursos para batalhas.",
+    "download": "https://1024terabox.com/s/1G61_vtTs6or7WQc1CObdrw"
+  },
+  {
+    "nome": "Cinecam",
+    "categoria": "visual",
+    "imagem": "imagens/camera addon.png",
+    "versao": "v1.0",
+    "descricao": "Adiciona uma câmera cinematográfica para criar vídeos e cenas no Minecraft.",
+    "download": "https://1024terabox.com/s/1I1H-zocarI2pUvyU7dP_5g"
+  },
+  {
+    "nome": "Buckets Plus",
+    "categoria": "utilidades",
+    "imagem": "imagens/bucketsplus.jpg",
+    "versao": "v1.0",
+    "descricao": "Expande as possibilidades dos baldes adicionando novas funções.",
+    "download": "https://1024terabox.com/s/1XwKtnyLDtLkf4IbyyRKWwg"
+  },
+  {
+    "nome": "Bosses Plus",
+    "categoria": "mobs",
+    "imagem": "imagens/bossesplus-1.5.webp",
+    "versao": "1.5",
+    "descricao": "Adiciona novos chefes poderosos para enfrentar no mundo.",
+    "download": "https://1024terabox.com/s/1Z43cKpa0c07UDWElQc36og"
+  },
+  {
+    "nome": "Blurry's Java PvP",
+    "categoria": "pvp",
+    "imagem": "imagens/Blurry's Java PvP.gif",
+    "versao": "2.1 Beta 4",
+    "descricao": "Modifica elementos de combate deixando o PvP mais parecido com Minecraft Java.",
+    "download": "https://1024terabox.com/s/1GbrxpbUOjSyUQUK76xMlwg"
+  },
+  {
+    "nome": "Biomes O Plenty Addon",
+    "categoria": "modificadores-de-mundo",
+    "imagem": "imagens/biomes-o-plenty.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona novos biomas e aumenta a variedade dos mundos do Minecraft.",
+    "download": "https://1024terabox.com/s/1zE-hmpPnbSy9tZhaj-_vkw"
+  },
+  {
+    "nome": "Better Backpacks",
+    "categoria": "utilidades",
+    "imagem": "imagens/better-backpacks.webp",
+    "versao": "v1.0",
+    "descricao": "Adiciona mochilas melhores para aumentar o espaço do inventário.",
+    "download": "https://1024terabox.com/s/17APf3uCv71JXjAiDvNdm2A"
+  },
+  {
+    "nome": "Backpacks",
+    "categoria": "utilidades",
+    "imagem": "imagens/Backpack addon.png",
+    "versao": "v1.0",
+    "descricao": "Permite usar mochilas para carregar mais itens durante aventuras.",
+    "download": "https://1024terabox.com/s/1E8m0m4Gc-sGooVdrK6Ilaw"
+  },
+  {
+    "nome": "Auto Tool Swap",
+    "categoria": "utilidades",
+    "imagem": "imagens/auto-tool-swap.png",
+    "versao": "v1.0",
+    "descricao": "Troca automaticamente ferramentas de acordo com o bloco quebrado.",
+    "download": "https://1024terabox.com/s/1s2PKBxh5GhsKD7muK22SrA"
+  },
+  {
+    "nome": "Apex Suite",
+    "categoria": "utilidades",
+    "imagem": "imagens/apex suite.png",
+    "versao": "v1.0",
+    "descricao": "Pacote de melhorias e recursos extras para Minecraft Bedrock.",
+    "download": "https://1024terabox.com/s/1C0-s9BM-Dmhj3_2o-8QsnA"
+  }
+]
+[
+  {
+    "nome": "AFK Farms",
+    "categoria": "utilidades",
+    "imagem": "imagens/afk-farms.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona recursos para facilitar a criação e funcionamento de farms automáticas.",
+    "download": "https://1024terabox.com/s/1h9nBYje4ZeF30RUCj_Zgjw"
+  },
+  {
+    "nome": "AFK Chunk Loader",
+    "categoria": "utilidades",
+    "imagem": "imagens/Afk_Chunk_Loader.jpg",
+    "versao": "v1.0",
+    "descricao": "Mantém áreas carregadas para que farms e sistemas continuem funcionando.",
+    "download": "https://1024terabox.com/s/1U-52an371203QyqpFdjxrw"
+  },
+  {
+    "nome": "A2TSQQ",
+    "categoria": "outros",
+    "imagem": "",
+    "versao": "v1.0",
+    "descricao": "Addon extra para Minecraft Bedrock.",
+    "download": "https://1024terabox.com/s/1j45__U0xEo_Hvo4nODCQtg"
+  },
+  {
+    "nome": "A Vanilla Expansion",
+    "categoria": "modificadores-de-mundo",
+    "imagem": "imagens/A Vanilla Expansion.jpg",
+    "versao": "v1.0",
+    "descricao": "Expande o Minecraft vanilla adicionando novos conteúdos sem perder a essência original.",
+    "download": "https://1024terabox.com/s/1rkUslv-tyZ3SrotwXLtcdQ"
+  },
+  {
+    "nome": "08prpg",
+    "categoria": "outros",
+    "imagem": "",
+    "versao": "v1.0",
+    "descricao": "Addon adicional para Minecraft Bedrock.",
+    "download": "https://1024terabox.com/s/1xwM9AUsqYuPUSMS-IfH-DQ"
+  },
+  {
+    "nome": "View Model AS",
+    "categoria": "visual",
+    "imagem": "imagens/View Model AS by JustPals.jpeg",
+    "versao": "v1.0",
+    "descricao": "Melhora a visualização dos itens na mão deixando o Minecraft mais parecido com Java.",
+    "download": "https://1024terabox.com/s/1H7ADSe17P0Trg0gIZmEW7g"
+  },
+  {
+    "nome": "VulkanCore Performance Booster",
+    "categoria": "performance",
+    "imagem": "imagens/VulkanCore(Performance Booster)V6.3.0.jpg",
+    "versao": "6.3.0",
+    "descricao": "Pacote focado em melhorar o desempenho e aumentar a estabilidade do jogo.",
+    "download": "https://1024terabox.com/s/1V-uaztydUISuxEbxOG1NNQ"
+  },
+  {
+    "nome": "View Model AS",
+    "categoria": "visual",
+    "imagem": "imagens/View Model AS by JustPals.jpeg",
+    "versao": "v1.0",
+    "descricao": "Recurso visual que altera a posição e aparência dos itens segurados.",
+    "download": "https://1024terabox.com/s/18LT9ZPGTZWroh8zIcOrNlg"
+  },
+  {
+    "nome": "System Dynamic Lights",
+    "categoria": "visual",
+    "imagem": "imagens/iluminacao addon.gif",
+    "versao": "3.2.3",
+    "descricao": "Adiciona iluminação dinâmica aos itens e blocos do Minecraft.",
+    "download": "https://1024terabox.com/s/1QhN2qjq2EwI6WbeymDd6Dw"
+  },
+  {
+    "nome": "RealismCraft 2.4",
+    "categoria": "texturas",
+    "imagem": "imagens/RealismCraft 2.4 (resources).jpg",
+    "versao": "2.4",
+    "descricao": "Pacote de recursos realista que melhora gráficos e detalhes do Minecraft.",
+    "download": "https://1024terabox.com/s/1pvw20RSzftb-4X6Y2iKd7g"
+  }
+]
+[
+  {
+    "nome": "Prizma Visuals",
+    "categoria": "texturas",
+    "imagem": "imagens/prizma-visuals-2.1.jpg",
+    "versao": "2.1",
+    "descricao": "Pacote visual que melhora as cores, iluminação e aparência geral do Minecraft.",
+    "download": "https://1024terabox.com/s/1fm5wWVmi4Ca6kYHLGsXtyQ"
+  },
+  {
+    "nome": "Doyl 128x",
+    "categoria": "texturas",
+    "imagem": "imagens/Doyl 128x.png",
+    "versao": "128x",
+    "descricao": "Textura de alta resolução que deixa o Minecraft com visual mais detalhado.",
+    "download": "https://1024terabox.com/s/12MWQ-kc7OHASX2S5OSxKyw"
+  },
+  {
+    "nome": "One Esmeralde",
+    "categoria": "utilidades",
+    "imagem": "imagens/op vilagers png.webp",
+    "versao": "v1.0",
+    "descricao": "Melhora as trocas dos aldeões e adiciona novas possibilidades de comércio.",
+    "download": "https://1024terabox.com/s/12-A8sjwc3nT5uFnZcXBP_w"
+  },
+  {
+    "nome": "Night Vision Atualizada",
+    "categoria": "visual",
+    "imagem": "imagens/nigth vision png.webp",
+    "versao": "v1.0",
+    "descricao": "Permite enxergar melhor em lugares escuros sem precisar de tochas.",
+    "download": "https://1024terabox.com/s/1VBX3RiL6Ui7hBQBisOm6JA"
+  },
+  {
+    "nome": "GOODMODE",
+    "categoria": "utilidades",
+    "imagem": "imagens/GOODMODE.webp",
+    "versao": "v1.0",
+    "descricao": "Pacote de melhorias e recursos extras para facilitar a jogabilidade.",
+    "download": "https://1024terabox.com/s/1ofAh4oDq4CVJolMhW4CegQ"
+  },
+  {
+    "nome": "FPS Counter",
+    "categoria": "performance",
+    "imagem": "imagens/FPSCounter.webp",
+    "versao": "v1.0",
+    "descricao": "Mostra informações de FPS para acompanhar o desempenho do Minecraft.",
+    "download": "https://1024terabox.com/s/1IA8JTR9t_ZtNfWFdLWMevA"
+  },
+  {
+    "nome": "Fogos Infinitos",
+    "categoria": "utilidades",
+    "imagem": "imagens/fogos_infinitos.webp",
+    "versao": "v1.0",
+    "descricao": "Permite usar fogos de artifício de forma ilimitada.",
+    "download": "https://1024terabox.com/s/1B4EVhSPzC9BcIkaBiboyjA"
+  },
+  {
+    "nome": "Easy Netherite",
+    "categoria": "utilidades",
+    "imagem": "imagens/EasyNetherite.webp",
+    "versao": "v1.0",
+    "descricao": "Facilita a obtenção de netherite deixando a progressão mais rápida.",
+    "download": "https://1024terabox.com/s/1p0ulhd7tzLx0HziQR4bV9g"
+  },
+  {
+    "nome": "Diamond Plus",
+    "categoria": "utilidades",
+    "imagem": "imagens/diamond plus (com conquistas).webp",
+    "versao": "v1.0",
+    "descricao": "Adiciona melhorias relacionadas aos diamantes mantendo conquistas ativas.",
+    "download": "https://1024terabox.com/s/1ZW0akqNLTs8nGRZjD3glFA"
+  },
+  {
+    "nome": "Criativo com Graveto",
+    "categoria": "utilidades",
+    "imagem": "imagens/criativo com graveto.webp",
+    "versao": "v1.0",
+    "descricao": "Adiciona uma ferramenta especial para facilitar construções e criação.",
+    "download": "https://1024terabox.com/s/1vRFS90nHcZQ8U1NLL5zMRQ"
+  }
+]
+[
+  {
+    "nome": "Chunk Miner",
+    "categoria": "utilidades",
+    "imagem": "imagens/chunkminer.webp",
+    "versao": "v1.0",
+    "descricao": "Permite minerar vários blocos de uma vez facilitando a coleta de recursos.",
+    "download": "https://1024terabox.com/s/1Mi2DhgUbHwRGo8YuC64aJQ"
+  },
+  {
+    "nome": "Better Xray",
+    "categoria": "utilidades",
+    "imagem": "imagens/Better Xray.png",
+    "versao": "1.25",
+    "descricao": "Facilita encontrar minérios e estruturas escondidas no mundo.",
+    "download": "https://1024terabox.com/s/1djQ-DtXW8jki7epcwSghoQ"
+  },
+  {
+    "nome": "Auto Totem",
+    "categoria": "utilidades",
+    "imagem": "imagens/auto totem.webp",
+    "versao": "v1.0",
+    "descricao": "Equipe automaticamente o Totem da Imortalidade para aumentar sua segurança.",
+    "download": "https://1024terabox.com/s/1WgNBtl4zHtl3UITPPje0yg"
+  },
+  {
+    "nome": "Actions Stuff",
+    "categoria": "visual",
+    "imagem": "imagens/Actions Stuff V1.10 Refritt2.jpg",
+    "versao": "1.10",
+    "descricao": "Adiciona novas animações e melhorias visuais aos movimentos do jogador.",
+    "download": "https://1024terabox.com/s/1-Horkc8OGvyKpGome13vbQ"
+  },
+  {
+    "nome": "Sodium GL Reimagined",
+    "categoria": "performance",
+    "imagem": "imagens/Sodium GL Reimagined.png",
+    "versao": "1.0.0",
+    "descricao": "Pacote focado em melhorar desempenho e aparência gráfica do Minecraft.",
+    "download": "https://1024terabox.com/s/1bsioBqDQhhfJFJysrQdRVQ"
+  },
+  {
+    "nome": "Diamond Ultra 200%",
+    "categoria": "texturas",
+    "imagem": "imagens/diamante 200x.webp",
+    "versao": "v1.0",
+    "descricao": "Melhora o visual do diamante deixando o minério mais destacado.",
+    "download": "https://1024terabox.com/s/10xdRXq510tCjwhML7fqadQ"
+  },
+  {
+    "nome": "Wizard Craft",
+    "categoria": "mobs",
+    "imagem": "imagens/wizard-craft.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona novos elementos mágicos, criaturas e recursos ao Minecraft.",
+    "download": "https://1024terabox.com/s/15k8ZAUcyyvdM11BNLNkQ0g"
+  },
+  {
+    "nome": "Waystone",
+    "categoria": "utilidades",
+    "imagem": "imagens/waystone.jpg",
+    "versao": "v1.0",
+    "descricao": "Adiciona pontos de teleporte para facilitar a movimentação pelo mundo.",
+    "download": "https://1024terabox.com/s/1q-LVq0zMrw8PJFgmbybybA"
+  },
+  {
+    "nome": "Ultra Vein Miner",
+    "categoria": "utilidades",
+    "imagem": "imagens/Ultra vein miner.webp",
+    "versao": "v1.0",
+    "descricao": "Permite quebrar vários blocos conectados de uma vez.",
+    "download": "https://1024terabox.com/s/12yhiUclymFo7AMMr3zpO3Q"
+  },
+  {
+    "nome": "UI72YJ",
+    "categoria": "visual",
+    "imagem": "",
+    "versao": "v1.0",
+    "descricao": "Addon de interface e melhorias visuais para Minecraft Bedrock.",
+    "download": "https://1024terabox.com/s/1ACxBFCXXi0liTJJxO5SDYA"
+  }
+]
+{
+  "nome": "SCP Uncaged Add-On",
+  "categoria": "mobs",
+  "imagem": "imagens/SCP Uncaged Add-On addon.jpg",
+  "arquivo": "SCP Uncaged Add-On addon.mcaddon",
+  "link": "https://1024terabox.com/s/11Ki_z7R_fmOuxI6UVWyOwA",
+  "versao": "1.0",
+  "descricao": "Adiciona criaturas SCP perigosas ao Minecraft Bedrock, trazendo novos desafios e inimigos para enfrentar."
+},
+{
+  "nome": "Realistic Biomes",
+  "categoria": "modificadores de mundo",
+  "imagem": "imagens/realistic-biomes.jpg",
+  "arquivo": "realistic-biomes.mcaddon",
+  "link": "https://1024terabox.com/s/1XD_-EBuz5_9iksmODJqIOA",
+  "versao": "1.0",
+  "descricao": "Melhora os biomas do Minecraft deixando os mundos mais variados e realistas."
+},
+{
+  "nome": "Realism VFX",
+  "categoria": "visual",
+  "imagem": "imagens/realism-vfx-1.3.jpg",
+  "arquivo": "realism-vfx-1.3.mcaddon",
+  "link": "https://1024terabox.com/s/1_Try488l1DzkIukebU7mrA",
+  "versao": "1.3",
+  "descricao": "Pacote visual que adiciona efeitos mais realistas para melhorar a aparência do Minecraft."
+},
+{
+  "nome": "Ranzie Rise and Survive",
+  "categoria": "aventura",
+  "imagem": "imagens/Ranzie Rise and Survive 1.2.png",
+  "arquivo": "Ranzie Rise and Survive 1.2.mcaddon",
+  "link": "https://1024terabox.com/s/16j-1slloug7DAHDrCJMJmg",
+  "versao": "1.2",
+  "descricao": "Addon de sobrevivência que adiciona novos desafios e elementos para explorar."
+},
+{
+  "nome": "Real Minimap",
+  "categoria": "utilidades",
+  "imagem": "imagens/mini map addon.jpg",
+  "arquivo": "Real Minimap Add-On addon.mcaddon",
+  "link": "https://1024terabox.com/s/1hYjJcdcJV4ruFejmwPw3OQ",
+  "versao": "1.0",
+  "descricao": "Adiciona um minimapa ao Minecraft Bedrock para facilitar a exploração."
+},
+{
+  "nome": "Parasite",
+  "categoria": "mobs",
+  "imagem": "imagens/parasite-1.0.3-.jpg",
+  "arquivo": "parasite-1.0.3-.mcaddon",
+  "link": "https://1024terabox.com/s/1Igjs1-_PQs3kIPY3gQTntA",
+  "versao": "1.0.3",
+  "descricao": "Adiciona parasitas e novos inimigos que tornam a sobrevivência mais difícil."
+},
+{
+  "nome": "OTG Backpack",
+  "categoria": "utilidades",
+  "imagem": "imagens/better-backpacks.webp",
+  "arquivo": "OTG Backpack v1.0.6.mcaddon",
+  "link": "https://1024terabox.com/s/1zYwi13l22Bhy4GVJZYz-nA",
+  "versao": "1.0.6",
+  "descricao": "Adiciona mochilas para aumentar o espaço de armazenamento durante aventuras."
+},
+{
+  "nome": "Multiply Ores",
+  "categoria": "utilidades",
+  "imagem": "imagens/multiplidor de minerios png.webp",
+  "arquivo": "MultiplyOresby@ncmine.mcaddon",
+  "link": "https://1024terabox.com/s/1PLts_3cs3Gd_MWpsNqK4Ow",
+  "versao": "1.0",
+  "descricao": "Aumenta a quantidade de minérios obtidos na mineração."
+},
+{
+  "nome": "Easy Netherite",
+  "categoria": "modificadores de mundo",
+  "imagem": "imagens/EasyNetherite.webp",
+  "arquivo": "EasyNetherite.mcpack",
+  "link": "https://1024terabox.com/s/1roMrC4l7y5nTs_V8_gVvwQ",
+  "versao": "1.0",
+  "descricao": "Facilita a obtenção de Netherite no Minecraft Bedrock."
+}
+{
+  "nome": "Waystone",
+  "categoria": "utilidades",
+  "imagem": "imagens/waystone.jpg",
+  "arquivo": "waystone.mcaddon",
+  "link": "https://1024terabox.com/s/1q-LVq0zMrw8PJFgmbybybA",
+  "versao": "1.0",
+  "descricao": "Adiciona pontos de teleporte pelo mundo para facilitar a movimentação entre locais."
+},
+{
+  "nome": "Ultra Vein Miner",
+  "categoria": "mineração",
+  "imagem": "imagens/Ultra vein miner.webp",
+  "arquivo": "Ultra vein miner.mcaddon",
+  "link": "https://1024terabox.com/s/12yhiUclymFo7AMMr3zpO3Q",
+  "versao": "1.0",
+  "descricao": "Permite quebrar vários blocos conectados de uma vez, deixando a mineração mais rápida."
+},
+{
+  "nome": "UI72YJ",
+  "categoria": "visual",
+  "imagem": "",
+  "arquivo": "ui72yj.mcaddon",
+  "link": "https://1024terabox.com/s/1ACxBFCXXi0liTJJxO5SDYA",
+  "versao": "1.0",
+  "descricao": "Addon que modifica elementos da interface do Minecraft Bedrock."
+},
+{
+  "nome": "Tree Capitator com Conquistas",
+  "categoria": "utilidades",
+  "imagem": "imagens/TREE CAPITATOR COM CONQUISTAS.webp",
+  "arquivo": "TREE CAPITATOR COM CONQUISTAS.mcaddon",
+  "link": "https://1024terabox.com/s/1NsFfliZV-J8rwIOyEApIhA",
+  "versao": "1.0",
+  "descricao": "Permite cortar árvores inteiras de forma rápida mantendo as conquistas ativadas."
+},
+{
+  "nome": "Thirst",
+  "categoria": "sobrevivência",
+  "imagem": "imagens/Thirst.jpeg",
+  "arquivo": "Thirst.mcaddon",
+  "link": "https://1024terabox.com/s/15xj7Zdp4d6FIEEXQlphZrw",
+  "versao": "1.0",
+  "descricao": "Adiciona sistema de sede para deixar a sobrevivência mais realista."
+},
+{
+  "nome": "The One Who Watches",
+  "categoria": "mobs",
+  "imagem": "imagens/the-one-who-watches.jpg",
+  "arquivo": "the-one-who-watches.mcaddon",
+  "link": "https://1024terabox.com/s/1g5hBZ2q-4v-4bVyyjA8nmg",
+  "versao": "1.0",
+  "descricao": "Adiciona uma criatura misteriosa com estilo de terror ao Minecraft."
+},
+{
+  "nome": "The Backrooms",
+  "categoria": "aventura",
+  "imagem": "imagens/thebackrooms.jpg",
+  "arquivo": "thebackrooms.mcaddon",
+  "link": "https://1024terabox.com/s/1gEQvZs_CAE7xMiiT7uDxSA",
+  "versao": "1.0",
+  "descricao": "Transforma o Minecraft em uma experiência inspirada no universo Backrooms."
+},
+{
+  "nome": "Simple Waystone",
+  "categoria": "utilidades",
+  "imagem": "imagens/waystone.jpg",
+  "arquivo": "Simple_Waystone_v8.2_Full.mcaddon",
+  "link": "https://1024terabox.com/s/1V-zCw40uSQtsQ4oAOytZaA",
+  "versao": "8.2",
+  "descricao": "Sistema completo de waystones para criar pontos de viagem rápida."
+},
+{
+  "nome": "Security Addon",
+  "categoria": "utilidades",
+  "imagem": "imagens/securityaddon.jpg",
+  "arquivo": "securityaddon.mcaddon",
+  "link": "https://1024terabox.com/s/1kuXnQLZITNtHw-LKrVhTBQ",
+  "versao": "1.0",
+  "descricao": "Adiciona sistemas de segurança, proteção e novos equipamentos."
+}
+{
+  "nome": "Wizard Craft",
+  "categoria": "mobs",
+  "imagem": "imagens/wizard-craft.jpg",
+  "arquivo": "wizard-craft.mcaddon",
+  "link": "https://1024terabox.com/s/15k8ZAUcyyvdM11BNLNkQ0g",
+  "versao": "1.0",
+  "descricao": "Adiciona elementos mágicos, habilidades e conteúdos inspirados em magia ao Minecraft Bedrock."
+},
+{
+  "nome": "Diamond Ultra 200%",
+  "categoria": "texturas",
+  "imagem": "imagens/diamante 200x.webp",
+  "arquivo": "_MConverter.eu_diamond ultra 200%.mcpack",
+  "link": "https://1024terabox.com/s/10xdRXq510tCjwhML7fqadQ",
+  "versao": "1.0",
+  "descricao": "Textura que aumenta o destaque visual dos diamantes no Minecraft."
+},
+{
+  "nome": "Sodium GL Reimagined",
+  "categoria": "performance",
+  "imagem": "imagens/Sodium GL Reimagined.png",
+  "arquivo": "§lSodium gl §5Reimagined(v1.0.0).mcpack",
+  "link": "https://1024terabox.com/s/1bsioBqDQhhfJFJysrQdRVQ",
+  "versao": "1.0",
+  "descricao": "Pacote focado em melhorar o visual e desempenho do Minecraft Bedrock."
+},
+{
+  "nome": "Actions Stuff",
+  "categoria": "animações",
+  "imagem": "imagens/Actions Stuff V1.10 Refritt2.jpg",
+  "arquivo": "Actions Stuff V1.10 Refritt2.mcpack",
+  "link": "https://1024terabox.com/s/1-Horkc8OGvyKpGome13vbQ",
+  "versao": "1.10",
+  "descricao": "Adiciona novas animações e melhorias visuais para deixar o jogo mais dinâmico."
+},
+{
+  "nome": "FPS Counter",
+  "categoria": "utilidades",
+  "imagem": "imagens/FPSCounter.webp",
+  "arquivo": "FPSCounter.mcpack",
+  "link": "https://1024terabox.com/s/1IA8JTR9t_ZtNfWFdLWMevA",
+  "versao": "1.0",
+  "descricao": "Mostra informações de FPS para acompanhar o desempenho do Minecraft."
+},
+{
+  "nome": "Fogos Infinitos",
+  "categoria": "utilidades",
+  "imagem": "imagens/fogos_infinitos.webp",
+  "arquivo": "fogos_infinitos.mcpack",
+  "link": "https://1024terabox.com/s/1B4EVhSPzC9BcIkaBiboyjA",
+  "versao": "1.0",
+  "descricao": "Permite usar fogos de artifício de forma ilimitada."
+},
+{
+  "nome": "Criativo com Graveto",
+  "categoria": "utilidades",
+  "imagem": "imagens/criativo com graveto.webp",
+  "arquivo": "criativo com gravito.mcpack",
+  "link": "https://1024terabox.com/s/1vRFS90nHcZQ8U1NLL5zMRQ",
+  "versao": "1.0",
+  "descricao": "Adiciona uma forma rápida de acessar recursos do modo criativo."
+},
+{
+  "nome": "Chunk Miner",
+  "categoria": "mineração",
+  "imagem": "imagens/chunkminer.webp",
+  "arquivo": "chunkminer.mcpack",
+  "link": "https://1024terabox.com/s/1Mi2DhgUbHwRGo8YuC64aJQ",
+  "versao": "1.0",
+  "descricao": "Melhora a mineração permitindo quebrar áreas maiores com mais facilidade."
+},
+{
+  "nome": "Better Xray",
+  "categoria": "utilidades",
+  "imagem": "imagens/Better Xray.png",
+  "arquivo": "Better Xray v1.25.mcpack",
+  "link": "https://1024terabox.com/s/1djQ-DtXW8jki7epcwSghoQ",
+  "versao": "1.25",
+  "descricao": "Ajuda a visualizar blocos importantes durante a mineração."
+},
+{
+  "nome": "Auto Totem",
+  "categoria": "utilidades",
+  "imagem": "imagens/auto totem.webp",
+  "arquivo": "auto totem.mcpack",
+  "link": "https://1024terabox.com/s/1WgNBtl4zHtl3UITPPje0yg",
+  "versao": "1.0",
+  "descricao": "Equipamento automático de Totem da Imortalidade para maior proteção."
+}
+{
+  "nome": "A Vanilla Expansion",
+  "categoria": "modificadores de mundo",
+  "imagem": "imagens/A Vanilla Expansion.jpg",
+  "arquivo": "A Vanilla Expansion.mcaddon",
+  "link": "https://1024terabox.com/s/1rkUslv-tyZ3SrotwXLtcdQ",
+  "versao": "1.0",
+  "descricao": "Expande o Minecraft Vanilla adicionando novos conteúdos mantendo o estilo original do jogo."
+},
+{
+  "nome": "Apex Suite",
+  "categoria": "utilidades",
+  "imagem": "imagens/apex suite.png",
+  "arquivo": "apex suite.mcaddon",
+  "link": "https://1024terabox.com/s/1C0-s9BM-Dmhj3_2o-8QsnA",
+  "versao": "1.0",
+  "descricao": "Adiciona novas ferramentas e melhorias para facilitar a jogabilidade."
+},
+{
+  "nome": "Auto Tool Swap",
+  "categoria": "utilidades",
+  "imagem": "imagens/auto-tool-swap.png",
+  "arquivo": "auto-tool-swap.mcaddon.mcaddon",
+  "link": "https://1024terabox.com/s/1s2PKBxh5GhsKD7muK22SrA",
+  "versao": "1.0",
+  "descricao": "Troca automaticamente a ferramenta correta conforme o bloco quebrado."
+},
+{
+  "nome": "Camera Addon",
+  "categoria": "visual",
+  "imagem": "imagens/camera addon.png",
+  "arquivo": "Cinecam by domikalmazika.mcaddon",
+  "link": "https://1024terabox.com/s/1I1H-zocarI2pUvyU7dP_5g",
+  "versao": "1.0",
+  "descricao": "Adiciona uma câmera cinematográfica para criar vídeos e cenas dentro do Minecraft."
+},
+{
+  "nome": "CPU Optimizer",
+  "categoria": "performance",
+  "imagem": "imagens/cpuoptimizer.png",
+  "arquivo": "cpuoptimizer.mcaddon",
+  "link": "https://1024terabox.com/s/1q6qeAE6PNZ_HLAmofKkt4g",
+  "versao": "1.0",
+  "descricao": "Otimiza alguns recursos do jogo buscando melhorar desempenho e estabilidade."
+},
+{
+  "nome": "Essentials Addon",
+  "categoria": "utilidades",
+  "imagem": "imagens/Essentials addon.webp",
+  "arquivo": "Essentials addon.mcaddon",
+  "link": "",
+  "versao": "1.0",
+  "descricao": "Adiciona ferramentas essenciais para melhorar a experiência de sobrevivência."
+},
+{
+  "nome": "Keep Inventory 1.21.81",
+  "categoria": "utilidades",
+  "imagem": "imagens/Keep Inventory1.21.81.webp",
+  "arquivo": "Keep Inventory1.21.81.mcaddon",
+  "link": "",
+  "versao": "1.21.81",
+  "descricao": "Mantém os itens do jogador após morrer, facilitando a sobrevivência."
+},
+{
+  "nome": "Mob Booster Java",
+  "categoria": "mobs",
+  "imagem": "imagens/mob boster java.png",
+  "arquivo": "JavaSpawnInBedrock.mcpack",
+  "link": "",
+  "versao": "1.0",
+  "descricao": "Modifica comportamentos de mobs trazendo elementos inspirados na versão Java."
+},
+{
+  "nome": "Command Runner",
+  "categoria": "utilidades",
+  "imagem": "imagens/𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙍𝙪𝙣𝙣𝙚𝙧.webp",
+  "arquivo": "Command Runner.mcaddon",
+  "link": "",
+  "versao": "1.0",
+  "descricao": "Ferramenta para executar comandos automaticamente dentro do Minecraft."
+},
+{
+  "nome": "Blurry's Java PvP",
+  "categoria": "pvp",
+  "imagem": "imagens/Blurry's Java PvP.gif",
+  "arquivo": "Blurry's Java PvP 2.1 (Beta 4).mcaddon",
+  "link": "https://1024terabox.com/s/1GbrxpbUOjSyUQUK76xMlwg",
+  "versao": "2.1",
+  "descricao": "Pacote focado em melhorar a experiência de PvP trazendo estilo parecido com Java."
+}
+{
+  "nome": "Backpacks",
+  "categoria": "utilidades",
+  "imagem": "imagens/better-backpacks.webp",
+  "arquivo": "Backpacks.mcaddon",
+  "link": "https://1024terabox.com/s/1E8m0m4Gc-sGooVdrK6Ilaw",
+  "versao": "1.0",
+  "descricao": "Adiciona mochilas para aumentar o espaço de armazenamento durante aventuras."
+},
+{
+  "nome": "Better Backpacks",
+  "categoria": "utilidades",
+  "imagem": "imagens/better-backpacks.webp",
+  "arquivo": "better-backpacks.mcaddon",
+  "link": "https://1024terabox.com/s/17APf3uCv71JXjAiDvNdm2A",
+  "versao": "1.0",
+  "descricao": "Melhora o sistema de mochilas adicionando mais opções de armazenamento."
+},
+{
+  "nome": "Biomes O Plenty",
+  "categoria": "modificadores de mundo",
+  "imagem": "imagens/biomes-o-plenty.jpg",
+  "arquivo": "Biomes O Plenty Add-On addon.mcaddon",
+  "link": "https://1024terabox.com/s/1zE-hmpPnbSy9tZhaj-_vkw",
+  "versao": "1.0",
+  "descricao": "Adiciona novos biomas e ambientes para explorar no Minecraft Bedrock."
+},
+{
+  "nome": "Bosses Plus",
+  "categoria": "mobs",
+  "imagem": "imagens/bossesplus-1.5.webp",
+  "arquivo": "bossesplus-1.5.mcaddon",
+  "link": "https://1024terabox.com/s/1Z43cKpa0c07UDWElQc36og",
+  "versao": "1.5",
+  "descricao": "Adiciona novos chefes poderosos para enfrentar em batalhas."
+},
+{
+  "nome": "Buckets Plus",
+  "categoria": "utilidades",
+  "imagem": "imagens/bucketsplus.jpg",
+  "arquivo": "bucketsplus.mcaddon",
+  "link": "https://1024terabox.com/s/1XwKtnyLDtLkf4IbyyRKWwg",
+  "versao": "1.0",
+  "descricao": "Expande as possibilidades dos baldes adicionando novas funções."
+},
+{
+  "nome": "Combat Plus",
+  "categoria": "combate",
+  "imagem": "imagens/combat-plus.jpg",
+  "arquivo": "combat-plus.mcaddon",
+  "link": "https://1024terabox.com/s/1G61_vtTs6or7WQc1CObdrw",
+  "versao": "1.0",
+  "descricao": "Melhora o sistema de combate adicionando novos recursos e mecânicas."
+},
+{
+  "nome": "CommonSense",
+  "categoria": "utilidades",
+  "imagem": "imagens/CommonSense 1.7.1 (Trinkets ON).png",
+  "arquivo": "CommonSense 1.7.1 (Trinkets ON).mcaddon",
+  "link": "https://1024terabox.com/s/1F1TF0tfPbMQ7hKM1jpuVeQ",
+  "versao": "1.7.1",
+  "descricao": "Adiciona melhorias de qualidade de vida e novos recursos para sobrevivência."
+},
+{
+  "nome": "Ma00GM",
+  "categoria": "mobs",
+  "imagem": "imagens/ma00gm.jpg",
+  "arquivo": "ma00gm.mcaddon",
+  "link": "https://1024terabox.com/s/10CvDhXwAxIAt866GsqJ24Q",
+  "versao": "1.0",
+  "descricao": "Addon que adiciona novos conteúdos e elementos para o Minecraft Bedrock."
+},
+{
+  "nome": "Item Physics",
+  "categoria": "visual",
+  "imagem": "imagens/itemphysics.jpg",
+  "arquivo": "itemphysics.mcaddon",
+  "link": "https://1024terabox.com/s/16pDtn94oWlbeQIyY_0sRng",
+  "versao": "1.0",
+  "descricao": "Modifica a física dos itens deixando a movimentação deles mais realista."
+},
+{
+  "nome": "Keep Inventory",
+  "categoria": "utilidades",
+  "imagem": "imagens/keep_inventory 1.21.81.webp",
+  "arquivo": "Keep Inventory1.21.81.mcaddon",
+  "link": "",
+  "versao": "1.21.81",
+  "descricao": "Mantém os itens do jogador após a morte."
+}
+[
+  {
+    "nome": "NIGHT VISION ATUALIZADA",
+    "categoria": "visual",
+    "imagem": "imagens/nigth vision png.webp",
+    "versao": "1.0",
+    "descricao": "Permite enxergar melhor em locais escuros sem precisar utilizar tochas, melhorando a visibilidade do jogador.",
+    "download": "https://1024terabox.com/s/1VBX3RiL6Ui7hBQBisOm6JA"
+  },
+  {
+    "nome": "NebulaSky",
+    "categoria": "texturas",
+    "imagem": "imagens/NebulaSky.jpg",
+    "versao": "1.0",
+    "descricao": "Adiciona um novo visual para o céu do Minecraft deixando a atmosfera mais bonita e detalhada.",
+    "download": ""
+  },
+  {
+    "nome": "Doyl 128x",
+    "categoria": "texturas",
+    "imagem": "imagens/Doyl 128x.png",
+    "versao": "128x",
+    "descricao": "Textura de alta resolução que melhora os detalhes dos blocos e itens do Minecraft.",
+    "download": "https://1024terabox.com/s/12MWQ-kc7OHASX2S5OSxKyw"
+  },
+  {
+    "nome": "One Esmeralde",
+    "categoria": "utilidades",
+    "imagem": "imagens/op vilagers png.webp",
+    "versao": "1.0",
+    "descricao": "Melhora o sistema de aldeões e adiciona novas possibilidades de comércio.",
+    "download": "https://1024terabox.com/s/12-A8sjwc3nT5uFnZcXBP_w"
+  },
+  {
+    "nome": "VulkanCore Performance Booster",
+    "categoria": "performance",
+    "imagem": "imagens/VulkanCore(Performance Booster)V6.3.0.jpg",
+    "versao": "6.3.0",
+    "descricao": "Pacote de otimização focado em melhorar FPS, desempenho e estabilidade do Minecraft.",
+    "download": "https://1024terabox.com/s/1V-uaztydUISuxEbxOG1NNQ"
+  },
+  {
+    "nome": "System Dynamic Lights",
+    "categoria": "visual",
+    "imagem": "imagens/iluminacao addon.gif",
+    "versao": "3.2.3",
+    "descricao": "Adiciona iluminação dinâmica permitindo que itens iluminem o ambiente enquanto são segurados.",
+    "download": "https://1024terabox.com/s/1QhN2qjq2EwI6WbeymDd6Dw"
+  },
+  {
+    "nome": "The Backrooms",
+    "categoria": "aventura",
+    "imagem": "imagens/thebackrooms.jpg",
+    "versao": "1.0",
+    "descricao": "Transforma o Minecraft em uma experiência de terror inspirada no universo Backrooms.",
+    "download": "https://1024terabox.com/s/1gEQvZs_CAE7xMiiT7uDxSA"
+  },
+  {
+    "nome": "Essentials Addon",
+    "categoria": "utilidades",
+    "imagem": "imagens/Essentials addon.webp",
+    "versao": "1.0",
+    "descricao": "Adiciona ferramentas e recursos essenciais para melhorar a sobrevivência.",
+    "download": ""
+  },
+  {
+    "nome": "Keep Inventory 1.21.81",
+    "categoria": "utilidades",
+    "imagem": "imagens/Keep Inventory1.21.81.webp",
+    "versao": "1.21.81",
+    "descricao": "Mantém os itens do jogador após a morte.",
+    "download": ""
+  },
+  {
+    "nome": "Mob Booster Java",
+    "categoria": "mobs",
+    "imagem": "imagens/mob boster java.png",
+    versao": "1.0",
+    "descricao": "Modifica o comportamento dos mobs trazendo recursos inspirados no Minecraft Java.",
+    "download": ""
+  },
+  {
+    "nome": "Command Runner",
+    "categoria": "utilidades",
+    "imagem": "imagens/𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙍𝙪𝙣𝙣𝙚𝙧.webp",
+    "versao": "1.0",
+    "descricao": "Ferramenta para executar comandos automaticamente dentro do Minecraft.",
+    "download": ""
+  },
+  {
+    "nome": "Fogos Infinitos",
+    "categoria": "utilidades",
+    "imagem": "imagens/fogos_infinitos.webp",
+    "versao": "1.0",
+    "descricao": "Permite utilizar fogos de artifício infinitamente.",
+    "download": "https://1024terabox.com/s/1B4EVhSPzC9BcIkaBiboyjA"
+  },
+  {
+    "nome": "Realism VFX",
+    "categoria": "visual",
+    "imagem": "imagens/realism-vfx-1.3.jpg",
+    "versao": "1.3",
+    "descricao": "Adiciona efeitos visuais realistas para melhorar a aparência do Minecraft.",
+    "download": "https://1024terabox.com/s/1_Try488l1DzkIukebU7mrA"
+  },
+  {
+    "nome": "Parasite",
+    "categoria": "mobs",
+    "imagem": "imagens/parasite-1.0.3-.jpg",
+    "versao": "1.0.3",
+    "descricao": "Adiciona parasitas e inimigos que deixam a sobrevivência mais difícil.",
+    "download": "https://1024terabox.com/s/1Igjs1-_PQs3kIPY3gQTntA"
+  },
+  {
+    "nome": "Waystone",
+    "categoria": "utilidades",
+    "imagem": "imagens/waystone.jpg",
+    "versao": "1.0",
+    "descricao": "Adiciona pontos de teleporte para facilitar a movimentação pelo mundo.",
+    "download": "https://1024terabox.com/s/1q-LVq0zMrw8PJFgmbybybA"
+  },
+  {
+    "nome": "Wizard Craft",
+    "categoria": "mobs",
+    "imagem": "imagens/wizard-craft.jpg",
+    "versao": "1.0",
+    "descricao": "Adiciona magia, criaturas e novos conteúdos ao Minecraft Bedrock.",
+    "download": "https://1024terabox.com/s/15k8ZAUcyyvdM11BNLNkQ0g"
+  },
+  {
+    "nome": "Simple Waystone",
+    "categoria": "utilidades",
+    "imagem": "imagens/waystone.jpg",
+    "versao": "8.2",
+    "descricao": "Sistema completo de waystones para criar pontos de viagem rápida.",
+    "download": "https://1024terabox.com/s/1V-zCw40uSQtsQ4oAOytZaA"
+  },
+  {
+    "nome": "Security Addon",
+    "categoria": "utilidades",
+    "imagem": "imagens/securityaddon.jpg",
+    "versao": "1.0",
+    "descricao": "Adiciona sistemas de segurança, proteção e novos equipamentos.",
+    "download": "https://1024terabox.com/s/1kuXnQLZITNtHw-LKrVhTBQ"
+  }
+]
