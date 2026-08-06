@@ -10,854 +10,7 @@
 
 <meta name="description" content="Cy Addons - Minecraft Bedrock">
 
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-:root{
---p:#7b2cff;
---p2:#a855ff;
---b:#080808;
-}
-
-
-body{
-
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-color:#111;
-background:#fff;
-
-background-image:
-linear-gradient(45deg,rgba(0,0,0,.055) 25%,transparent 25%),
-linear-gradient(-45deg,rgba(0,0,0,.055) 25%,transparent 25%),
-linear-gradient(45deg,transparent 75%,rgba(0,0,0,.055) 75%),
-linear-gradient(-45deg,transparent 75%,rgba(0,0,0,.055) 75%);
-
-background-size:30px 30px;
-
-overflow-x:hidden;
-
-}
-
-
-
-body:before{
-
-content:"";
-
-position:fixed;
-
-inset:0;
-
-z-index:-2;
-
-background:
-
-radial-gradient(circle at 50% 0,
-rgba(123,44,255,.25),
-transparent 390px),
-
-linear-gradient(
-180deg,
-rgba(255,255,255,.7),
-rgba(255,255,255,.95)
-);
-
-}
-
-
-
-
-/* FUNDO */
-
-.bg-art{
-
-position:fixed;
-
-inset:0;
-
-z-index:-1;
-
-overflow:hidden;
-
-pointer-events:none;
-
-}
-
-
-
-.bg-card{
-
-position:absolute;
-
-width:160px;
-
-height:160px;
-
-object-fit:cover;
-
-border:4px solid #111;
-
-box-shadow:9px 9px 0 rgba(0,0,0,.5);
-
-opacity:.15;
-
-}
-
-
-
-.bg-card:nth-child(1){
-
-top:80px;
-left:8%;
-
-animation:m1 10s infinite;
-
-}
-
-
-.bg-card:nth-child(2){
-
-top:90px;
-right:10%;
-
-animation:m2 12s infinite;
-
-}
-
-
-.bg-card:nth-child(3){
-
-top:300px;
-left:40%;
-
-animation:m3 11s infinite;
-
-}
-
-
-
-
-@keyframes m1{
-
-0%,100%{
-transform:rotate(-15deg);
-}
-
-50%{
-transform:rotate(-5deg) translate(15px,-20px);
-}
-
-}
-
-
-@keyframes m2{
-
-0%,100%{
-transform:rotate(15deg);
-}
-
-50%{
-transform:rotate(5deg) translate(-20px,15px);
-}
-
-}
-
-
-
-@keyframes m3{
-
-0%,100%{
-transform:rotate(-10deg);
-}
-
-50%{
-transform:rotate(-15deg) translate(10px,20px);
-}
-
-}
-
-
-
-/* HEADER */
-
-
-.top{
-
-text-align:center;
-
-padding:30px 15px 45px;
-
-}
-
-
-
-.badge{
-
-display:inline-block;
-
-border:3px solid #111;
-
-box-shadow:5px 5px 0 #111;
-
-background:white;
-
-padding:8px 20px;
-
-font-weight:1000;
-
-}
-
-
-
-.live{
-
-margin:18px 0;
-
-color:var(--p);
-
-font-weight:1000;
-
-}
-
-
-
-.hero{
-
-display:inline-block;
-
-background:linear-gradient(
-90deg,
-var(--p),
-var(--p2)
-);
-
-color:white;
-
-font-size:clamp(45px,9vw,90px);
-
-font-weight:1000;
-
-padding:12px 25px;
-
-border:4px solid white;
-
-box-shadow:
-
-9px 9px 0 #111,
-
-0 0 40px rgba(123,44,255,.5);
-
-
-transform:rotate(-1deg);
-
-text-shadow:4px 4px 0 rgba(0,0,0,.2);
-
-}
-
-
-
-
-.sub{
-
-font-size:20px;
-
-font-weight:900;
-
-line-height:1.4;
-
-}
-
-
-.sub b{
-
-color:var(--p);
-
-}
-
-
-
-.free{
-
-display:inline-block;
-
-margin-top:20px;
-
-border:2px dashed #b88cff;
-
-background:white;
-
-padding:14px 25px;
-
-font-weight:1000;
-
-}
-
-
-
-/* MENU */
-
-
-.nav{
-
-display:flex;
-
-gap:25px;
-
-background:#050505;
-
-color:white;
-
-padding:15px;
-
-border-top:4px solid #111;
-
-border-bottom:4px solid #111;
-
-overflow:auto;
-
-font-weight:1000;
-
-}
-
-
-
-.nav a{
-
-color:white;
-
-text-decoration:none;
-
-white-space:nowrap;
-
-}
-
-
-
-
-/* CONTAINER */
-
-
-.wrap{
-
-max-width:1240px;
-
-margin:auto;
-
-padding:25px 15px 50px;
-
-}
-
-
-
-/* REDES */
-
-
-.social{
-
-background:white;
-
-border:3px solid #111;
-
-box-shadow:5px 5px 0 #111;
-
-padding:20px;
-
-text-align:center;
-
-margin-bottom:30px;
-
-}
-
-
-
-.social h2{
-
-color:var(--p);
-
-letter-spacing:2px;
-
-}
-
-
-
-.socials{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:15px;
-
-}
-
-
-
-.socials button{
-
-border:3px solid #111;
-
-box-shadow:5px 5px 0 #111;
-
-padding:15px;
-
-font-weight:1000;
-
-cursor:pointer;
-
-background:white;
-
-}
-
-
-
-.socials button:nth-child(2){
-
-background:linear-gradient(
-90deg,
-var(--p),
-#d946ef
-);
-
-color:white;
-
-}
-
-
-
-
-/* TITULO */
-
-
-.head{
-
-display:grid;
-
-grid-template-columns:1fr 390px;
-
-gap:15px;
-
-align-items:end;
-
-margin:30px 0 20px;
-
-}
-
-
-
-.label{
-
-display:inline-block;
-
-background:#111;
-
-color:white;
-
-padding:5px 10px;
-
-font-weight:1000;
-
-}
-
-
-
-.head h1{
-
-font-size:50px;
-
-margin:8px 0;
-
-font-weight:1000;
-
-}
-
-
-
-.head p{
-
-color:#555;
-
-}
-
-
-
-.search{
-
-height:46px;
-
-border:3px solid #111;
-
-padding:0 15px;
-
-font-weight:900;
-
-font-size:15px;
-
-}
-
-
-/* CATEGORIAS */
-
-.tabs{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:10px;
-
-margin-bottom:25px;
-
-}
-
-
-.tabs button{
-
-border:3px solid #111;
-
-background:white;
-
-padding:10px 18px;
-
-font-weight:1000;
-
-cursor:pointer;
-
-}
-
-
-
-.tabs button.active,
-.tabs button:hover{
-
-background:var(--p);
-
-color:white;
-
-}
-
-
-
-
-/* GRID */
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:18px;
-
-}
-
-
-
-
-/* CARD */
-
-.card{
-
-background:white;
-
-border:3px solid #111;
-
-box-shadow:5px 5px 0 #111;
-
-display:flex;
-
-flex-direction:column;
-
-min-height:390px;
-
-}
-
-
-
-.pic{
-
-height:175px;
-
-background:#111;
-
-overflow:hidden;
-
-display:block;
-
-}
-
-
-
-.pic img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-
-
-.auto-cover{
-
-height:100%;
-
-display:grid;
-
-place-items:center;
-
-text-align:center;
-
-padding:20px;
-
-background:
-
-linear-gradient(
-135deg,
-#7b2cff,
-#111
-);
-
-color:white;
-
-font-size:22px;
-
-font-weight:1000;
-
-}
-
-
-
-
-.tag{
-
-position:absolute;
-
-top:8px;
-
-left:8px;
-
-background:var(--p);
-
-color:white;
-
-border:2px solid #111;
-
-padding:4px 8px;
-
-font-size:12px;
-
-font-weight:1000;
-
-}
-
-
-
-.body{
-
-padding:15px;
-
-display:flex;
-
-flex-direction:column;
-
-gap:10px;
-
-flex:1;
-
-}
-
-
-
-.body h3{
-
-margin:0;
-
-font-size:21px;
-
-}
-
-
-
-.meta,
-.desc{
-
-font-size:13px;
-
-color:#555;
-
-line-height:1.4;
-
-}
-
-
-
-.stars{
-
-color:var(--p);
-
-font-size:18px;
-
-}
-
-
-
-.actions{
-
-margin-top:auto;
-
-}
-
-
-
-.btn{
-
-border:3px solid #111;
-
-background:white;
-
-box-shadow:5px 5px 0 #111;
-
-height:43px;
-
-display:grid;
-
-place-items:center;
-
-font-weight:1000;
-
-cursor:pointer;
-
-}
-
-
-
-.btn:hover{
-
-background:var(--p);
-
-color:white;
-
-}
-
-
-
-
-/* MENSAGEM VAZIA */
-
-.empty{
-
-display:none;
-
-border:3px solid #111;
-
-background:white;
-
-padding:25px;
-
-font-weight:1000;
-
-box-shadow:5px 5px 0 #111;
-
-}
-
-
-
-/* FOOTER */
-
-
-.footer{
-
-background:#050505;
-
-color:#aaa;
-
-text-align:center;
-
-padding:20px;
-
-font-weight:1000;
-
-}
-
-
-
-
-
-/* RESPONSIVO */
-
-
-@media(max-width:1000px){
-
-.grid{
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-
-.head{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-
-
-@media(max-width:760px){
-
-.grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-
-.socials{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.head h1{
-
-font-size:40px;
-
-}
-
-
-}
-
-
-
-@media(max-width:520px){
-
-.grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.hero{
-
-font-size:48px;
-
-}
-
-}
-
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -867,11 +20,11 @@ font-size:48px;
 
 <div class="bg-art">
 
-<img class="bg-card" src="https://via.placeholder.com/200">
+<img class="bg-card" src="imagens/background1.png">
 
-<img class="bg-card" src="https://via.placeholder.com/200">
+<img class="bg-card" src="imagens/background2.png">
 
-<img class="bg-card" src="https://via.placeholder.com/200">
+<img class="bg-card" src="imagens/background3.png">
 
 </div>
 
@@ -881,24 +34,18 @@ font-size:48px;
 
 
 <div class="badge">
-
 100+ ADDONS GRÁTIS
-
 </div>
 
 
 <div class="live">
-
 ● PESSOAS ONLINE
-
 </div>
 
 
 
 <div class="hero">
-
 ADDONS GRÁTIS
-
 </div>
 
 
@@ -928,54 +75,65 @@ Seus conteúdos favoritos de Minecraft Bedrock.<br>
 
 <nav class="nav">
 
-<a href="#">■ ADDONS</a>
 
-<a href="#">■ TEXTURAS</a>
+<a href="#">
+■ ADDONS
+</a>
 
-<a href="#">■ MOBS</a>
 
-<a href="#">■ MAPAS</a>
+<a href="#">
+■ TEXTURAS
+</a>
 
-<a href="#">■ UTILIDADES</a>
 
-<a href="#">■ VISUAL</a>
+<a href="#">
+■ MOBS
+</a>
+
+
+<a href="#">
+■ MAPAS
+</a>
+
+
+<a href="#">
+■ UTILIDADES
+</a>
+
+
+<a href="#">
+■ VISUAL
+</a>
+
 
 </nav>
-
-
-
-
 <main class="wrap">
-
 
 
 <section class="social">
 
 
-<h2>SIGA O CRIADOR</h2>
+<h2>
+SIGA O CRIADOR
+</h2>
+
 
 
 <div class="socials">
 
 
 <button>
-
 DISCORD
-
 </button>
 
 
 <button>
-
 INSTAGRAM
-
 </button>
 
 
 <button>
-
 YOUTUBE
-
 </button>
 
 
@@ -993,25 +151,18 @@ YOUTUBE
 
 <div>
 
-
 <span class="label">
-
 ADDONS
-
 </span>
 
 
 <h1>
-
 TODA A COLEÇÃO
-
 </h1>
 
 
 <p>
-
 Explore conteúdos para Minecraft Bedrock
-
 </p>
 
 
@@ -1019,15 +170,16 @@ Explore conteúdos para Minecraft Bedrock
 
 
 
-<input 
+
+<input
 class="search"
 id="search"
 placeholder="Buscar addon..."
 >
 
 
-
 </section>
+
 
 
 
@@ -1036,35 +188,39 @@ placeholder="Buscar addon..."
 <div class="tabs">
 
 
-<button class="active">
+<button class="active" data-cat="todos">
 
 TODOS
 
 </button>
 
 
-<button>
+
+<button data-cat="utilidades">
 
 UTILIDADES
 
 </button>
 
 
-<button>
+
+<button data-cat="visual">
 
 VISUAL
 
 </button>
 
 
-<button>
+
+<button data-cat="construcao">
 
 CONSTRUÇÃO
 
 </button>
 
 
-<button>
+
+<button data-cat="mobs">
 
 MOBS
 
@@ -1072,7 +228,17 @@ MOBS
 
 
 
+<button data-cat="performance">
+
+PERFORMANCE
+
+</button>
+
+
 </div>
+
+
+
 
 
 
@@ -1080,145 +246,13 @@ MOBS
 <section class="grid" id="grid">
 
 
-<div class="card">
-
-
-<div class="pic">
-
-<div class="auto-cover">
-
-Addon Example
-
-</div>
-
-</div>
-
-
-
-<div class="body">
-
-
-<h3>
-
-Nome do Addon
-
-</h3>
-
-
-<div class="meta">
-
-Minecraft Bedrock
-
-</div>
-
-
-<div class="desc">
-
-Descrição do addon aqui.
-
-</div>
-
-
-<div class="stars">
-
-★★★★★
-
-</div>
-
-
-
-<div class="actions">
-
-<div class="btn">
-
-VER DETALHES
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<div class="pic">
-
-
-<div class="auto-cover">
-
-Texture Example
-
-</div>
-
-
-</div>
-
-
-<div class="body">
-
-
-<h3>
-
-Nome da Textura
-
-</h3>
-
-
-<div class="meta">
-
-Minecraft Bedrock
-
-</div>
-
-
-<div class="desc">
-
-Descrição da textura aqui.
-
-</div>
-
-
-<div class="stars">
-
-★★★★★
-
-</div>
-
-
-<div class="actions">
-
-<div class="btn">
-
-VER DETALHES
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
 </section>
 
 
 
-<p class="empty">
+
+
+<p class="empty" id="empty">
 
 Nenhum resultado encontrado.
 
@@ -1231,6 +265,7 @@ Nenhum resultado encontrado.
 
 
 
+
 <footer class="footer">
 
 © 2026 Cy Addons · Todos os direitos reservados
@@ -1238,85 +273,376 @@ Nenhum resultado encontrado.
 </footer>
 <script>
 
+let addons = [];
 
-// PESQUISA VISUAL DOS CARDS
-
-const search = document.getElementById("search");
-const cards = document.querySelectorAll(".card");
-const empty = document.querySelector(".empty");
+let categoriaAtual = "todos";
 
 
-search.addEventListener("input",()=>{
 
-let texto = search.value.toLowerCase();
+// CARREGAR ADDONS DO JSON
 
-let encontrados = 0;
+fetch("links/addons.json")
+
+.then(res => res.json())
+
+.then(data => {
 
 
-cards.forEach(card=>{
+
+    let nomes = new Set();
 
 
-let nome = card
-.querySelector("h3")
-.textContent
+
+    // REMOVE DUPLICADOS PELO NOME
+
+    addons = data.filter(addon => {
+
+
+        let nome = addon.nome
+        .toLowerCase()
+        .trim();
+
+
+
+        if(nomes.has(nome)){
+
+            return false;
+
+        }
+
+
+
+        nomes.add(nome);
+
+
+        return true;
+
+
+    });
+
+
+
+    mostrarAddons();
+
+
+
+})
+
+.catch(error => {
+
+
+    console.log(
+        "Erro ao carregar addons:",
+        error
+    );
+
+
+});
+
+
+
+
+
+
+
+
+// CRIAR CARDS
+
+
+function mostrarAddons(){
+
+
+const grid = document.getElementById("grid");
+
+
+grid.innerHTML = "";
+
+
+
+let pesquisa = document
+.getElementById("search")
+.value
 .toLowerCase();
 
 
-if(nome.includes(texto)){
 
-card.style.display="flex";
 
-encontrados++;
+let lista = addons.filter(addon => {
+
+
+
+let nome =
+addon.nome
+.toLowerCase();
+
+
+
+let categoria =
+addon.categoria
+.toLowerCase();
+
+
+
+
+
+let buscaOK =
+nome.includes(pesquisa);
+
+
+
+
+
+let categoriaOK =
+
+categoriaAtual === "todos"
+
+||
+
+categoria.includes(categoriaAtual);
+
+
+
+
+
+
+return buscaOK && categoriaOK;
+
+
+
+});
+
+
+
+
+
+
+lista.forEach(addon => {
+
+
+
+let imagem = addon.imagem;
+
+
+
+if(imagem){
+
+imagem = imagem.replace(
+"imagens/",
+"imagens/"
+);
 
 }
 
-else{
 
-card.style.display="none";
+
+
+let link =
+addon.download
+||
+addon.link
+||
+"#";
+
+
+
+
+
+let card = document.createElement("div");
+
+
+card.className = "card";
+
+
+
+
+card.innerHTML = `
+
+
+<div class="pic">
+
+
+${
+imagem
+
+?
+
+`
+
+<img src="${imagem}" 
+loading="lazy">
+
+`
+
+:
+
+`
+
+<div class="auto-cover">
+
+${addon.nome}
+
+</div>
+
+`
 
 }
+
+
+</div>
+
+
+
+
+
+
+<div class="body">
+
+
+<h3>
+
+${addon.nome}
+
+</h3>
+
+
+
+
+
+<div class="meta">
+
+Minecraft Bedrock • ${addon.versao || "1.0"}
+
+</div>
+
+
+
+
+
+<div class="desc">
+
+${addon.descricao || "Addon para Minecraft Bedrock."}
+
+</div>
+
+
+
+
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+
+
+
+
+
+<div class="actions">
+
+
+<a 
+href="${link}" 
+target="_blank"
+class="btn">
+
+BAIXAR ADDON
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+`;
+
+
+
+grid.appendChild(card);
+
 
 
 });
 
 
 
-if(encontrados === 0){
 
-empty.style.display="block";
+
+
+
+document.getElementById("empty").style.display =
+
+lista.length === 0
+
+?
+
+"block"
+
+:
+
+"none";
+
+
+
+
 
 }
 
-else{
 
-empty.style.display="none";
 
-}
 
+
+
+
+
+
+// BUSCA
+
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+mostrarAddons
+);
+
+
+
+
+
+
+
+
+// CATEGORIAS
+
+
+document
+.querySelectorAll(".tabs button")
+.forEach(botao => {
+
+
+
+botao.addEventListener(
+"click",
+()=>{
+
+
+
+document
+.querySelectorAll(".tabs button")
+.forEach(btn => {
+
+btn.classList.remove("active");
 
 });
 
 
-
-
-
-// CATEGORIAS VISUAIS
-
-
-const categorias = document.querySelectorAll(".tabs button");
-
-
-categorias.forEach(botao=>{
-
-
-botao.addEventListener("click",()=>{
-
-
-categorias.forEach(b=>{
-
-b.classList.remove("active");
-
-});
 
 
 
@@ -1324,10 +650,29 @@ botao.classList.add("active");
 
 
 
-});
+
+
+categoriaAtual =
+botao.dataset.cat;
+
+
+
+
+
+mostrarAddons();
+
+
 
 
 });
+
+
+
+});
+
+
+
+
 
 
 
@@ -1336,57 +681,38 @@ botao.classList.add("active");
 // BOTÕES SOCIAIS
 
 
-const socialButtons = document.querySelectorAll(".socials button");
-
-
-socialButtons.forEach(botao=>{
-
-
-botao.addEventListener("click",()=>{
-
-
-alert("Indisponível por enquanto");
-
-
-});
-
-
-});
+document
+.querySelectorAll(".socials button")
+.forEach(botao => {
 
 
 
+botao.addEventListener(
+"click",
+()=>{
 
 
-// EFEITO NOS CARDS
-
-
-const cardList = document.querySelectorAll(".card");
-
-
-cardList.forEach(card=>{
-
-
-card.addEventListener("mouseenter",()=>{
-
-
-card.style.transform="translateY(-8px)";
+alert(
+"Link em breve!"
+);
 
 
 });
 
 
 
-card.addEventListener("mouseleave",()=>{
-
-
-card.style.transform="translateY(0)";
-
-
-});
-
-
 });
 
 
 
-</script> 
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
